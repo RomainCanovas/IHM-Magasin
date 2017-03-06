@@ -14,13 +14,13 @@ import java.util.ResourceBundle;
 public class MagasinController implements Initializable {
 
 	@FXML
-	private Button reception, sales, products, information, company, team;
+	private Button reception, sales, products, nouveautes, company, team;
 	@FXML
 	private ScrollPane center;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		boolean condButton = this.reception != null && this.sales != null && this.products != null && this.information != null && this.company != null && this.team != null;
+		boolean condButton = this.reception != null && this.sales != null && this.products != null && this.nouveautes != null && this.company != null && this.team != null;
 		boolean condScrollPane = this.center != null;
 		assert condButton && condScrollPane : "Buttons were not injected: check your FXML file 'Magasin.fxml'.";
 
@@ -58,7 +58,7 @@ public class MagasinController implements Initializable {
 
 	public void actionInformation(ActionEvent actionEvent) {
 		try {
-			center = FXMLLoader.load(getClass().getResource("Information.fxml"));
+			center = FXMLLoader.load(getClass().getResource("Nouveautes.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
