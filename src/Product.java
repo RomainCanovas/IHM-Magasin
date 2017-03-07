@@ -1,9 +1,8 @@
-package model;
-
 public class Product {
 
 	private String name, imagePath, description;
-	private float price, salesPrice;
+	private final float price;
+	private float salesPrice;
 	private boolean isSelect;
 
 	public Product(String name, String imagePath, String description, int price) {
@@ -48,5 +47,7 @@ public class Product {
 		return this.price != this.salesPrice;
 	}
 
-
+	public void reinitPrice() {
+		this.salesPrice = this.price;
+	}
 }

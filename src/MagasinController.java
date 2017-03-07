@@ -1,11 +1,10 @@
-package Controller;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,18 +13,22 @@ import java.util.ResourceBundle;
 public class MagasinController implements Initializable {
 
 	@FXML
-	private Button reception, sales, products, nouveautes, company, team;
+	private Button reception, sales, products, news, company, team;
 	@FXML
-	private ScrollPane center;
+	private Parent center;
+
+	//fixme rajouter l'image view et la charger dans l'initialize
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		boolean condButton = this.reception != null && this.sales != null && this.products != null && this.nouveautes != null && this.company != null && this.team != null;
+
+		boolean condButton = this.reception != null && this.sales != null && this.products != null && this.news != null && this.company != null && this.team != null;
 		boolean condScrollPane = this.center != null;
 		assert condButton && condScrollPane : "Buttons were not injected: check your FXML file 'Magasin.fxml'.";
 
+
 		try {
-			center = FXMLLoader.load(getClass().getResource("Accueil.fxml"));
+			((AnchorPane) this.center).getChildren().add(FXMLLoader.load(getClass().getResource("Accueil.fxml")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -34,7 +37,7 @@ public class MagasinController implements Initializable {
 
 	public void actionReception(ActionEvent actionEvent) {
 		try {
-			center = FXMLLoader.load(getClass().getResource("Accueil.fxml"));
+			((AnchorPane) this.center).getChildren().add(FXMLLoader.load(getClass().getResource("Accueil.fxml")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -42,7 +45,7 @@ public class MagasinController implements Initializable {
 
 	public void actionSales(ActionEvent actionEvent) {
 		try {
-			center = FXMLLoader.load(getClass().getResource("Promotion.fxml"));
+			((AnchorPane) this.center).getChildren().add(FXMLLoader.load(getClass().getResource("Promotion.fxml")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -50,31 +53,27 @@ public class MagasinController implements Initializable {
 
 	public void actionProducts(ActionEvent actionEvent) {
 		try {
-			center = FXMLLoader.load(getClass().getResource("Produit.fxml"));
+			((AnchorPane) this.center).getChildren().add(FXMLLoader.load(getClass().getResource("Produit.fxml")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void actionInformation(ActionEvent actionEvent) {
+	public void actionNews(ActionEvent actionEvent) {
 		try {
-			center = FXMLLoader.load(getClass().getResource("Nouveautes.fxml"));
+			((AnchorPane) this.center).getChildren().add(FXMLLoader.load(getClass().getResource("Nouveautes.fxml")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void actionCompany(ActionEvent actionEvent) {
-		try {
-			center = FXMLLoader.load(getClass().getResource("Enseigne.fxml"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		//Fixme rebalancer le gens sur la page de l'enseigne
 	}
 
 	public void actionTeam(ActionEvent actionEvent) {
 		try {
-			center = FXMLLoader.load(getClass().getResource("Equipe.fxml"));
+			((AnchorPane) this.center).getChildren().add(FXMLLoader.load(getClass().getResource("Equipe.fxml")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

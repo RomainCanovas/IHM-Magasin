@@ -9,128 +9,103 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <VBox prefHeight="252.0" prefWidth="786.0">
-         <children>
-            <HBox prefHeight="90.0" prefWidth="786.0" style="-fx-background-color: white;">
-               <children>
-                  <VBox prefHeight="86.0" prefWidth="211.0">
-                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="40.0">
-                           <image>
-                              <Image url="@../res/horloge.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="75.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HORAIRES D'OUVERTURE">
-                           <VBox.margin>
-                              <Insets left="25.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lundi - Samedi de 10h à 20h30">
-                           <VBox.margin>
-                              <Insets left="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="131.0" prefWidth="373.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CULTURE - MULTIMEDIA">
-                           <VBox.margin>
-                              <Insets left="100.0" top="10.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DÉVELOPPEMENT PERSONNEL">
-                           <VBox.margin>
-                              <Insets left="80.0" top="10.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="86.0" prefWidth="211.0">
-                     <children>
-                        <ImageView fitHeight="35.0" fitWidth="35.0">
-                           <image>
-                              <Image url="@../res/contact.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="85.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tél. : +33 78 27 39 21">
-                           <VBox.margin>
-                              <Insets left="27.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="email : tbth@capsophia.fr">
-                           <VBox.margin>
-                              <Insets left="15.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </VBox>
-               </children>
-            </HBox>
-            <HBox prefHeight="162.0" prefWidth="786.0" style="-fx-background-color: white;">
-               <children>
-                  <VBox prefHeight="162.0" prefWidth="291.0">
-                     <children>
-                        <ImageView fitHeight="50.0" fitWidth="50.0">
-                           <image>
-                              <Image url="@../res/lieu.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="70.0" top="20.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ACCÈS">
-                           <VBox.margin>
-                              <Insets left="72.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Niveau 2">
-                           <VBox.margin>
-                              <Insets left="65.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="En face des escalators">
-                           <VBox.margin>
-                              <Insets left="25.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="162.0" prefWidth="284.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="To Be or To Have : ">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                     </children>
-                  </VBox>
-                  <ImageView fitHeight="150.0" fitWidth="200.0">
-                     <image>
-                        <Image url="@../res/vitrine.jpg" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="2.0" />
-                     </HBox.margin>
-                  </ImageView>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0"
+            prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <VBox prefHeight="252.0" prefWidth="786.0">
+      <HBox prefHeight="90.0" prefWidth="786.0" style="-fx-background-color: white;">
+         <VBox prefHeight="86.0" prefWidth="211.0">
+            <ImageView fitHeight="40.0" fitWidth="40.0">
+               <VBox.margin>
+                  <Insets left="75.0"/>
+               </VBox.margin>
+               <Image url="@../res/horloge.png"/>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HORAIRES D'OUVERTURE">
+               <VBox.margin>
+                  <Insets left="25.0"/>
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lundi - Samedi de 10h à 20h30">
+               <VBox.margin>
+                  <Insets left="5.0"/>
+               </VBox.margin>
+            </Text>
+         </VBox>
+         <VBox prefHeight="131.0" prefWidth="373.0">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CULTURE - MULTIMEDIA">
+               <VBox.margin>
+                  <Insets left="100.0" top="10.0"/>
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DÉVELOPPEMENT PERSONNEL">
+               <VBox.margin>
+                  <Insets left="80.0" top="10.0"/>
+               </VBox.margin>
+            </Text>
+         </VBox>
+         <VBox prefHeight="86.0" prefWidth="211.0">
+            <HBox.margin>
+               <Insets/>
+            </HBox.margin>
+            <ImageView fitHeight="35.0" fitWidth="35.0">
+               <VBox.margin>
+                  <Insets left="85.0" right="5.0" top="5.0"/>
+               </VBox.margin>
+               <Image url="@../res/contact.png"/>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tél. : +33 78 27 39 21">
+               <VBox.margin>
+                  <Insets left="27.0"/>
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="email : tbth@capsophia.fr">
+               <VBox.margin>
+                  <Insets left="15.0"/>
+               </VBox.margin>
+            </Text>
+         </VBox>
+      </HBox>
+      <HBox prefHeight="162.0" prefWidth="786.0" style="-fx-background-color: white;">
+         <VBox prefHeight="162.0" prefWidth="291.0">
+            <ImageView fitHeight="50.0" fitWidth="50.0">
+               <VBox.margin>
+                  <Insets left="70.0" top="20.0"/>
+               </VBox.margin>
+               <Image url="@../res/lieu.png"/>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ACCÈS">
+               <VBox.margin>
+                  <Insets left="72.0"/>
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Niveau 2">
+               <VBox.margin>
+                  <Insets left="65.0"/>
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="En face des escalators">
+               <VBox.margin>
+                  <Insets left="25.0"/>
+               </VBox.margin>
+            </Text>
+         </VBox>
+         <VBox prefHeight="162.0" prefWidth="284.0">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="To Be or To Have : ">
+               <font>
+                  <Font name="System Bold" size="15.0"/>
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text"/>
+         </VBox>
+         <ImageView fitHeight="150.0" fitWidth="200.0">
+            <HBox.margin>
+               <Insets bottom="2.0"/>
+            </HBox.margin>
+            <Image url="@../res/vitrine.jpg"/>
+         </ImageView>
+      </HBox>
+   </VBox>
 </AnchorPane>

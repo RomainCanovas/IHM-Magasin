@@ -1,6 +1,3 @@
-package model;
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,15 +20,22 @@ public class Shop {
 		this.products.add(product);
 	}
 
-	public void makeReduction(int reduction) {
+	public void reduction(int reduction) {
 		for (Product product : products)
-
 			if (product.isInSales())
 				product.updateReduction(reduction);
+	}
 
-			else
+	public void newReductin(int reduction){
+		for (Product product : products)
+			if (product.isInSales())
 				product.setReduction(reduction);
+	}
 
+	public void reinitReduction(){
+		for (Product product : products)
+			if (product.isInSales())
+				product.reinitPrice();
 	}
 
 	public List<Product> productInSales(){
