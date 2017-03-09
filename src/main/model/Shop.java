@@ -1,20 +1,28 @@
 package model;
 
-import javafx.beans.property.StringProperty;
-
 import java.util.List;
 
 public class Shop {
 
-	private StringProperty location, telephone, open, close, email;
-	private List<Product> products;
+	private Information info;
+	private List<Employee> team;
+	private Inventory inventory;
 
-	public Shop(StringProperty location, StringProperty telephone, StringProperty open, StringProperty close, StringProperty email, List<Product> products) {
-		this.location = location;
-		this.telephone = telephone;
-		this.open = open;
-		this.close = close;
-		this.email = email;
-		this.products = products;
+	public Shop(Information info, List<Employee> team, Inventory inventory) {
+		this.info = info;
+		this.team = team;
+		this.inventory = inventory;
+	}
+
+	public List<Employee> getTeam() {
+		return team;
+	}
+
+	public Information getInfo() {
+		return info;
+	}
+
+	public Inventory getInventory() {
+		return this.inventory;
 	}
 }

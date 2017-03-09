@@ -8,7 +8,7 @@ public class Magasin extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("views/Magasin.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("controller/view/Magasin.fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
