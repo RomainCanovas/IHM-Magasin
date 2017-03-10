@@ -28,7 +28,7 @@
                   <MenuButton mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="Accueil">
                     <items>
                         <MenuItem fx:id="access"  mnemonicParsing="false" onAction="#actionAdmin" text="Accès" />
-                      <MenuItem mnemonicParsing="false" text="Heures d'ouverture" />
+                        <MenuItem mnemonicParsing="false" text="Heures d'ouverture" />
                         <MenuItem mnemonicParsing="false" text="Contact" />
                         <MenuItem mnemonicParsing="false" text="Description" />
                     </items>
