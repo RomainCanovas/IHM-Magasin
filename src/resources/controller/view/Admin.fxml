@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefHeight="252.0" prefWidth="786.0">
@@ -26,15 +25,25 @@
             </Text>
             <HBox prefHeight="157.0" prefWidth="786.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="Accueil">
+                  <MenuButton mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="Accueil">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Accès" />
+                      <MenuItem mnemonicParsing="false" text="Heures d'ouverture" />
+                        <MenuItem mnemonicParsing="false" text="Contact" />
+                        <MenuItem mnemonicParsing="false" text="Description" />
+                    </items>
                      <HBox.margin>
                         <Insets left="110.0" top="40.0" />
                      </HBox.margin>
-                  </Button>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </MenuButton>
                   <MenuButton mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="Les produits">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
-                      <MenuItem mnemonicParsing="false" text="Action 2" />
+                        <MenuItem mnemonicParsing="false" text="Nouveautés" />
+                        <MenuItem mnemonicParsing="false" text="Promotions" />
+                      <MenuItem mnemonicParsing="false" text="Catalogue" />
                     </items>
                      <HBox.margin>
                         <Insets left="100.0" top="40.0" />
