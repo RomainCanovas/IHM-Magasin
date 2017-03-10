@@ -6,10 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import model.*;
 
-import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -18,6 +19,8 @@ public class ShopController implements Initializable {
 
 	@FXML
 	private Button reception, sales, products, news, company, team;
+    @FXML
+    private MenuItem access;
 	@FXML
 	private AnchorPane center;
 	private Shop shop;
@@ -81,6 +84,18 @@ public class ShopController implements Initializable {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Equipe.fxml"));
 			Parent pane = loader.load();
 			((TeamController) loader.getController()).initEmployee(this.shop.getTeam());
+			this.center.getChildren().set(0, pane);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void actionAdmin(ActionEvent actionEvent) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Admin.fxml"));
+			Parent pane = loader.load();
+			((AdminController) loader.getController()).init();
 			this.center.getChildren().set(0, pane);
 		} catch (IOException e) {
 			e.printStackTrace();
