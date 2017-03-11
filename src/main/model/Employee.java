@@ -12,39 +12,27 @@ public class Employee {
 		this.name = name;
 		this.job = job;
 		this.picture = new ImageView(this.getClass().getResource(picturePath).toString());
-		this.picture.setFitHeight(165);
-		this.picture.setFitWidth(165);
+		this.reSize(165, 165);
 	}
 
 	public String getFirstName() {
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
 	public String getName() {
 		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getJob() {
 		return job;
 	}
 
-	public void setJob(String job) {
-		this.job = job;
+	private void reSize(double height, double width) {
+		this.picture.setFitWidth(width);
+		this.picture.setFitHeight(height);
 	}
 
 	public ImageView getPicture() {
 		return picture;
-	}
-
-	public void setPicture(ImageView picture) {
-		this.picture = picture;
 	}
 }

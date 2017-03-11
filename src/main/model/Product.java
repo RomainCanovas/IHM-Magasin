@@ -16,7 +16,6 @@ public class Product {
 		this.description = description;
 		this.price = price;
 		this.salesPrice = this.price;
-		this.reSize(60,60);
 	}
 
 	public boolean isOnSale() {
@@ -31,7 +30,7 @@ public class Product {
 		return this.name;
 	}
 
-	private void reSize(double height, double width) {
+	public void reSize(double height, double width) {
 		this.picture.setFitWidth(width);
 		this.picture.setFitHeight(height);
 	}
