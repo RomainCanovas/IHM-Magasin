@@ -1,16 +1,21 @@
 package controller;
 
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Popup;
+import javafx.stage.Screen;
+import model.Product;
 
 public class Zone extends Parent {
 
 	private String name;
 
-	public Zone(String name, Color color, ImageView image, int maxSize) {
+	public Zone(String name, Color color, ImageView picture, int maxSize) {
 
 		this.name = name;
 		this.prefHeight(maxSize);
@@ -36,11 +41,25 @@ public class Zone extends Parent {
 					this.getChildren().get(this.getChildren().size() - 2));
 		});
 
-		this.getChildren().addAll(zone, image);
-
+		this.getChildren().addAll(zone, picture);
 	}
+
 
 	public String getName() {
 		return this.name;
 	}
+
+	public void setPopUp(Product p) {
+
+		this.setOnMouseClicked(event -> {
+			Popup popup = new Popup();
+			Rectangle2D dim = Screen.getPrimary().getBounds();
+			popup.setX(dim.getWidth() / 2);
+			popup.setY(dim.getHeight() / 2);
+			popup.getContent().addAll(new Circle(25, 25, 50, Color.AQUAMARINE));
+			popup.show(this.getScene().getWindow());
+		});
+
+	}
+
 }

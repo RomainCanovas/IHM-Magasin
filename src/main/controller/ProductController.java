@@ -25,6 +25,12 @@ public class ProductController implements Initializable {
 	@FXML
 	public Text heading;
 
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		this.gridPane.setHgap(2);
+		this.gridPane.setVgap(2);
+	}
+
 	void init(Inventory inventory, String name) {
 
 		if (inventory.getCategory(name) != null) {
@@ -56,6 +62,7 @@ public class ProductController implements Initializable {
 			Product p = products.get(i);
 			p.resize(MAX_SIZE, MAX_SIZE);
 			Zone zone = new Zone(p.getName(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, p.getPicture(), MAX_SIZE);
+			zone.setPopUp(p);
 			this.gridPane.add(zone, 1 + i % MAX_COLUMN, i / MAX_COLUMN);
 		}
 	}
@@ -91,9 +98,4 @@ public class ProductController implements Initializable {
 
 	}
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		this.gridPane.setHgap(2);
-		this.gridPane.setVgap(2);
-	}
 }
