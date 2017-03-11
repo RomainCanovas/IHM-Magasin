@@ -7,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import model.*;
 
@@ -19,8 +18,8 @@ public class ShopController implements Initializable {
 
 	@FXML
 	private Button reception, sales, products, news, company, team;
-    @FXML
-    private MenuItem access;
+	@FXML
+	private MenuItem access;
 	@FXML
 	private AnchorPane center;
 	private Shop shop;
@@ -64,7 +63,7 @@ public class ShopController implements Initializable {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
 			Parent pane = loader.load();
-			((ProductController) loader.getController()).init(this.shop.getInventory().onSale(),"PROMOTIONS");
+			((ProductController) loader.getController()).init(this.shop.getInventory().onSale(), "PROMOTIONS");
 			this.center.getChildren().set(0, pane);
 
 		} catch (IOException e) {
@@ -75,6 +74,20 @@ public class ShopController implements Initializable {
 	}
 
 	public void actionProducts(ActionEvent actionEvent) {
+
+		try {
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
+			Parent pane = loader.load();
+			((ProductController) loader.getController()).init(this.shop.getInventory().getCategories());
+			this.center.getChildren().set(0, pane);
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
+
 	}
 
 	public void actionNews(ActionEvent actionEvent) {
@@ -161,9 +174,10 @@ public class ShopController implements Initializable {
 				)
 		);
 
-		Map<ImageView, List<Product>> map = new HashMap<>();
-		for (List<Product> product : products)
-			map.put(product.get(0).getPicture(), product);
+		Map<String, List<Product>> map = new HashMap<>();
+
+		for (int i = 0; i < products.size(); i++)
+			map.put("Categorie " + i, products.get(i));
 
 		Inventory inventory = new Inventory(map);
 

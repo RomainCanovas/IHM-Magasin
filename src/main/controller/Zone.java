@@ -39,4 +39,5 @@ public class Zone extends Parent {
 		this.getChildren().addAll(zone, image);
 
 	}
+
 }

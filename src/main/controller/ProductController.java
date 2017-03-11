@@ -11,6 +11,7 @@ import model.Product;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ProductController implements Initializable {
@@ -30,19 +31,39 @@ public class ProductController implements Initializable {
 		this.heading.setText(heading);
 		this.products = products;
 
-		for (int i = 0; i < MAX_COLUMN + 1; i++)
-			this.gridPane.getColumnConstraints().add(new ColumnConstraints());
-		for (int i = 0; i < this.products.size() / MAX_COLUMN; i++)
-			this.gridPane.getRowConstraints().add(new RowConstraints());
+		this.initSize(this.products.size() + 1, MAX_COLUMN);
 
 		for (int i = 0; i < this.products.size(); i++) {
 			Product p = this.products.get(i);
-			p.reSize(MAX_SIZE, MAX_SIZE);
+			p.resize(MAX_SIZE, MAX_SIZE);
 			Zone zone = new Zone(p.getName(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, p.getPicture(), MAX_SIZE);
 			this.gridPane.add(zone, 1 + i % MAX_COLUMN, i / MAX_COLUMN);
 		}
 	}
 
+	public void init(Map<String, Product> categories) {
+
+		this.heading.setText("Categorie");
+		this.initSize(categories.keySet().size() + 1, MAX_COLUMN);
+
+		int i = 0;
+
+		for (Map.Entry<String, Product> entry : categories.entrySet()) {
+			entry.getValue().resize(MAX_SIZE,MAX_SIZE);
+			Zone zone = new Zone(entry.getKey(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, entry.getValue().getPicture(), MAX_SIZE);
+			this.gridPane.add(zone, 1 + i % MAX_COLUMN, i / MAX_COLUMN);
+			i++;
+		}
+	}
+
+	private void initSize(int maxColumn, int size) {
+
+		for (int i = 0; i < maxColumn + 1; i++)
+			this.gridPane.getColumnConstraints().add(new ColumnConstraints());
+		for (int i = 0; i < size / maxColumn; i++)
+			this.gridPane.getRowConstraints().add(new RowConstraints());
+
+	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

@@ -19,7 +19,7 @@ public class Product {
 	}
 
 	public boolean isOnSale() {
-		return this.price != this.salesPrice || true;
+		return this.price != this.salesPrice ||true;
 	}//Fixme
 
 	public ImageView getPicture() {
@@ -30,7 +30,7 @@ public class Product {
 		return this.name;
 	}
 
-	public void reSize(double height, double width) {
+	public void resize(double height, double width) {
 		this.picture.setFitWidth(width);
 		this.picture.setFitHeight(height);
 	}
