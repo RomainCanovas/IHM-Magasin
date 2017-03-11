@@ -7,6 +7,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import model.Inventory;
 import model.Product;
 
 import java.net.URL;
@@ -24,36 +25,61 @@ public class ProductController implements Initializable {
 	@FXML
 	public Text heading;
 
-	private List<Product> products;
+	void init(Inventory inventory, String name) {
 
-	public void init(List<Product> products, String heading) { // 786 252
+		if (inventory.getCategory(name) != null) {
 
-		this.heading.setText(heading);
-		this.products = products;
+			this.initProduct(inventory.getCategory(name), name);
 
-		this.initSize(this.products.size() + 1, MAX_COLUMN);
+		} else {
 
-		for (int i = 0; i < this.products.size(); i++) {
-			Product p = this.products.get(i);
+			switch (name) {
+				case "PROMOTIONS":
+					this.initProduct(inventory.onSale(), name);
+					break;
+				case "CATEGORIES":
+					this.initCategory(inventory);
+					break;
+				default:
+					System.exit(0);
+			}
+		}
+	}
+
+	private void initProduct(List<Product> products, String name) { // 786 252
+
+		this.heading.setText(name);
+
+		this.initSize(products.size() + 1, MAX_COLUMN);
+
+		for (int i = 0; i < products.size(); i++) {
+			Product p = products.get(i);
 			p.resize(MAX_SIZE, MAX_SIZE);
 			Zone zone = new Zone(p.getName(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, p.getPicture(), MAX_SIZE);
 			this.gridPane.add(zone, 1 + i % MAX_COLUMN, i / MAX_COLUMN);
 		}
 	}
 
-	public void init(Map<String, Product> categories) {
+	private void initCategory(Inventory inventory) {
 
-		this.heading.setText("Categorie");
+		this.heading.setText("CATEGORIES");
+
+		Map<String, Product> categories = inventory.getCategories();
+
 		this.initSize(categories.keySet().size() + 1, MAX_COLUMN);
 
 		int i = 0;
 
 		for (Map.Entry<String, Product> entry : categories.entrySet()) {
-			entry.getValue().resize(MAX_SIZE,MAX_SIZE);
+
+			entry.getValue().resize(MAX_SIZE, MAX_SIZE);
 			Zone zone = new Zone(entry.getKey(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, entry.getValue().getPicture(), MAX_SIZE);
+			zone.setOnMouseClicked(event -> this.init(inventory, zone.getName()));
+
 			this.gridPane.add(zone, 1 + i % MAX_COLUMN, i / MAX_COLUMN);
 			i++;
 		}
+
 	}
 
 	private void initSize(int maxColumn, int size) {

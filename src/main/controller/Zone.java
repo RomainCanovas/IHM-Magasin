@@ -40,4 +40,7 @@ public class Zone extends Parent {
 
 	}
 
+	public String getName() {
+		return this.name;
+	}
 }

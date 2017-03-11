@@ -1,7 +1,5 @@
 package model;
 
-import javafx.scene.image.ImageView;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,5 +31,9 @@ public class Inventory {
 			map.put(entry.getKey(), entry.getValue().get(0));
 
 		return map;
+	}
+
+	public List<Product> getCategory(String key) {
+		return this.products.get(key);
 	}
 }

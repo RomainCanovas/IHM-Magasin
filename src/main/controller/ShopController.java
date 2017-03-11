@@ -63,7 +63,7 @@ public class ShopController implements Initializable {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
 			Parent pane = loader.load();
-			((ProductController) loader.getController()).init(this.shop.getInventory().onSale(), "PROMOTIONS");
+			((ProductController) loader.getController()).init(this.shop.getInventory(), "PROMOTIONS");
 			this.center.getChildren().set(0, pane);
 
 		} catch (IOException e) {
@@ -79,7 +79,7 @@ public class ShopController implements Initializable {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
 			Parent pane = loader.load();
-			((ProductController) loader.getController()).init(this.shop.getInventory().getCategories());
+			((ProductController) loader.getController()).init(this.shop.getInventory(),"CATEGORIES");
 			this.center.getChildren().set(0, pane);
 
 		} catch (IOException e) {

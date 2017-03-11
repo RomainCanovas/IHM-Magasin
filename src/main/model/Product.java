@@ -20,7 +20,7 @@ public class Product {
 
 	public boolean isOnSale() {
 		return this.price != this.salesPrice ||true;
-	}//Fixme
+	}
 
 	public ImageView getPicture() {
 		return this.picture;
