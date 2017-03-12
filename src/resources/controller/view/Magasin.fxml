@@ -8,21 +8,28 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane onKeyPressed="#keyListenerAdmin" prefHeight="405.0" prefWidth="930.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShopController">
-    <HBox layoutY="305.0" prefHeight="50.0" prefWidth="930.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
-        <Button fx:id="reception" mnemonicParsing="false" onAction="#actionReception" prefHeight="50.0" prefWidth="155.0" text="Accueil" />
-        <Button fx:id="sales" mnemonicParsing="false" onAction="#actionSales" prefHeight="50.0" prefWidth="155.0" text="Promotions" />
-        <Button fx:id="products" mnemonicParsing="false" onAction="#actionProducts" prefHeight="50.0" prefWidth="155.0" text="Nos produits" />
-        <Button fx:id="news" mnemonicParsing="false" onAction="#actionNews" prefHeight="50.0" prefWidth="155.0" text="Nouveautés" />
-        <Button fx:id="company" mnemonicParsing="false" onAction="#actionCompany" prefHeight="50.0" prefWidth="155.0" text="Enseigne" />
-        <Button fx:id="team" mnemonicParsing="false" onAction="#actionTeam" prefHeight="50.0" prefWidth="155.0" text="Notre équipe" />
+<AnchorPane onKeyPressed="#keyListenerAdmin" prefHeight="405.0" prefWidth="930.0" style="-fx-background-color: white;"
+            xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.ShopController">
+    <HBox layoutY="305.0" prefHeight="50.0" prefWidth="930.0" AnchorPane.bottomAnchor="10.0"
+          AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+        <Button mnemonicParsing="false" onAction="#actionReception" prefHeight="50.0" prefWidth="155.0" text="Accueil"/>
+        <Button mnemonicParsing="false" onAction="#actionSales" prefHeight="50.0" prefWidth="155.0" text="Promotions"/>
+        <Button mnemonicParsing="false" onAction="#actionProducts" prefHeight="50.0" prefWidth="155.0"
+                text="Nos produits"/>
+        <Button mnemonicParsing="false" onAction="#actionNews" prefHeight="50.0" prefWidth="155.0" text="Nouveautés"/>
+        <Button mnemonicParsing="false" onAction="#actionCompany" prefHeight="50.0" prefWidth="155.0" text="Enseigne"/>
+        <Button mnemonicParsing="false" onAction="#actionTeam" prefHeight="50.0" prefWidth="155.0" text="Notre équipe"/>
     </HBox>
-    <AnchorPane fx:id="center" layoutX="74.0" layoutY="58.0" prefHeight="252.0" prefWidth="786.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="75.0" />
-    <ImageView fitHeight="50.0" fitWidth="260.0" layoutX="18.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="10.0">
-        <Image url="@../../controller/image/mf_logo_final.jpg" />
+    <AnchorPane fx:id="center" layoutX="74.0" layoutY="58.0" prefHeight="252.0" prefWidth="786.0"
+                AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0"
+                AnchorPane.topAnchor="75.0"/>
+    <ImageView fitHeight="50.0" fitWidth="260.0" layoutX="18.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true"
+               AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="10.0">
+        <Image url="@../../controller/image/mf_logo_final.jpg"/>
     </ImageView>
-    <Text layoutX="47.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE place to be," />
-    <Text layoutX="113.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE place to have" />
+    <Text layoutX="47.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE place to be,"/>
+    <Text layoutX="113.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE place to have"/>
     <TextField fx:id="search" layoutX="718.0" layoutY="16.0" onKeyReleased="#searchCall" prefHeight="40.0"
                prefWidth="187.0" promptText="Rechercher..."/>
 
