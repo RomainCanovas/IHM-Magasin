@@ -27,17 +27,18 @@ public class AdminController {
     private MenuItem access, description, opening, phoneMail, newsAdmin, salesAdmin, productsAdmin;
     @FXML
     private AnchorPane center;
-    private Information information;
+    private Information info;
 
 
-        public void init(){
+        public void init(Information info){
+            this.info=info;
         }
 
     public void actionAdmin(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Admin.fxml"));
             Parent pane = loader.load();
-            ((AdminController) loader.getController()).init();
+            ((AdminController) loader.getController()).init(this.info);
             this.center.getChildren().set(0, pane);
         } catch (IOException e) {
             e.printStackTrace();
@@ -48,7 +49,7 @@ public class AdminController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminAccess.fxml"));
             Parent pane = loader.load();
-            ((AdminController) loader.getController()).init();
+            ((AdminController) loader.getController()).init(this.info);
             this.center.getChildren().set(0, pane);
         } catch (IOException e) {
             e.printStackTrace();
@@ -63,13 +64,13 @@ public class AdminController {
         String floor = getFloor();
         switch (floor) {
             case "0":
-                information.setFloor(0);
+                info.setFloor(0);
                 break;
             case "1":
-                information.setFloor(1);
+                info.setFloor(1);
                 break;
             case "2":
-                information.setFloor(2);
+                info.setFloor(2);
                 break;
             default:
                 break;
@@ -81,7 +82,7 @@ public class AdminController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/AdminDescription.fxml"));
             Parent pane = loader.load();
-            ((AdminController) loader.getController()).init();
+            ((AdminController) loader.getController()).init(this.info);
             this.center.getChildren().set(0, pane);
         } catch (IOException e) {
             e.printStackTrace();
@@ -92,7 +93,7 @@ public class AdminController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/AdminOpeningHours.fxml"));
             Parent pane = loader.load();
-            ((AdminController) loader.getController()).init();
+            ((AdminController) loader.getController()).init(this.info);
             this.center.getChildren().set(0, pane);
         } catch (IOException e) {
             e.printStackTrace();
@@ -103,7 +104,7 @@ public class AdminController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/AdminPhoneAndMail.fxml"));
             Parent pane = loader.load();
-            ((AdminController) loader.getController()).init();
+            ((AdminController) loader.getController()).init(this.info);
             this.center.getChildren().set(0, pane);
         } catch (IOException e) {
             e.printStackTrace();
@@ -114,7 +115,7 @@ public class AdminController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/AdminStats.fxml"));
             Parent pane = loader.load();
-            ((AdminController) loader.getController()).init();
+            ((AdminController) loader.getController()).init(this.info);
             this.center.getChildren().set(0, pane);
         } catch (IOException e) {
             e.printStackTrace();

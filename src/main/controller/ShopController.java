@@ -119,7 +119,7 @@ public class ShopController implements Initializable {
 
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/Admin.fxml"));
 				Parent pane = loader.load();
-				((AdminController) loader.getController()).init();
+				((AdminController) loader.getController()).init(createData().getInfo());
 				this.center.getChildren().set(0, pane);
 
 			}

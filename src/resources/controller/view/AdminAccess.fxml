@@ -28,7 +28,7 @@
                                 <Font size="34.0" />
                             </font>
                         </Text>
-                        <ComboBox fx:id="floor" prefHeight="49.0" prefWidth="69.0" onAction="#setFloor">
+                        <ComboBox fx:id="floor" prefHeight="49.0" prefWidth="69.0" onAction="#setFloorFX">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="0" />
