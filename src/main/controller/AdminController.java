@@ -19,7 +19,7 @@ import java.io.IOException;
         @FXML
         public Button stats;
         @FXML
-        public MenuItem floor1, floor2;
+        public MenuItem floor1, floor2, floor0;
         @FXML
         private MenuItem jan2017CA, feb2017CA, jan2017PR, feb2017PR, jan2017PS, feb2017PS;
         @FXML
