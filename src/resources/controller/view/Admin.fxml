@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminController">
    <children>
       <VBox prefHeight="252.0" prefWidth="786.0">
          <children>
@@ -27,10 +27,10 @@
                <children>
                   <MenuButton mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="Accueil">
                     <items>
-                        <MenuItem fx:id="access"  mnemonicParsing="false" onAction="#actionAdmin" text="Accès" />
-                        <MenuItem mnemonicParsing="false" text="Heures d'ouverture" />
-                        <MenuItem mnemonicParsing="false" text="Contact" />
-                        <MenuItem mnemonicParsing="false" text="Description" />
+                        <MenuItem fx:id="access" onAction="#actionAdminAccess" mnemonicParsing="false" text="Accès" />
+                        <MenuItem fx:id="opening" onAction="#actionAdminOpening" mnemonicParsing="false" text="Heures d'ouverture" />
+                        <MenuItem fx:id="phoneMail" onAction="#actionAdminPhoneAndMail" mnemonicParsing="false" text="Contact" />
+                        <MenuItem fx:id="description" onAction="#actionAdminDescription" mnemonicParsing="false" text="Description" />
                     </items>
                      <HBox.margin>
                         <Insets left="110.0" top="40.0" />
@@ -41,9 +41,9 @@
                   </MenuButton>
                   <MenuButton mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="Les produits">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Nouveautés" />
-                        <MenuItem mnemonicParsing="false" text="Promotions" />
-                      <MenuItem mnemonicParsing="false" text="Catalogue" />
+                        <MenuItem fx:id="newsAdmin" onAction="#actionAdminAccess" mnemonicParsing="false" text="Nouveautés" />
+                        <MenuItem fx:id="salesAdmin" onAction="#actionAdminAccess" mnemonicParsing="false" text="Promotions" />
+                      <MenuItem fx:id="productsAdmin" onAction="#actionAdminAccess" mnemonicParsing="false" text="Catalogue" />
                     </items>
                      <HBox.margin>
                         <Insets left="100.0" top="40.0" />
@@ -56,7 +56,7 @@
                   </Button>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="230.0" text="Statistiques">
+            <Button fx:id="stats" onAction="#HomeStats" mnemonicParsing="false" prefHeight="31.0" prefWidth="230.0" text="Statistiques">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

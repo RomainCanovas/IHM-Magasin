@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import model.*;
 
@@ -19,7 +20,7 @@ public class ShopController implements Initializable {
 	@FXML
 	private Button reception, sales, products, news, company, team;
 	@FXML
-	private MenuItem access;
+	private MenuItem access, description, opening, phoneMail, newsAdmin, salesAdmin, productsAdmin;
 	@FXML
 	private AnchorPane center;
 	private Shop shop;
@@ -121,16 +122,20 @@ public class ShopController implements Initializable {
 		}
 	}
 
-	public void actionAdmin(ActionEvent actionEvent) {
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Admin.fxml"));
-			Parent pane = loader.load();
-			((AdminController) loader.getController()).init();
-			this.center.getChildren().set(0, pane);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+
+    public void keyListenerAdmin(KeyEvent event) {
+        try {
+            if (event.getEventType()==KeyEvent.KEY_PRESSED) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Admin.fxml"));
+                Parent pane = loader.load();
+                ((AdminController) loader.getController()).init();
+                this.center.getChildren().set(0, pane);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 	private Shop createData() {
 		Information info = new Information("+33 79 35 01 21", "tbth@capsophia.com", "Lundi - Vendredi",

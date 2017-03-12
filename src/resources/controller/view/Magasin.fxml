@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="405.0" prefWidth="930.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShopController">
+<AnchorPane prefHeight="405.0" prefWidth="930.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" onKeyPressed="#keyListenerAdmin" fx:controller="controller.ShopController" >
     <HBox layoutY="305.0" prefHeight="50.0" prefWidth="930.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
         <Button fx:id="reception" onAction="#actionReception" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" text="Accueil" />
         <Button fx:id="sales" onAction="#actionSales" mnemonicParsing="false"  prefHeight="50.0" prefWidth="155.0" text="Promotions" />
@@ -24,4 +24,5 @@
     <Text layoutX="47.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE place to be," />
     <Text layoutX="113.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE place to have" />
     <TextField layoutX="718.0" layoutY="16.0" prefHeight="40.0" prefWidth="187.0" promptText="Rechercher..." />
+
 </AnchorPane>
