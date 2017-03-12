@@ -24,6 +24,16 @@ public class Inventory {
 		return products;
 	}
 
+	public List<Product> isNew() {
+
+		List<Product> products = new ArrayList<>();
+
+		for (List<Product> list : this.products.values())
+			products.addAll(list.stream().filter(Product::isNew).collect(Collectors.toList()));
+
+		return products;
+	}
+
 	public Map<String, Product> getCategories() {
 		Map<String, Product> map = new HashMap<>();
 

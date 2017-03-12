@@ -91,7 +91,20 @@ public class ShopController implements Initializable {
 	}
 
 	public void actionNews(ActionEvent actionEvent) {
-	}
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Nouveautés.fxml"));
+            Parent pane = loader.load();
+            ((ProductController) loader.getController()).init(this.shop.getInventory(),"NEWS");
+            this.center.getChildren().set(0, pane);
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+
+    }
 
 	public void actionCompany(ActionEvent actionEvent) {
 		//Fixme rebalancer le gens sur la page de l'enseigne
@@ -103,7 +116,6 @@ public class ShopController implements Initializable {
 			Parent pane = loader.load();
 			((TeamController) loader.getController()).initEmployee(this.shop.getTeam());
 			this.center.getChildren().set(0, pane);
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -136,42 +148,50 @@ public class ShopController implements Initializable {
 
 		List<List<Product>> products = Arrays.asList(
 				Arrays.asList(
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25)
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false)
 
 				),
 				Arrays.asList(
-						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250),
-						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250),
-						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250)
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250, false),
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250, false),
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250,false)
 				),
 				Arrays.asList(
-						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250),
-						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250),
-						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produitr !", 2500)
-				)
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250,false),
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250,false),
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500,false)
+				),
+				Arrays.asList(
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit !", 250,true),
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit !", 250,true),
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500,true)
+                )
 		);
 
 		Map<String, List<Product>> map = new HashMap<>();

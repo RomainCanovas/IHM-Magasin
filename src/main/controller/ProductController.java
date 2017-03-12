@@ -46,6 +46,9 @@ public class ProductController implements Initializable {
 				case "CATEGORIES":
 					this.initCategory(inventory);
 					break;
+				case "NEWS":
+					this.initNews(inventory.isNew());
+					break;
 				default:
 					System.exit(0);
 			}
@@ -88,6 +91,21 @@ public class ProductController implements Initializable {
 		}
 
 	}
+
+    private void initNews(List<Product> products) { // 786 252
+
+        this.heading.setText("NOUVEAUTES");
+
+        this.initSize(products.size() + 1, MAX_COLUMN);
+
+        for (int i = 0; i < products.size(); i++) {
+            Product p = products.get(i);
+            p.resize(MAX_SIZE, MAX_SIZE);
+            Zone zone = new Zone(p.getName(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, p.getPicture(), MAX_SIZE);
+            zone.setPopUp(p);
+            this.gridPane.add(zone, 1 + i % MAX_COLUMN, i / MAX_COLUMN);
+        }
+    }
 
 	private void initSize(int maxColumn, int size) {
 
