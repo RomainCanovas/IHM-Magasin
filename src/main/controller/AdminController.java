@@ -14,23 +14,24 @@ import java.io.IOException;
 /**
  * Created by canor on 10/03/2017.
  */
-public class AdminController {
+    public class AdminController {
+
+        @FXML
+        public Button stats;
+        @FXML
+        public MenuItem floor1, floor2;
+        @FXML
+        private MenuItem jan2017CA, feb2017CA, jan2017PR, feb2017PR, jan2017PS, feb2017PS;
+        @FXML
+        private MenuItem access, description, opening, phoneMail, newsAdmin, salesAdmin, productsAdmin;
+        @FXML
+        private AnchorPane center;
+        private Information information;
 
 
-    @FXML
-    public Button stats;
-    @FXML
-    public MenuItem floor1, floor2;
-    @FXML
-    private MenuItem jan2017CA, feb2017CA, jan2017PR, feb2017PR, jan2017PS, feb2017PS;
-    @FXML
-    private AnchorPane center;
+        public void init(){
 
-    public Information information;
-
-
-    public void init() {
-    }
+        }
 
     public void actionAdmin(ActionEvent actionEvent) {
         try {

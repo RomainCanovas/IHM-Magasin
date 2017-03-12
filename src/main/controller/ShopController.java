@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import model.*;
@@ -19,8 +18,6 @@ public class ShopController implements Initializable {
 
 	@FXML
 	private Button reception, sales, products, news, company, team;
-	@FXML
-	private MenuItem access, description, opening, phoneMail, newsAdmin, salesAdmin, productsAdmin;
 	@FXML
 	private AnchorPane center;
 	private Shop shop;
