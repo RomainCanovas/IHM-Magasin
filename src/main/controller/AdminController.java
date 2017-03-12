@@ -46,7 +46,7 @@ import java.io.IOException;
 
     public void actionAdminAccess(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/AdminAccess.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminAccess.fxml"));
             Parent pane = loader.load();
             ((AdminController) loader.getController()).init();
             this.center.getChildren().set(0, pane);

@@ -1,18 +1,20 @@
 package controller;
 
-import javafx.geometry.Rectangle2D;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Popup;
-import javafx.stage.Screen;
 import model.Product;
+
+import java.io.IOException;
 
 public class Zone extends Parent {
 
+	private static double xPop = 0;
+	private static double yPop = 0;
 	private String name;
 
 	public Zone(String name, Color color, ImageView picture, int maxSize) {
@@ -44,7 +46,6 @@ public class Zone extends Parent {
 		this.getChildren().addAll(zone, picture);
 	}
 
-
 	public String getName() {
 		return this.name;
 	}
@@ -52,12 +53,27 @@ public class Zone extends Parent {
 	public void setPopUp(Product p) {
 
 		this.setOnMouseClicked(event -> {
+
 			Popup popup = new Popup();
-			Rectangle2D dim = Screen.getPrimary().getBounds();
-			popup.setX(dim.getWidth() / 2);
-			popup.setY(dim.getHeight() / 2);
-			popup.getContent().addAll(new Circle(25, 25, 50, Color.AQUAMARINE));
+			popup.setX(xPop);
+			popup.setY(yPop);
+
+			try {
+
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("view/PopUp.fxml"));
+				Parent pane = loader.load();
+				pane.setOnMousePressed(e ->	popup.hide());
+				((PopUpController) loader.getController()).init(p);
+				popup.getContent().add(pane);
+
+			} catch (IOException e) {
+
+				e.printStackTrace();
+
+			}
+
 			popup.show(this.getScene().getWindow());
+
 		});
 
 	}

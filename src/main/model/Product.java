@@ -3,29 +3,27 @@ package model;
 
 import javafx.scene.image.ImageView;
 
+import java.util.Date;
+
 public class Product {
 
 	private String name, description;
 	private final float price;
 	private float salesPrice;
-	private boolean newest;
 	private ImageView picture;
+	private Date date;
 
-	public Product(String name, String picturePath, String description, int price, boolean isANew) {
+	public Product(String name, String picturePath, String description, int price) {
 		this.name = name;
 		this.picture = new ImageView(this.getClass().getResource(picturePath).toString());
 		this.description = description;
 		this.price = price;
 		this.salesPrice = this.price;
-		this.newest = isANew;
+		this.date = new Date();
 	}
 
 	public boolean isOnSale() {
-		return this.price != this.salesPrice ||true;
-	}
-
-	public boolean isNew() {
-		return newest;
+		return this.price != this.salesPrice;
 	}
 
 	public ImageView getPicture() {
@@ -47,5 +45,9 @@ public class Product {
 
 	public float getPrice() {
 		return this.price;
+	}
+
+	public Date getDate() {
+		return this.date;
 	}
 }

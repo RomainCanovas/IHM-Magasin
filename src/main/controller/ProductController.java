@@ -33,26 +33,21 @@ public class ProductController implements Initializable {
 
 	void init(Inventory inventory, String name) {
 
-		if (inventory.getCategory(name) != null) {
+		switch (name) {
+			case "PROMOTIONS":
+				this.initProduct(inventory.onSale(), name);
+				break;
+			case "CATEGORIES":
+				this.initCategory(inventory);
+				break;
+			case "NOUVEAUTES":
+				this.initProduct(inventory.isNew(), name);
+				break;
+			default:
+				this.initProduct(inventory.search(name),name);
 
-			this.initProduct(inventory.getCategory(name), name);
-
-		} else {
-
-			switch (name) {
-				case "PROMOTIONS":
-					this.initProduct(inventory.onSale(), name);
-					break;
-				case "CATEGORIES":
-					this.initCategory(inventory);
-					break;
-				case "NEWS":
-					this.initNews(inventory.isNew());
-					break;
-				default:
-					System.exit(0);
-			}
 		}
+
 	}
 
 	private void initProduct(List<Product> products, String name) { // 786 252
@@ -84,28 +79,13 @@ public class ProductController implements Initializable {
 
 			entry.getValue().resize(MAX_SIZE, MAX_SIZE);
 			Zone zone = new Zone(entry.getKey(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, entry.getValue().getPicture(), MAX_SIZE);
-			zone.setOnMouseClicked(event -> this.init(inventory, zone.getName()));
+			zone.setOnMouseClicked(event -> this.initProduct(inventory.getCategory(zone.getName()), zone.getName()));
 
 			this.gridPane.add(zone, 1 + i % MAX_COLUMN, i / MAX_COLUMN);
 			i++;
 		}
 
 	}
-
-    private void initNews(List<Product> products) { // 786 252
-
-        this.heading.setText("NOUVEAUTES");
-
-        this.initSize(products.size() + 1, MAX_COLUMN);
-
-        for (int i = 0; i < products.size(); i++) {
-            Product p = products.get(i);
-            p.resize(MAX_SIZE, MAX_SIZE);
-            Zone zone = new Zone(p.getName(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, p.getPicture(), MAX_SIZE);
-            zone.setPopUp(p);
-            this.gridPane.add(zone, 1 + i % MAX_COLUMN, i / MAX_COLUMN);
-        }
-    }
 
 	private void initSize(int maxColumn, int size) {
 

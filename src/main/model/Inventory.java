@@ -1,17 +1,16 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Inventory {
 
 	private Map<String, List<Product>> products;
+	private Date dataNews;
 
 	public Inventory(Map<String, List<Product>> products) {
 		this.products = products;
+		this.dataNews = new Date();
 	}
 
 	public List<Product> onSale() {
@@ -29,7 +28,7 @@ public class Inventory {
 		List<Product> products = new ArrayList<>();
 
 		for (List<Product> list : this.products.values())
-			products.addAll(list.stream().filter(Product::isNew).collect(Collectors.toList()));
+			products.addAll(list.stream().filter(product -> product.getDate().after(this.dataNews)).collect(Collectors.toList()));
 
 		return products;
 	}
@@ -45,5 +44,16 @@ public class Inventory {
 
 	public List<Product> getCategory(String key) {
 		return this.products.get(key);
+	}
+
+	public List<Product> search(String name) {
+
+		List<Product> products = new ArrayList<>();
+
+		for (List<Product> list : this.products.values())
+			products.addAll(list.stream().filter(product -> product.getName().toLowerCase().contains(name)).collect(Collectors.toList()));
+
+		return products;
+
 	}
 }

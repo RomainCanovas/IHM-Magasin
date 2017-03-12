@@ -1,11 +1,11 @@
 package controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import model.*;
@@ -13,29 +13,22 @@ import model.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.List;
 
 public class ShopController implements Initializable {
-
 	@FXML
-	private Button reception, sales, products, news, company, team;
+	public TextField search;
 	@FXML
 	private AnchorPane center;
 	private Shop shop;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
-
 		this.shop = this.createData();
-
-		boolean condButton = this.reception != null && this.sales != null && this.products != null && this.news != null && this.company != null && this.team != null;
-		boolean condScrollPane = this.center != null;
-		assert condButton && condScrollPane : "Buttons were not injected: check your FXML file 'Magasin.fxml'.";
-
-		this.actionReception(new ActionEvent());
+		this.actionReception();
 	}
 
-	public void actionReception(ActionEvent actionEvent) {
+	public void actionReception() {
 
 		try {
 
@@ -55,7 +48,7 @@ public class ShopController implements Initializable {
 		}
 	}
 
-	public void actionSales(ActionEvent actionEvent) {
+	public void actionSales() {
 
 		try {
 
@@ -71,13 +64,13 @@ public class ShopController implements Initializable {
 		}
 	}
 
-	public void actionProducts(ActionEvent actionEvent) {
+	public void actionProducts() {
 
 		try {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
 			Parent pane = loader.load();
-			((ProductController) loader.getController()).init(this.shop.getInventory(),"CATEGORIES");
+			((ProductController) loader.getController()).init(this.shop.getInventory(), "CATEGORIES");
 			this.center.getChildren().set(0, pane);
 
 		} catch (IOException e) {
@@ -88,27 +81,27 @@ public class ShopController implements Initializable {
 
 	}
 
-	public void actionNews(ActionEvent actionEvent) {
-        try {
+	public void actionNews() {
+		try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Nouveautés.fxml"));
-            Parent pane = loader.load();
-            ((ProductController) loader.getController()).init(this.shop.getInventory(),"NEWS");
-            this.center.getChildren().set(0, pane);
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
+			Parent pane = loader.load();
+			((ProductController) loader.getController()).init(this.shop.getInventory(), "NOUVEAUTES");
+			this.center.getChildren().set(0, pane);
 
-        } catch (IOException e) {
+		} catch (IOException e) {
 
-            e.printStackTrace();
+			e.printStackTrace();
 
-        }
+		}
 
-    }
-
-	public void actionCompany(ActionEvent actionEvent) {
-		//Fixme rebalancer le gens sur la page de l'enseigne
 	}
 
-	public void actionTeam(ActionEvent actionEvent) {
+	public void actionCompany() {
+		//Todo rebalancer le gens sur la page de l'enseigne
+	}
+
+	public void actionTeam() {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Equipe.fxml"));
 			Parent pane = loader.load();
@@ -119,20 +112,23 @@ public class ShopController implements Initializable {
 		}
 	}
 
+	public void keyListenerAdmin(KeyEvent event) {
+		try {
 
-    public void keyListenerAdmin(KeyEvent event) {
-        try {
-            if (event.getEventType()==KeyEvent.KEY_PRESSED) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Admin.fxml"));
-                Parent pane = loader.load();
-                ((AdminController) loader.getController()).init();
-                this.center.getChildren().set(0, pane);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+			if (event.getEventType() == KeyEvent.KEY_PRESSED && event.getCode() == KeyCode.A) {
 
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/Admin.fxml"));
+				Parent pane = loader.load();
+				((AdminController) loader.getController()).init();
+				this.center.getChildren().set(0, pane);
+
+			}
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
+	}
 
 	private Shop createData() {
 		Information info = new Information("+33 79 35 01 21", "tbth@capsophia.com", "Lundi - Vendredi",
@@ -150,50 +146,50 @@ public class ShopController implements Initializable {
 
 		List<List<Product>> products = Arrays.asList(
 				Arrays.asList(
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, false)
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit26", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25)
 
 				),
 				Arrays.asList(
-						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250, false),
-						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250, false),
-						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250,false)
+						new Product("produit26", "produit/produit2.jpg", "Ce produit est un produit qui est cher mais qui est bien, il est quand même relativement cher !", 250),
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250),
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250)
 				),
 				Arrays.asList(
-						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250,false),
-						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250,false),
-						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500,false)
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250),
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250),
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500)
 				),
 				Arrays.asList(
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit !", 250,true),
-						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit !", 250,true),
-						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500,true)
-                )
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit !", 250),
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit !", 250),
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500)
+				)
 		);
 
 		Map<String, List<Product>> map = new HashMap<>();
@@ -204,5 +200,22 @@ public class ShopController implements Initializable {
 		Inventory inventory = new Inventory(map);
 
 		return new Shop(info, workers, inventory);
+	}
+
+	public void searchCall() {
+
+
+		try {
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
+			Parent pane = loader.load();
+			((ProductController) loader.getController()).init(this.shop.getInventory(), this.search.getText());
+			this.center.getChildren().set(0, pane);
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
 	}
 }
