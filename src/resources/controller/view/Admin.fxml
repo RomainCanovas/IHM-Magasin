@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminController">
+   <children>
+      <VBox prefHeight="252.0" prefWidth="786.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue dans la vue administrateur !">
+               <VBox.margin>
+                  <Insets left="270.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Que désirez-vous faire/modifier?">
+               <VBox.margin>
+                  <Insets left="290.0" top="20.0" />
+               </VBox.margin>
+            </Text>
+            <HBox prefHeight="157.0" prefWidth="786.0">
+               <children>
+                  <MenuButton mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="Accueil">
+                    <items>
+                        <MenuItem fx:id="access" onAction="#actionAdminAccess" mnemonicParsing="false" text="Accès" />
+                        <MenuItem fx:id="opening" onAction="#actionAdminOpening" mnemonicParsing="false" text="Heures d'ouverture" />
+                        <MenuItem fx:id="phoneMail" onAction="#actionAdminPhoneAndMail" mnemonicParsing="false" text="Contact" />
+                        <MenuItem fx:id="description" onAction="#actionAdminDescription" mnemonicParsing="false" text="Description" />
+                    </items>
+                     <HBox.margin>
+                        <Insets left="110.0" top="40.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="Les produits">
+                    <items>
+                        <MenuItem fx:id="newsAdmin" onAction="#actionAdminAccess" mnemonicParsing="false" text="Nouveautés" />
+                        <MenuItem fx:id="salesAdmin" onAction="#actionAdminAccess" mnemonicParsing="false" text="Promotions" />
+                      <MenuItem fx:id="productsAdmin" onAction="#actionAdminAccess" mnemonicParsing="false" text="Catalogue" />
+                    </items>
+                     <HBox.margin>
+                        <Insets left="100.0" top="40.0" />
+                     </HBox.margin>
+                  </MenuButton>
+                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="L'équipe">
+                     <HBox.margin>
+                        <Insets left="110.0" top="40.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Button fx:id="stats" onAction="#HomeStats" mnemonicParsing="false" prefHeight="31.0" prefWidth="230.0" text="Statistiques">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="275.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
