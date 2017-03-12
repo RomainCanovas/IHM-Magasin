@@ -119,7 +119,7 @@ public class ShopController implements Initializable {
 
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/Admin.fxml"));
 				Parent pane = loader.load();
-				((AdminController) loader.getController()).init(createData().getInfo());
+				((AdminController) loader.getController()).init(this.shop.getInfo());
 				this.center.getChildren().set(0, pane);
 
 			}
@@ -204,12 +204,11 @@ public class ShopController implements Initializable {
 
 	public void searchCall() {
 
-
 		try {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
 			Parent pane = loader.load();
-			((ProductController) loader.getController()).init(this.shop.getInventory(), this.search.getText());
+			((ProductController) loader.getController()).init(this.shop.getInventory(), this.search.getText().toUpperCase());
 			this.center.getChildren().set(0, pane);
 
 		} catch (IOException e) {

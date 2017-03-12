@@ -51,7 +51,7 @@ public class Inventory {
 		List<Product> products = new ArrayList<>();
 
 		for (List<Product> list : this.products.values())
-			products.addAll(list.stream().filter(product -> product.getName().toLowerCase().contains(name)).collect(Collectors.toList()));
+			products.addAll(list.stream().filter(product -> product.getName().toUpperCase().contains(name)).collect(Collectors.toList()));
 
 		return products;
 

@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0"
             prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.AdminController">
+            fx:controller="controller.AdminAccesController">
     <VBox prefHeight="252.0" prefWidth="786.0">
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Accès">
             <VBox.margin>
@@ -31,9 +31,9 @@
             </Text>
             <MenuButton mnemonicParsing="false" prefHeight="49.0" prefWidth="69.0">
                 <items>
-                    <MenuItem fx:id="floor0" onAction="#setFloor0" mnemonicParsing="false" text="0"/>
-                    <MenuItem fx:id="floor1" onAction="#setFloor1" mnemonicParsing="false" text="1"/>
-                    <MenuItem fx:id="floor2" onAction="#setFloor2" mnemonicParsing="false" text="2"/>
+                    <MenuItem onAction="#setFloor0" mnemonicParsing="false" text="0"/>
+                    <MenuItem onAction="#setFloor1" mnemonicParsing="false" text="1"/>
+                    <MenuItem onAction="#setFloor2" mnemonicParsing="false" text="2"/>
                 </items>
                 <HBox.margin>
                     <Insets left="10.0" top="5.0"/>
