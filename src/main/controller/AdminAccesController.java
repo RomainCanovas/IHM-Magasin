@@ -1,13 +1,14 @@
 package controller;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import model.Information;
 
@@ -23,18 +24,51 @@ public class AdminAccesController implements Initializable {
     TextField clue;
     @FXML
     AnchorPane center;
+    @FXML
+    ToggleButton tb1, tb2, tb0;
 
     private Information info;
 
+    private int floor;
+
     public void init(Information info) {
         this.info = info;
+        floor=info.getFloor();
         clue.setText(this.info.getClue());
+        final ToggleGroup group = new ToggleGroup();
+        tb1.setToggleGroup(group);
+        tb2.setToggleGroup(group);
+        tb0.setToggleGroup(group);
+        switch (floor){
+            case 0:
+                tb0.setSelected(true);
+                break;
+            case 1:
+                tb1.setSelected(true);
+                break;
+            case 2:
+                tb2.setSelected(true);
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
 
+    public void giveFloor0() {
+        this.floor=0;
+    }
+
+    public void giveFloor1() {
+        this.floor=1;
+    }
+
+    public void giveFloor2() {
+        this.floor=2;
+    }
 
     public void setFloor0() {
         this.info.setFloor(0);
@@ -53,10 +87,21 @@ public class AdminAccesController implements Initializable {
     }
 
 
-    public void keyListenerAdmin(KeyEvent event) {
-            if (event.getEventType() == KeyEvent.KEY_PRESSED && event.getCode() == KeyCode.ENTER) {
-            setModifiedClue();
-            }
+    public void validChanges(ActionEvent actionEvent){
+        setModifiedClue();
+        switch(floor){
+            case 0:
+                setFloor0();
+                break;
+            case 1:
+                setFloor1();
+                break;
+            case 2:
+                setFloor2();
+                break;
+            default:
+                break;
+        }
     }
 
     public void actionAdmin() {

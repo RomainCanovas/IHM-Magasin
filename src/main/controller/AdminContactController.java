@@ -1,12 +1,11 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import model.Information;
 
@@ -49,11 +48,9 @@ public class AdminContactController implements Initializable {
     }
 
 
-    public void keyListenerAdmin(KeyEvent event) {
-        if (event.getEventType() == KeyEvent.KEY_PRESSED && event.getCode() == KeyCode.ENTER) {
-            setModifiedPhone();
-            setModifiedMail();
-        }
+    public void validChanges(ActionEvent actionEvent){
+        setModifiedPhone();
+        setModifiedMail();
     }
 
     public void actionAdmin() {
