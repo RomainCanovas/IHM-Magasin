@@ -1,12 +1,11 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import model.Information;
 
@@ -40,12 +39,11 @@ public class AdminDescriptionController implements Initializable {
         this.info.setDesc(desc.getText());
     }
 
+    public void validChanges(ActionEvent actionEvent){
+        setModifiedDescription();
 
-    public void keyListenerAdmin(KeyEvent event) {
-        if (event.getEventType() == KeyEvent.KEY_PRESSED && event.getCode() == KeyCode.ENTER) {
-            setModifiedDescription();
-        }
     }
+
 
     public void actionAdmin() {
         try {

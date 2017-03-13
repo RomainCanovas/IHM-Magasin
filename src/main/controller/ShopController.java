@@ -132,7 +132,7 @@ public class ShopController implements Initializable {
 
 	private Shop createData() {
 		Information info = new Information("21", "tbth", "Lundi - Vendredi",
-				"8H - 20H", " the place to be tada", "En face des escaliers", 2);
+				"8H - 20H", "Trouver l'inspi pour une description", "En face des escaliers", 2);
 
 		List<Employee> workers = Arrays.asList(
 				new Employee("Maurice", "Lopez", "Directeur", "image/directeur.png"),
