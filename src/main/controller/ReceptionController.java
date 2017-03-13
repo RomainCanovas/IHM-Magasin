@@ -19,7 +19,6 @@ public class ReceptionController {
 		this.desc1.setText(info.getDesc());
 		this.desc2.setText("Yololo");
 		this.desc3.setText("Yolololo");
-
 	}
 
 	//fixme INTERACTION INTERACTION INTERACTION INTERACTION INTERACTION INTERACTION INTERACTION
