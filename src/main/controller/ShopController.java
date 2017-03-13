@@ -117,7 +117,7 @@ public class ShopController implements Initializable {
 
 			if (event.getEventType() == KeyEvent.KEY_PRESSED && event.getCode() == KeyCode.A) {
 
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/Admin.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
 				Parent pane = loader.load();
 				((AdminController) loader.getController()).init(this.shop.getInfo());
 				this.center.getChildren().set(0, pane);

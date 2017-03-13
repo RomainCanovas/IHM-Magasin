@@ -7,7 +7,8 @@ import model.Information;
 public class ReceptionController {
 
 	@FXML
-	public Text openning, phone, email, floor, clue;
+	public Text openning, phone, email, floor, clue, desc1, desc2, desc3;
+	@FXML
 
 	public void init(Information info) {
 		this.openning.setText(info.getOpenDay() + " de " + info.getOpenHour());
@@ -15,6 +16,10 @@ public class ReceptionController {
 		this.email.setText("email: " + info.getEmail());
 		this.floor.setText("Niveau: " + info.getFloor());
 		this.clue.setText(info.getClue());
+		this.desc1.setText(info.getDesc());
+		this.desc2.setText("Yololo");
+		this.desc3.setText("Yolololo");
+
 	}
 
 	//fixme INTERACTION INTERACTION INTERACTION INTERACTION INTERACTION INTERACTION INTERACTION

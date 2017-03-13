@@ -9,444 +9,447 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminController">
-   <children>
-      <VBox prefHeight="252.0" prefWidth="786.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vos horaires d'ouverture : (appuyez sur entrée pour valider les changements)">
-               <VBox.margin>
-                  <Insets bottom="8.0" left="140.0" />
-               </VBox.margin>
-            </Text>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Lundi de">
-                           <VBox.margin>
-                              <Insets top="6.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Mardi de">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Mercredi de">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Jeudi de">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Vendredi de">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Samedi de">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Dimanche de">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                     <padding>
-                        <Insets left="30.0" />
-                     </padding>
-                  </VBox>
-                  <VBox prefHeight="217.0" prefWidth="685.0">
-                     <children>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="10.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="7.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Button mnemonicParsing="false" text="Fermeture">
-                                 <HBox.margin>
-                                    <Insets left="40.0" />
-                                 </HBox.margin>
-                              </Button>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="10.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="7.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Button mnemonicParsing="false" text="Fermeture">
-                                 <HBox.margin>
-                                    <Insets left="40.0" />
-                                 </HBox.margin>
-                              </Button>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="10.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="7.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Button mnemonicParsing="false" text="Fermeture">
-                                 <HBox.margin>
-                                    <Insets left="40.0" />
-                                 </HBox.margin>
-                              </Button>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="10.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="7.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Button mnemonicParsing="false" text="Fermeture">
-                                 <HBox.margin>
-                                    <Insets left="40.0" />
-                                 </HBox.margin>
-                              </Button>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="10.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="7.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Button mnemonicParsing="false" text="Fermeture">
-                                 <HBox.margin>
-                                    <Insets left="40.0" />
-                                 </HBox.margin>
-                              </Button>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="10.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="7.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Button mnemonicParsing="false" text="Fermeture">
-                                 <HBox.margin>
-                                    <Insets left="40.0" />
-                                 </HBox.margin>
-                              </Button>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="10.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                                 <HBox.margin>
-                                    <Insets left="7.0" />
-                                 </HBox.margin>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Text>
-                              <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
-                              <Button mnemonicParsing="false" text="Fermeture">
-                                 <HBox.margin>
-                                    <Insets left="40.0" />
-                                 </HBox.margin>
-                              </Button>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </children>
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminOpeningController">
+    <children>
+        <VBox prefHeight="252.0" prefWidth="786.0">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="Vos horaires d'ouverture : (appuyez sur entrée pour valider les changements)">
+                    <VBox.margin>
+                        <Insets bottom="8.0" left="140.0"/>
+                    </VBox.margin>
+                </Text>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Lundi de">
+                                    <VBox.margin>
+                                        <Insets top="6.0"/>
+                                    </VBox.margin>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Mardi de">
+                                    <VBox.margin>
+                                        <Insets top="10.0"/>
+                                    </VBox.margin>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Mercredi de">
+                                    <VBox.margin>
+                                        <Insets top="10.0"/>
+                                    </VBox.margin>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Jeudi de">
+                                    <VBox.margin>
+                                        <Insets top="10.0"/>
+                                    </VBox.margin>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Vendredi de">
+                                    <VBox.margin>
+                                        <Insets top="10.0"/>
+                                    </VBox.margin>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Samedi de">
+                                    <VBox.margin>
+                                        <Insets top="10.0"/>
+                                    </VBox.margin>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Dimanche de">
+                                    <VBox.margin>
+                                        <Insets top="10.0"/>
+                                    </VBox.margin>
+                                </Text>
+                            </children>
+                            <padding>
+                                <Insets left="30.0"/>
+                            </padding>
+                        </VBox>
+                        <VBox prefHeight="217.0" prefWidth="685.0">
+                            <children>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="10.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="7.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Button mnemonicParsing="false" text="Fermeture">
+                                            <HBox.margin>
+                                                <Insets left="40.0"/>
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="10.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="7.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Button mnemonicParsing="false" text="Fermeture">
+                                            <HBox.margin>
+                                                <Insets left="40.0"/>
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="10.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="7.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Button mnemonicParsing="false" text="Fermeture">
+                                            <HBox.margin>
+                                                <Insets left="40.0"/>
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="10.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="7.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Button mnemonicParsing="false" text="Fermeture">
+                                            <HBox.margin>
+                                                <Insets left="40.0"/>
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="10.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="7.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Button mnemonicParsing="false" text="Fermeture">
+                                            <HBox.margin>
+                                                <Insets left="40.0"/>
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="10.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="7.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Button mnemonicParsing="false" text="Fermeture">
+                                            <HBox.margin>
+                                                <Insets left="40.0"/>
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="10.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="7.0"/>
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    et de">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="h    à">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0"/>
+                                            </HBox.margin>
+                                        </Text>
+                                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                                            </items>
+                                        </MenuButton>
+                                        <Button mnemonicParsing="false" text="Fermeture">
+                                            <HBox.margin>
+                                                <Insets left="40.0"/>
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>

@@ -29,7 +29,7 @@
                     <MenuItem fx:id="access" onAction="#actionAdminAccess" mnemonicParsing="false" text="Accès"/>
                     <MenuItem fx:id="opening" onAction="#actionAdminOpening" mnemonicParsing="false"
                               text="Heures d'ouverture"/>
-                    <MenuItem fx:id="phoneMail" onAction="#actionAdminPhoneAndMail" mnemonicParsing="false"
+                    <MenuItem fx:id="phoneMail" onAction="#actionAdminContact" mnemonicParsing="false"
                               text="Contact"/>
                     <MenuItem fx:id="description" onAction="#actionAdminDescription" mnemonicParsing="false"
                               text="Description"/>
@@ -60,7 +60,7 @@
                 </HBox.margin>
             </Button>
         </HBox>
-        <Button fx:id="stats" onAction="#HomeStats" mnemonicParsing="false" prefHeight="31.0" prefWidth="230.0"
+        <Button fx:id="stats" onAction="#actionStats" mnemonicParsing="false" prefHeight="31.0" prefWidth="230.0"
                 text="Statistiques">
             <opaqueInsets>
                 <Insets/>

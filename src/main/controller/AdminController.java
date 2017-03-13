@@ -22,16 +22,6 @@ public class AdminController {
 		this.info = info;
 	}
 
-	public void actionAdmin() {
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Admin.fxml"));
-			Parent pane = loader.load();
-			((AdminController) loader.getController()).init(this.info);
-			this.center.getChildren().set(0, pane);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 
 	public void actionAdminAccess() {
 		try {
@@ -46,9 +36,9 @@ public class AdminController {
 
 	public void actionAdminDescription() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/AdminDescription.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminDescription.fxml"));
 			Parent pane = loader.load();
-			((AdminController) loader.getController()).init(this.info);
+			((AdminDescriptionController) loader.getController()).init(this.info);
 			this.center.getChildren().set(0, pane);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -57,39 +47,35 @@ public class AdminController {
 
 	public void actionAdminOpening() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/AdminOpeningHours.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminOpeningHours.fxml"));
 			Parent pane = loader.load();
-			((AdminController) loader.getController()).init(this.info);
+			((AdminOpeningController) loader.getController()).init(this.info);
 			this.center.getChildren().set(0, pane);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void actionAdminPhoneAndMail() {
+	public void actionAdminContact() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/AdminPhoneAndMail.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminContact.fxml"));
 			Parent pane = loader.load();
-			((AdminController) loader.getController()).init(this.info);
+			((AdminContactController) loader.getController()).init(this.info);
 			this.center.getChildren().set(0, pane);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void HomeStats() {
+	public void actionStats() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/AdminStats.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminStats.fxml"));
 			Parent pane = loader.load();
-			((AdminController) loader.getController()).init(this.info);
+			((AdminStatsController) loader.getController()).init(this.info);
 			this.center.getChildren().set(0, pane);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	public void DoStats() {
-
 	}
 
 }
