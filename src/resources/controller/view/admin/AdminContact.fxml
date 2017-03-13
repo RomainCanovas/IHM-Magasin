@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+<AnchorPane fx:id="center" onKeyPressed="#keyListenerAdmin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminContactController">
     <children>
@@ -30,7 +30,7 @@
                                 <Font size="34.0"/>
                             </font>
                         </Text>
-                        <TextField prefHeight="74.0" prefWidth="78.0" text="21">
+                        <TextField fx:id="phone" prefHeight="74.0" prefWidth="78.0">
                             <opaqueInsets>
                                 <Insets left="2.0"/>
                             </opaqueInsets>
@@ -58,7 +58,7 @@
                 </Text>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <TextField prefHeight="74.0" prefWidth="187.0" text="tbth">
+                        <TextField fx:id="mail" prefHeight="74.0" prefWidth="187.0">
                             <opaqueInsets>
                                 <Insets left="2.0"/>
                             </opaqueInsets>

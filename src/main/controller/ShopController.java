@@ -131,7 +131,7 @@ public class ShopController implements Initializable {
 	}
 
 	private Shop createData() {
-		Information info = new Information("+33 79 35 01 21", "tbth@capsophia.com", "Lundi - Vendredi",
+		Information info = new Information("21", "tbth", "Lundi - Vendredi",
 				"8H - 20H", " the place to be tada", "En face des escaliers", 2);
 
 		List<Employee> workers = Arrays.asList(

@@ -12,8 +12,8 @@ public class ReceptionController {
 
 	public void init(Information info) {
 		this.openning.setText(info.getOpenDay() + " de " + info.getOpenHour());
-		this.phone.setText("Tél.: " + info.getPhone());
-		this.email.setText("email: " + info.getEmail());
+		this.phone.setText("Tél.: +33 78 27 39" + info.getPhone());
+		this.email.setText("email: " + info.getEmail() + "@capsophia.fr");
 		this.floor.setText("Niveau: " + info.getFloor());
 		this.clue.setText(info.getClue());
 		this.desc1.setText(info.getDesc());
