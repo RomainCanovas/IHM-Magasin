@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminStatsFreqController">
+    <children>
+        <VBox prefHeight="252.0" prefWidth="786.0">
+            <children>
+                <BarChart fx:id="chart" prefHeight="248.0" prefWidth="786.0" title="FREQUENTATION">
+                    <xAxis>
+                        <CategoryAxis label="Heure de la journée" prefHeight="42.0" prefWidth="699.0" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Nb de clients" prefHeight="131.0" prefWidth="57.0" side="LEFT" />
+                    </yAxis>
+                </BarChart>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" text="Retour">
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" top="5.0" />
+                            </HBox.margin>
+                        </Button>
+                        <ToggleButton fx:id="lun" mnemonicParsing="false" onAction="#display" prefHeight="40.0" text="Lun">
+                     <HBox.margin>
+                        <Insets left="120.0" top="5.0" />
+                     </HBox.margin></ToggleButton>
+                        <ToggleButton fx:id="mar" mnemonicParsing="false" onAction="#display" prefHeight="40.0" text="Mar">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin></ToggleButton>
+                        <ToggleButton fx:id="mer" mnemonicParsing="false" onAction="#display" prefHeight="40.0" text="Mer">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin></ToggleButton>
+                        <ToggleButton fx:id="jeu" mnemonicParsing="false" onAction="#display" prefHeight="40.0" text="Jeu">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin></ToggleButton>
+                        <ToggleButton fx:id="ven" mnemonicParsing="false" onAction="#display" prefHeight="40.0" text="Ven">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin></ToggleButton>
+                        <ToggleButton fx:id="sam" mnemonicParsing="false" onAction="#display" prefHeight="40.0" text="Sam">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin></ToggleButton>
+                        <ToggleButton fx:id="dim" mnemonicParsing="false" onAction="#display" prefHeight="40.0" text="Dim">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin></ToggleButton>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <RadioButton fx:id="freq16" onAction="#display" mnemonicParsing="false" text="2016" />
+                        <RadioButton fx:id="freq17" onAction="#display" mnemonicParsing="false" text="2017">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                  </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

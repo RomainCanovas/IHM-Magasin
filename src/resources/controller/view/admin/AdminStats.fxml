@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -16,52 +15,54 @@
             <children>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quelles statistiques voulez vous consulter?">
                     <VBox.margin>
-                        <Insets left="250.0" top="20.0"/>
+                        <Insets left="250.0" top="15.0"/>
                     </VBox.margin>
                 </Text>
                 <HBox prefHeight="157.0" prefWidth="786.0">
                     <children>
-                        <MenuButton mnemonicParsing="false" prefHeight="70.0" prefWidth="174.0"
-                                    text="Chiffre d'affaires">
-                            <items>
-                                <MenuItem fx:id="jan2017CA" mnemonicParsing="false" onAction="#DoStats"
-                                          text="Janvier 2017"/>
-                                <MenuItem fx:id="feb2017CA" mnemonicParsing="false" onAction="#DoStats"
-                                          text="Février 2017"/>
-                            </items>
-                            <HBox.margin>
-                                <Insets left="20.0" top="40.0"/>
-                            </HBox.margin>
-                            <padding>
-                                <Insets left="20.0"/>
-                            </padding>
-                        </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="70.0" prefWidth="246.0"
-                                    text="Nombre de produits renvoyés">
-                            <items>
-                                <MenuItem fx:id="jan2017PR" mnemonicParsing="false" onAction="#DoStats"
-                                          text="Janvier 2017"/>
-                                <MenuItem fx:id="feb2017PR" mnemonicParsing="false" onAction="#DoStats"
-                                          text="Février 2017"/>
-                            </items>
-                            <HBox.margin>
-                                <Insets left="40.0" top="40.0"/>
-                            </HBox.margin>
-                        </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="70.0" prefWidth="228.0"
-                                    text="Nombre de produits soldés">
-                            <items>
-                                <MenuItem fx:id="jan2017PS" mnemonicParsing="false" onAction="#DoStats"
-                                          text="Janvier 2017"/>
-                                <MenuItem fx:id="feb2017PS" mnemonicParsing="false" onAction="#DoStats"
-                                          text="Février 2017"/>
-                            </items>
-                            <HBox.margin>
-                                <Insets left="40.0" top="40.0"/>
-                            </HBox.margin>
-                        </MenuButton>
+                        <VBox prefHeight="157.0" prefWidth="377.0">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="174.0"
+                                        text="Fréquentation" onAction="#actionFreq">
+                                    <VBox.margin>
+                                        <Insets left="100.0"/>
+                                    </VBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="174.0"
+                                        text="Chiffre d'affaires" onAction="#actionCA">
+                                    <VBox.margin>
+                                        <Insets left="100.0" top="10.0"/>
+                                    </VBox.margin>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="157.0" prefWidth="403.0">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="185.0"
+                                        text="Nb de produit soldés" onAction="#actionPS">
+                                    <VBox.margin>
+                                        <Insets left="115.0" right="90.0"/>
+                                    </VBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="185.0"
+                                        text="Nb de produits renvoyés" onAction="#actionPR">
+                                    <VBox.margin>
+                                        <Insets left="115.0" right="90.0" top="10.0"/>
+                                    </VBox.margin>
+                                </Button>
+                            </children>
+                        </VBox>
                     </children>
+                    <VBox.margin>
+                        <Insets top="10.0"/>
+                    </VBox.margin>
                 </HBox>
+                <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" text="Retour"
+                        onAction="#actionAdmin">
+                    <VBox.margin>
+                        <Insets left="350.0" top="5.0"/>
+                    </VBox.margin>
+                </Button>
             </children>
         </VBox>
     </children>
