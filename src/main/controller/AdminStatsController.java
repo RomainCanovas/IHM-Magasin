@@ -32,9 +32,9 @@ public class AdminStatsController{
 
 	public void actionPS() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminstatsPS.fxml"));
 			Parent pane = loader.load();
-			((AdminStatsPSController) loader.getController()).init();
+			((AdminStatsPSController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -43,9 +43,9 @@ public class AdminStatsController{
 
 	public void actionPR() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminstatsPR.fxml"));
 			Parent pane = loader.load();
-			((AdminStatsPRController) loader.getController()).init();
+			((AdminStatsPRController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);
 		} catch (IOException e) {
 			e.printStackTrace();
