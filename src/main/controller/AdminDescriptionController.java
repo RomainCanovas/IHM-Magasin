@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import model.Shop;
@@ -22,6 +23,13 @@ public class AdminDescriptionController {
 	public void init(Shop shop) {
 		this.shop = shop;
 		desc.setText(this.shop.getInfo().getDesc());
+	}
+
+	public void check(KeyEvent keyEvent) {
+		if (desc.getLength() >= 300) {
+			desc.setText(desc.getText().substring(0, 300));
+			init(this.shop);
+		}
 	}
 
 	private void setModifiedDescription() {

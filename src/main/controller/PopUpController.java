@@ -11,15 +11,9 @@ public class PopUpController {
 	@FXML
 	private Button back;
 	@FXML
-	private Text title;
+	private Text title, desc, stock, price, priceSale;
 	@FXML
 	private ImageView picture;
-	@FXML
-	private Text desc;
-	@FXML
-	private Text stock;
-	@FXML
-	private Text price;
 	@FXML
 	private ImageView stockPicture;
 
@@ -30,10 +24,11 @@ public class PopUpController {
 		this.title.setText(product.getName());
 		this.desc.setText(product.getDescription());
 		this.picture.setImage(product.getPicture().getImage());
+		this.price.setText(String.valueOf(product.getPrice())+"€");
 
-		if (product.getPrice() == product.getCurrentPrice()) {
-			this.price.setText(String.valueOf(product.getPrice()));
-		} else this.price.setText(String.valueOf(product.getCurrentPrice()));
+		if (product.getPrice() != product.getCurrentPrice()) {
+			this.priceSale.setText(" / "+String.valueOf(product.getCurrentPrice())+"€");
+		}
 
 		if (product.isInStock()) {
 			this.stock.setText("En stock");

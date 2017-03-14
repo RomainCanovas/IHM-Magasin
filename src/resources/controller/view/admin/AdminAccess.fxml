@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminAccesController">
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#check" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminAccesController">
     <VBox prefHeight="252.0" prefWidth="786.0">
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Accès">
             <VBox.margin>
@@ -47,17 +47,17 @@
                 <children>
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Compléments">
                         <VBox.margin>
-                            <Insets left="130.0" top="20.0" />
+                            <Insets left="142.0" top="20.0" />
                         </VBox.margin>
                     </Text>
                     <TextField fx:id="clue">
                         <VBox.margin>
-                            <Insets bottom="12.0" left="3.0" right="5.0" top="20.0" />
+                            <Insets bottom="12.0" left="80.0" right="80.0" top="20.0" />
                         </VBox.margin>
                     </TextField>
                 </children>
                 <HBox.margin>
-                    <Insets left="100.0" />
+                    <Insets left="160.0" />
                 </HBox.margin>
             </VBox>
         </HBox>

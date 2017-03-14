@@ -8,30 +8,41 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="252.0" prefWidth="500.0" style="-fx-background-color: white;"
-            xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.PopUpController">
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PopUpController">
     <VBox prefHeight="252.0" prefWidth="500.0">
-        <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER"
-              wrappingWidth="500.6708984375"/>
+        <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="500.6708984375" />
         <HBox prefHeight="174.0" prefWidth="501.0">
-            <ImageView fx:id="picture" fitHeight="177.0" fitWidth="218.0" pickOnBounds="true"
-                       preserveRatio="true"/>
+            <ImageView fx:id="picture" fitHeight="177.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true" />
             <VBox prefHeight="200.0" prefWidth="100.0">
-                <Text fx:id="desc" strokeType="OUTSIDE" strokeWidth="0.0"
-                      wrappingWidth="259.6708984375"/>
-                <Text fx:id="price" strokeType="OUTSIDE" strokeWidth="0.0"/>
+                <Text fx:id="desc" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="259.6708984375">
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin></Text>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                      <Text fx:id="price" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <HBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="priceSale" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <HBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
-                    <Text fx:id="stock" strokeType="OUTSIDE" strokeWidth="0.0"/>
-                    <ImageView fx:id="stockPicture" fitHeight="150.0" fitWidth="200.0"
-                               pickOnBounds="true" preserveRatio="true"/>
+                    <Text fx:id="stock" strokeType="OUTSIDE" strokeWidth="0.0">
+                  <HBox.margin>
+                     <Insets left="5.0" top="5.0" />
+                  </HBox.margin></Text>
                 </HBox>
             </VBox>
         </HBox>
         <Button fx:id="back" mnemonicParsing="false" text="Retour">
             <VBox.margin>
-                <Insets left="225.0"/>
+                <Insets left="225.0" />
             </VBox.margin>
         </Button>
     </VBox>
