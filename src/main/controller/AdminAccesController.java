@@ -5,9 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import model.Information;
 import model.Shop;
@@ -20,7 +19,7 @@ import java.util.ResourceBundle;
 public class AdminAccesController implements Initializable {
 
     @FXML
-    ToggleButton tb1, tb2, tb0;
+    ComboBox comboBox;
 	@FXML
 	TextField clue;
 	@FXML
@@ -29,84 +28,37 @@ public class AdminAccesController implements Initializable {
 	private Information info;
 	private Shop shop;
 
-    private int floor;
+    private String floor;
 
     public void init(Information info) {
         this.info = info;
-        floor=info.getFloor();
+        floor=this.info.getFloor();
+        comboBox.setPromptText(floor);
         clue.setText(this.info.getClue());
-        final ToggleGroup group = new ToggleGroup();
-        tb1.setToggleGroup(group);
-        tb2.setToggleGroup(group);
-        tb0.setToggleGroup(group);
-        switch (floor){
-            case 0:
-                tb0.setSelected(true);
-                break;
-            case 1:
-                tb1.setSelected(true);
-                break;
-            case 2:
-                tb2.setSelected(true);
-                break;
-            default:
-                break;
         }
-    }
+
+
 	public void init(Shop s) {
 		this.info = s.getInfo();
 		this.shop = s;
 		clue.setText(this.info.getClue());
-	}
+        comboBox.setPromptText(info.getFloor());
+    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 	}
 
-    public void giveFloor0() {
-        this.floor=0;
-    }
-
-    public void giveFloor1() {
-        this.floor=1;
-    }
-
-    public void giveFloor2() {
-        this.floor=2;
-    }
-
-	public void setFloor0() {
-		this.info.setFloor(0);
-	}
-
-	public void setFloor1() {
-		this.info.setFloor(1);
-	}
-
-	public void setFloor2() {
-		this.info.setFloor(2);
-	}
 
 	public void setModifiedClue() {
 		this.info.setClue(clue.getText());
 	}
 
     public void validChanges(){
+        this.info.setFloor(comboBox.getValue().toString());
         setModifiedClue();
-        switch(floor){
-            case 0:
-                setFloor0();
-                break;
-            case 1:
-                setFloor1();
-                break;
-            case 2:
-                setFloor2();
-                break;
-            default:
-                break;
-        }
     }
+
 
 	public void actionAdmin() {
 		try {

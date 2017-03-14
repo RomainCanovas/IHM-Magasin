@@ -2,10 +2,9 @@ package model;
 
 public class Information {
 
-    private String phone, email, openDay, closeDay, commentary, desc, clue, openHour, closeHour, openMin, closeMin;
-    private int floor;
+    private String phone, email, openDay, closeDay, commentary, desc, clue, openHour, closeHour, openMin, closeMin, floor;
 
-    public Information(String phone, String email, String openDay, String closeDay, String openHour, String openMin, String closeHour, String closeMin, String commentary, String desc, String clue, int floor) {
+    public Information(String phone, String email, String openDay, String closeDay, String openHour, String openMin, String closeHour, String closeMin, String commentary, String desc, String clue, String floor) {
         this.phone = phone;
         this.email = email;
         this.openDay = openDay;
@@ -108,11 +107,11 @@ public class Information {
         this.clue = clue;
     }
 
-    public int getFloor() {
+    public String getFloor() {
         return floor;
     }
 
-    public void setFloor(int floor) {
+    public void setFloor(String floor) {
         this.floor = floor;
     }
 }

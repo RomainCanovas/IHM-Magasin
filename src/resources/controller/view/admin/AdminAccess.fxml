@@ -1,79 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="252.0" prefWidth="786.0"
-            xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.AdminAccesController">
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminAccesController">
     <VBox prefHeight="252.0" prefWidth="786.0">
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Accès">
             <VBox.margin>
-                <Insets left="320.0"/>
+                <Insets left="320.0" />
             </VBox.margin>
             <font>
-                <Font size="38.0"/>
+                <Font size="38.0" />
             </font>
         </Text>
         <HBox prefHeight="40.0" prefWidth="291.0">
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Niveau">
                 <font>
-                    <Font size="34.0"/>
+                    <Font size="34.0" />
                 </font>
                 <HBox.margin>
-                    <Insets left="20.0" top="25.0"/>
+                    <Insets left="20.0" top="25.0" />
                 </HBox.margin>
             </Text>
-            <VBox prefHeight="150.0" prefWidth="200.0">
-                <children>
-                    <ToggleButton fx:id="tb0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="0"
-                                  onAction="#giveFloor0"/>
-                    <ToggleButton fx:id="tb1" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="1"
-                                  onAction="#giveFloor1"/>
-                    <ToggleButton fx:id="tb2" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="2"
-                                  onAction="#giveFloor2"/>
-                </children>
+            <ComboBox fx:id="comboBox" prefHeight="60.0" prefWidth="100.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="0" />
+                        <String fx:value="1" />
+                        <String fx:value="2" />
+                    </FXCollections>
+                </items>
                 <HBox.margin>
-                    <Insets left="50.0"/>
+                    <Insets left="15.0" top="20.0" />
                 </HBox.margin>
-            </VBox>
+            </ComboBox>
             <VBox prefHeight="131.0" prefWidth="378.0">
                 <children>
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Compléments">
                         <VBox.margin>
-                            <Insets left="130.0" top="20.0"/>
+                            <Insets left="130.0" top="20.0" />
                         </VBox.margin>
                     </Text>
                     <TextField fx:id="clue">
                         <VBox.margin>
-                            <Insets bottom="12.0" left="3.0" right="5.0" top="20.0"/>
+                            <Insets bottom="12.0" left="3.0" right="5.0" top="20.0" />
                         </VBox.margin>
                     </TextField>
                 </children>
                 <HBox.margin>
-                    <Insets left="20.0"/>
+                    <Insets left="100.0" />
                 </HBox.margin>
             </VBox>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
-                <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="68.0" text="Valider" onAction="#validChanges">
+                <Button mnemonicParsing="false" onAction="#validChanges" prefHeight="48.0" prefWidth="68.0" text="Valider">
                     <HBox.margin>
-                        <Insets left="280.0" top="20.0"/>
+                        <Insets left="280.0" top="20.0" />
                     </HBox.margin>
                 </Button>
-                <Button fx:id="admin" mnemonicParsing="false" onAction="#actionAdmin" prefHeight="48.0" prefWidth="68.0"
-                        text="Retour">
+                <Button fx:id="admin" mnemonicParsing="false" onAction="#actionAdmin" prefHeight="48.0" prefWidth="68.0" text="Retour">
                     <HBox.margin>
-                        <Insets left="50.0" top="20.0"/>
+                        <Insets left="50.0" top="20.0" />
                     </HBox.margin>
                 </Button>
             </children>
