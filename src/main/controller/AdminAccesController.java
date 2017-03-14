@@ -27,6 +27,10 @@ public class AdminAccesController {
 		clue.setText(this.shop.getInfo().getClue());
 		comboBox.setPromptText(this.shop.getInfo().getFloor());
 	}
+		clue.setText(this.info.getClue());
+        comboBox.setPromptText(info.getFloor());
+        comboBox.setValue(info.getFloor());
+    }
 
 	private void setModifiedClue() {
 		this.shop.getInfo().setClue(clue.getText());

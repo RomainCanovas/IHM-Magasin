@@ -2,6 +2,7 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -34,6 +35,23 @@ public class AdminOpeningController {
 		clMn.setPromptText(info.getCloseMin());
 		commentary.setText(info.getCommentary());
 	}
+    public void init(Shop shop) {
+        this.shop = shop;
+        info=this.shop.getInfo();
+        opDay.setPromptText(info.getOpenDay());
+        opDay.setValue(info.getOpenDay());
+        clDay.setPromptText(info.getCloseDay());
+        clDay.setValue(info.getCloseDay());
+        opH.setPromptText(info.getOpenHour());
+        opH.setValue(info.getOpenHour());
+        clH.setPromptText(info.getCloseHour());
+        clH.setValue(info.getCloseHour());
+        opMn.setPromptText(info.getOpenMin());
+        opMn.setValue(info.getOpenMin());
+        clMn.setPromptText(info.getCloseMin());
+        clMn.setValue(info.getCloseMin());
+        commentary.setText(info.getCommentary());
+    }
 
 	public void actionAdmin() {
 
