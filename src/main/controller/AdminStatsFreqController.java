@@ -8,6 +8,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import model.Shop;
 
 import java.io.IOException;
@@ -37,10 +38,12 @@ public class AdminStatsFreqController {
 
 	public void actionAdmin() {
 		try {
+
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminstats.fxml"));
 			Parent pane = loader.load();
 			((AdminStatsController) loader.getController()).init(this.shop);
-			this.center.getChildren().set(0, pane);
+			((Pane) this.center.getParent()).getChildren().set(0, pane);
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -408,6 +411,4 @@ public class AdminStatsFreqController {
 			chart.getData().add(dataSeries2);
 		}
 	}
-
-
 }

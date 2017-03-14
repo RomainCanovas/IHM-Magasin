@@ -41,7 +41,7 @@ public class AdminProductController implements Initializable {
 	private boolean setModification;
 	private boolean setRemove;
 	private boolean setAdd;
-	private boolean setNews;
+	private boolean setNews; //Todo
 	private Inventory inventory;
 
 	@Override

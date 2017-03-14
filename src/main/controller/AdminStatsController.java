@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import model.Shop;
 
 import java.io.IOException;
@@ -20,13 +21,18 @@ public class AdminStatsController{
 	}
 
 	public void actionAdmin() {
+
 		try {
+
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
 			Parent pane = loader.load();
 			((AdminController) loader.getController()).init(this.shop);
-			this.center.getChildren().set(0, pane);
+			((Pane) this.center.getParent()).getChildren().set(0, pane);
+
 		} catch (IOException e) {
+
 			e.printStackTrace();
+
 		}
 	}
 
@@ -54,12 +60,17 @@ public class AdminStatsController{
 
 	public void actionCA() {
 		try {
+
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminStatsCA.fxml"));
 			Parent pane = loader.load();
 			((AdminStatsCAController) loader.getController()).init(this.shop);
-			this.center.getChildren().set(0, pane);
+
+			((Pane) this.center.getParent()).getChildren().set(0, pane);
+
 		} catch (IOException e) {
+
 			e.printStackTrace();
+
 		}
 	}
 

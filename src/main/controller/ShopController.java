@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Popup;
 import model.*;
 
 import java.io.IOException;
@@ -16,205 +17,217 @@ import java.util.*;
 import java.util.List;
 
 public class ShopController implements Initializable {
-    @FXML
-    public TextField search;
-    @FXML
-    private AnchorPane center;
-    private Shop shop;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        this.shop = this.createData();
-        this.actionReception();
-    }
+	@FXML
+	public TextField search;
+	@FXML
+	private AnchorPane center;
 
-    public void actionReception() {
+	private Shop shop;
 
-        try {
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		this.shop = this.createData();
+		this.actionReception();
+	}
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Accueil.fxml"));
-            Parent pane = loader.load();
-            ((ReceptionController) loader.getController()).init(this.shop.getInfo());
+	public void actionReception() {
 
-            if (this.center.getChildren().size() == 0)
-                this.center.getChildren().add(pane);
-            else
-                this.center.getChildren().set(0, pane);
+		try {
 
-        } catch (IOException e) {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Accueil.fxml"));
+			Parent pane = loader.load();
+			((ReceptionController) loader.getController()).init(this.shop.getInfo());
 
-            e.printStackTrace();
+			if (this.center.getChildren().size() == 0)
+				this.center.getChildren().add(pane);
+			else
+				this.center.getChildren().set(0, pane);
 
-        }
-    }
+		} catch (IOException e) {
 
-    public void actionSales() {
+			e.printStackTrace();
 
-        try {
+		}
+	}
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
-            Parent pane = loader.load();
-            ((ProductController) loader.getController()).init(this.shop.getInventory(), "PROMOTIONS");
-            this.center.getChildren().set(0, pane);
+	public void actionSales() {
 
-        } catch (IOException e) {
+		try {
 
-            e.printStackTrace();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
+			Parent pane = loader.load();
+			((ProductController) loader.getController()).init(this.shop.getInventory(), "PROMOTIONS");
+			this.center.getChildren().set(0, pane);
 
-        }
-    }
+		} catch (IOException e) {
 
-    public void actionProducts() {
+			e.printStackTrace();
 
-        try {
+		}
+	}
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
-            Parent pane = loader.load();
-            ((ProductController) loader.getController()).init(this.shop.getInventory(), "CATEGORIES");
-            this.center.getChildren().set(0, pane);
+	public void actionProducts() {
 
-        } catch (IOException e) {
+		try {
 
-            e.printStackTrace();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
+			Parent pane = loader.load();
+			((ProductController) loader.getController()).init(this.shop.getInventory(), "CATEGORIES");
+			this.center.getChildren().set(0, pane);
 
-        }
+		} catch (IOException e) {
 
-    }
+			e.printStackTrace();
 
-    public void actionNews() {
-        try {
+		}
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
-            Parent pane = loader.load();
-            ((ProductController) loader.getController()).init(this.shop.getInventory(), "NOUVEAUTES");
-            this.center.getChildren().set(0, pane);
+	}
 
-        } catch (IOException e) {
+	public void actionNews() {
+		try {
 
-            e.printStackTrace();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
+			Parent pane = loader.load();
+			((ProductController) loader.getController()).init(this.shop.getInventory(), "NOUVEAUTES");
+			this.center.getChildren().set(0, pane);
 
-        }
+		} catch (IOException e) {
 
-    }
+			e.printStackTrace();
 
-    public void actionCompany() {
-        //Todo rebalancer le gens sur la page de l'enseigne
-    }
+		}
 
-    public void actionTeam() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Equipe.fxml"));
-            Parent pane = loader.load();
-            ((TeamController) loader.getController()).initEmployee(this.shop.getTeam());
-            this.center.getChildren().set(0, pane);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+	}
 
-    public void keyListenerAdmin(KeyEvent event) {
-        try {
+	public void actionCompany() {
+		//Todo rebalancer le gens sur la page de l'enseigne
+	}
 
-            if (event.getEventType() == KeyEvent.KEY_PRESSED && event.getCode() == KeyCode.A) {
+	public void actionTeam() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Equipe.fxml"));
+			Parent pane = loader.load();
+			((TeamController) loader.getController()).initEmployee(this.shop.getTeam());
+			this.center.getChildren().set(0, pane);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
-                Parent pane = loader.load();
-                ((AdminController) loader.getController()).init(this.shop);
-                this.center.getChildren().set(0, pane);
+	public void keyListenerAdmin(KeyEvent event) {
+		try {
 
-            }
-        } catch (IOException e) {
+			if (event.getEventType() == KeyEvent.KEY_PRESSED && event.getCode() == KeyCode.A) {
 
-            e.printStackTrace();
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
+				Parent pane = loader.load();
+				((AdminController) loader.getController()).init(this.shop);
 
-        }
-    }
+				Popup admin = new Popup();
+				pane.setOnKeyPressed(e -> {
+					if (e.getCode() == KeyCode.Q)
+						admin.hide();
+				});
 
-    private Shop createData() {
-        Information info = new Information("21", "tbth", "Lundi","Samedi",
-                "8h", "30", "20h", "00", "Fermeture exceptionnelle le 14/03/17!","Bienvenue! Ouverts 6j/7 et entre midi et deux, nous vous\npermettons de venir retirer vos commandes faites par\ninternet pendant votre pause! Venez nous voir munis\nde votre bon de commande et gagnez du temps!\nNotre équipe espère vous voir bientôt!", "En face des escaliers", "2");
+				admin.getContent().add(pane);
+				admin.setY(50);
+				admin.setX(50);
+				admin.show(this.center.getScene().getWindow());
 
-        List<Employee> workers = Arrays.asList(
-                new Employee("Maurice", "Lopez", "Directeur", "image/directeur.png"),
-                new Employee("Maurice", "Lopez", "Directeur", "image/directeur.png"),
-                new Employee("Maurice", "Lopez", "Directeur", "image/directeur.png"),
-                new Employee("Philip", "Moris", "Vendeur", "image/vendeur.jpg"),
-                new Employee("Philip", "Moris", "Vendeur", "image/vendeur.jpg"),
-                new Employee("Philip", "Moris", "Vendeur", "image/vendeur.jpg"),
-                new Employee("Florian", "Guillaume", "Conseiller", "image/conseiller.png")
-        );
+			}
+		} catch (IOException e) {
 
-        List<List<Product>> products = Arrays.asList(
-                Arrays.asList(
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit26", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25)
+			e.printStackTrace();
 
-                ),
-                Arrays.asList(
-                        new Product("produit26", "produit/produit2.jpg", "Ce produit est un produit qui est cher mais qui est bien, il est quand même relativement cher !", 250),
-                        new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250),
-                        new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250)
-                ),
-                Arrays.asList(
-                        new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250),
-                        new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250),
-                        new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500)
-                ),
-                Arrays.asList(
-                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit !", 250),
-                        new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit !", 250),
-                        new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500)
-                )
-        );
+		}
+	}
 
-        Map<String, List<Product>> map = new HashMap<>();
+	private Shop createData() {
+		Information info = new Information("21", "tbth", "Lundi", "Samedi",
+				"8h", "30", "20h", "00", "Fermeture exceptionnelle le 14/03/17!", "Bienvenue! Ouverts 6j/7 et entre midi et deux, nous vous\npermettons de venir retirer vos commandes faites par\ninternet pendant votre pause! Venez nous voir munis\nde votre bon de commande et gagnez du temps!\nNotre équipe espère vous voir bientôt!", "En face des escaliers", "2");
 
-        for (int i = 0; i < products.size(); i++)
-            map.put("Categorie " + i, products.get(i));
+		List<Employee> workers = Arrays.asList(
+				new Employee("Maurice", "Lopez", "Directeur", "image/directeur.png"),
+				new Employee("Maurice", "Lopez", "Directeur", "image/directeur.png"),
+				new Employee("Maurice", "Lopez", "Directeur", "image/directeur.png"),
+				new Employee("Philip", "Moris", "Vendeur", "image/vendeur.jpg"),
+				new Employee("Philip", "Moris", "Vendeur", "image/vendeur.jpg"),
+				new Employee("Philip", "Moris", "Vendeur", "image/vendeur.jpg"),
+				new Employee("Florian", "Guillaume", "Conseiller", "image/conseiller.png")
+		);
 
-        Inventory inventory = new Inventory(map);
+		List<List<Product>> products = Arrays.asList(
+				Arrays.asList(
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit26", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25)
 
-        return new Shop(info, workers, inventory);
-    }
+				),
+				Arrays.asList(
+						new Product("produit26", "produit/produit2.jpg", "Ce produit est un produit qui est cher mais qui est bien, il est quand même relativement cher !", 250),
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250),
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250)
+				),
+				Arrays.asList(
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250),
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250),
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500)
+				),
+				Arrays.asList(
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit !", 250),
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit !", 250),
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500)
+				)
+		);
 
-    public void searchCall() {
+		Map<String, List<Product>> map = new HashMap<>();
 
-        try {
+		for (int i = 0; i < products.size(); i++)
+			map.put("Categorie " + i, products.get(i));
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
-            Parent pane = loader.load();
-            ((ProductController) loader.getController()).init(this.shop.getInventory(), this.search.getText().toUpperCase());
-            this.center.getChildren().set(0, pane);
+		Inventory inventory = new Inventory(map);
 
-        } catch (IOException e) {
+		return new Shop(info, workers, inventory);
+	}
 
-            e.printStackTrace();
+	public void searchCall() {
 
-        }
-    }
+		try {
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
+			Parent pane = loader.load();
+			((ProductController) loader.getController()).init(this.shop.getInventory(), this.search.getText().toUpperCase());
+			this.center.getChildren().set(0, pane);
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
+	}
 }

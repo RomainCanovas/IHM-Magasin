@@ -28,7 +28,7 @@ public class TeamController implements Initializable {
 		this.gridPane.setVgap(42);
 	}
 
-	public void initEmployee(List<Employee> team) {
+	void initEmployee(List<Employee> team) {
 
 		for (int i = 0; i < MAX_COLUMN; i++)
 			this.gridPane.getColumnConstraints().add(new ColumnConstraints());

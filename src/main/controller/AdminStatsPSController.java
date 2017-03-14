@@ -1,7 +1,6 @@
 package controller;
 
 import javafx.beans.binding.Bindings;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,14 +21,13 @@ import java.util.ResourceBundle;
 public class AdminStatsPSController implements Initializable {
 
     @FXML
-    AnchorPane center;
+    private AnchorPane center;
     @FXML
-    ToggleButton oct, nov, dec, jan, fev, mar;
+    private ToggleButton oct, nov, dec, jan, fev, mar;
     @FXML
-    PieChart chart;
+    private PieChart chart;
 
-    Shop shop;
-
+    private Shop shop;
 
     public void init(Shop shop) {
         this.shop = shop;
@@ -48,8 +46,7 @@ public class AdminStatsPSController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
     }
 
-
-    public void actionAdmin(ActionEvent actionEvent) {
+    public void actionAdmin() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminstats.fxml"));
             Parent pane = loader.load();

@@ -7,6 +7,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import model.Shop;
 
 import java.io.IOException;
@@ -15,26 +16,28 @@ import java.io.IOException;
 public class AdminStatsCAController{
 
     @FXML
-    AnchorPane center;
+    private AnchorPane center;
     @FXML
-    BarChart chart;
+    private BarChart chart;
     @FXML
-    ToggleButton a16, a17, a15;
+    private ToggleButton a16, a17, a15;
+
     private Shop shop;
 
     public void init(Shop shop) {
 		this.shop = shop;
         a17.setSelected(true);
-        display();
-
+        this.display();
     }
 
     public void actionAdmin(){
         try {
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminstats.fxml"));
             Parent pane = loader.load();
             ((AdminStatsController) loader.getController()).init(this.shop);
-            this.center.getChildren().set(0, pane);
+			((Pane) this.center.getParent()).getChildren().set(0, pane);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -48,7 +51,6 @@ public class AdminStatsCAController{
     }
 
     public void display2015(){
-
 
             XYChart.Series dataSeries1 = new XYChart.Series();
             dataSeries1.setName("2015");
@@ -71,7 +73,6 @@ public class AdminStatsCAController{
     }
 
     public void display2016(){
-
 
         XYChart.Series dataSeries1 = new XYChart.Series();
         dataSeries1.setName("2016");

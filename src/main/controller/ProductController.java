@@ -60,7 +60,7 @@ public class ProductController implements Initializable {
 			Product p = products.get(i);
 			p.resize(MAX_SIZE, MAX_SIZE);
 			Zone zone = new Zone(p.getName(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, p.getPicture(), MAX_SIZE);
-			zone.setPopUp(p);
+			//todo
 			this.gridPane.add(zone, 1 + i % MAX_COLUMN, i / MAX_COLUMN);
 		}
 	}

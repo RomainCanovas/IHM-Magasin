@@ -1,24 +1,18 @@
 package controller;
 
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.CheckBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.stage.Popup;
 import model.Product;
-
-import java.io.IOException;
 
 public class Zone extends Parent {
 
-	private static double xPop = 0;
-	private static double yPop = 0;
 	private String name;
 
-	public Zone(String name, Color color, ImageView picture, int maxSize) {
+	Zone(String name, Color color, ImageView picture, int maxSize) {
 
 		this.name = name;
 		this.prefHeight(maxSize);
@@ -49,34 +43,6 @@ public class Zone extends Parent {
 
 	public String getName() {
 		return this.name;
-	}
-
-	public void setPopUp(Product p) {
-
-		this.setOnMouseClicked(event -> {
-
-			Popup popup = new Popup();
-			popup.setX(xPop);
-			popup.setY(yPop);
-
-			try {
-
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("view/PopUp.fxml"));
-				Parent pane = loader.load();
-				pane.setOnMousePressed(e -> popup.hide());
-				((PopUpController) loader.getController()).init(p);
-				popup.getContent().add(pane);
-
-			} catch (IOException e) {
-
-				e.printStackTrace();
-
-			}
-
-			popup.show(this.getScene().getWindow());
-
-		});
-
 	}
 
 	public void setAdmin(Product p) {
