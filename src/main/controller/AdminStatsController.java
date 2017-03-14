@@ -22,7 +22,7 @@ public class AdminStatsController implements Initializable{
 
     private Information info;
 
-    public void init(Information info) {
+    public void init() {
     }
 
     @Override
@@ -64,7 +64,7 @@ public class AdminStatsController implements Initializable{
 
     public void actionCA(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminStatsCA.fxml"));
             Parent pane = loader.load();
             ((AdminStatsCAController) loader.getController()).init();
             this.center.getChildren().set(0, pane);

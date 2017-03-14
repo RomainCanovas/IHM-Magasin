@@ -71,7 +71,7 @@ public class AdminController {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminStats.fxml"));
 			Parent pane = loader.load();
-			((AdminStatsController) loader.getController()).init(this.info);
+			((AdminStatsController) loader.getController()).init();
 			this.center.getChildren().set(0, pane);
 		} catch (IOException e) {
 			e.printStackTrace();
