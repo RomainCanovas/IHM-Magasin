@@ -18,7 +18,7 @@ public class Inventory {
 		List<Product> products = new ArrayList<>();
 
 		for (List<Product> list : this.products.values())
-			products.addAll(list.stream().filter(Product::isOnSale).collect(Collectors.toList()));
+			products.addAll(list.stream().filter(product -> product.isOnSale() && product.getShow()).collect(Collectors.toList()));
 
 		return products;
 	}
@@ -28,7 +28,7 @@ public class Inventory {
 		List<Product> products = new ArrayList<>();
 
 		for (List<Product> list : this.products.values())
-			products.addAll(list.stream().filter(product -> product.getDate().after(this.dataNews)).collect(Collectors.toList()));
+			products.addAll(list.stream().filter(product -> product.getDate().after(this.dataNews) && product.getShow()).collect(Collectors.toList()));
 
 		return products;
 	}
@@ -37,13 +37,15 @@ public class Inventory {
 		Map<String, Product> map = new HashMap<>();
 
 		for (Map.Entry<String, List<Product>> entry : this.products.entrySet())
-			map.put(entry.getKey(), entry.getValue().get(0));
+			if (!entry.getValue().stream().filter(Product::getShow).collect(Collectors.toList()).isEmpty())
+				map.put(entry.getKey(), entry.getValue().get(0));
+
 
 		return map;
 	}
 
 	public List<Product> getCategory(String key) {
-		return this.products.get(key);
+		return this.products.get(key).stream().filter(Product::getShow).collect(Collectors.toList());
 	}
 
 	public List<Product> search(String name) {
@@ -51,9 +53,37 @@ public class Inventory {
 		List<Product> products = new ArrayList<>();
 
 		for (List<Product> list : this.products.values())
-			products.addAll(list.stream().filter(product -> product.getName().toUpperCase().contains(name)).collect(Collectors.toList()));
+			products.addAll(list.stream().filter(product -> product.getName().toUpperCase().contains(name) && product.getShow()).collect(Collectors.toList()));
 
 		return products;
 
+	}
+
+	public List<Product> getAll() {
+
+		List<Product> products = new ArrayList<>();
+
+		for (List<Product> list : this.products.values())
+			products.addAll(list);
+
+		return products;
+	}
+
+	public List<Product> getNotShown() {
+		List<Product> products = new ArrayList<>();
+
+		for (List<Product> list : this.products.values())
+			products.addAll(list.stream().filter(product -> !product.getShow()).collect(Collectors.toList()));
+
+		return products;
+	}
+
+	public List<Product> getShown() {
+		List<Product> products = new ArrayList<>();
+
+		for (List<Product> list : this.products.values())
+			products.addAll(list.stream().filter(product -> product.getShow()).collect(Collectors.toList()));
+
+		return products;
 	}
 }

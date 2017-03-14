@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="64.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/8.0.101"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminProductChoiceController">
+    <TextField fx:id="textField" onKeyReleased="#onActionTextField" layoutX="229.0" layoutY="8.0" prefHeight="25.0"
+               prefWidth="128.0"/>
+    <Slider fx:id="slider" layoutX="234.0" layoutY="38.0"/>
+    <SplitMenuButton fx:id="button" layoutX="3.0" layoutY="20.0" mnemonicParsing="false" prefHeight="25.0"
+                     prefWidth="210.0" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true"/>
+    <Text fx:id="text" layoutX="362.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          wrappingWidth="24.13671875"/>
+</AnchorPane>

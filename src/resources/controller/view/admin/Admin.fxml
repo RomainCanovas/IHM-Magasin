@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0"
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="252.0"
             prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controller.AdminController">
     <VBox prefHeight="252.0" prefWidth="786.0">
@@ -41,27 +42,18 @@
                     <Insets left="20.0"/>
                 </padding>
             </MenuButton>
-            <MenuButton mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="Les produits">
-                <items>
-                    <MenuItem fx:id="newsAdmin" onAction="#actionAdminAccess" mnemonicParsing="false"
-                              text="Nouveautés"/>
-                    <MenuItem fx:id="salesAdmin" onAction="#actionAdminAccess" mnemonicParsing="false"
-                              text="Promotions"/>
-                    <MenuItem fx:id="productsAdmin" onAction="#actionAdminAccess" mnemonicParsing="false"
-                              text="Catalogue"/>
-                </items>
+            <Button mnemonicParsing="false" onAction="#products" prefHeight="70.0" prefWidth="121.0" text="Les produits">
                 <HBox.margin>
                     <Insets left="100.0" top="40.0"/>
                 </HBox.margin>
-            </MenuButton>
+            </Button>
             <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="L'équipe">
                 <HBox.margin>
                     <Insets left="110.0" top="40.0"/>
                 </HBox.margin>
             </Button>
         </HBox>
-        <Button fx:id="stats" onAction="#actionStats" mnemonicParsing="false" prefHeight="31.0" prefWidth="230.0"
-                text="Statistiques">
+        <Button onAction="#actionStats" mnemonicParsing="false" prefHeight="31.0" prefWidth="230.0" text="Statistiques">
             <opaqueInsets>
                 <Insets/>
             </opaqueInsets>

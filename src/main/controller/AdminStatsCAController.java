@@ -1,23 +1,18 @@
 package controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
+import model.Shop;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-/**
- * Created by canor on 13/03/2017.
- */
-public class AdminStatsCAController implements Initializable{
+
+public class AdminStatsCAController{
 
     @FXML
     AnchorPane center;
@@ -25,24 +20,20 @@ public class AdminStatsCAController implements Initializable{
     BarChart chart;
     @FXML
     ToggleButton a16, a17, a15;
+    private Shop shop;
 
-
-    public void init() {
-
+    public void init(Shop shop) {
+		this.shop = shop;
         a17.setSelected(true);
         display();
 
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-    }
-
-    public void actionAdmin(ActionEvent actionEvent){
+    public void actionAdmin(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminstats.fxml"));
             Parent pane = loader.load();
-            ((AdminStatsController) loader.getController()).init();
+            ((AdminStatsController) loader.getController()).init(this.shop);
             this.center.getChildren().set(0, pane);
         } catch (IOException e) {
             e.printStackTrace();
@@ -124,8 +115,5 @@ public class AdminStatsCAController implements Initializable{
         chart.getData().add(dataSeries1);
 
     }
-
-
-
 
 }

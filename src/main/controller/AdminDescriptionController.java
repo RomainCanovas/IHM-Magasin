@@ -7,7 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
-import model.Information;
+import model.Shop;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,11 +24,11 @@ public class AdminDescriptionController implements Initializable {
     AnchorPane center;
 
 
-    private Information info;
+    private Shop shop;
 
-    public void init(Information info) {
-        this.info = info;
-        desc.setText(this.info.getDesc());
+    public void init(Shop shop) {
+        this.shop = shop;
+        desc.setText(this.shop.getInfo().getDesc());
     }
 
     @Override
@@ -36,7 +36,7 @@ public class AdminDescriptionController implements Initializable {
     }
 
     public void setModifiedDescription() {
-        this.info.setDesc(desc.getText());
+        this.shop.getInfo().setDesc(desc.getText());
     }
 
     public void validChanges(ActionEvent actionEvent){
@@ -49,7 +49,7 @@ public class AdminDescriptionController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
             Parent pane = loader.load();
-            ((AdminController) loader.getController()).init(this.info);
+            ((AdminController) loader.getController()).init(this.shop);
             this.center.getChildren().set(0, pane);
         } catch (IOException e) {
             e.printStackTrace();

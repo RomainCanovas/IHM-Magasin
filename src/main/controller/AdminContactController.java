@@ -7,7 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import model.Information;
+import model.Shop;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,13 +25,13 @@ public class AdminContactController implements Initializable {
     @FXML
     AnchorPane center;
 
-    private Information info;
+    private Shop shop;
 
 
-    public void init(Information info) {
-        this.info = info;
-        phone.setText(this.info.getPhone());
-        mail.setText(this.info.getEmail());
+    public void init(Shop shop) {
+        this.shop = shop;
+        phone.setText(this.shop.getInfo().getPhone());
+        mail.setText(this.shop.getInfo().getEmail());
 
     }
 
@@ -40,11 +40,11 @@ public class AdminContactController implements Initializable {
     }
 
     public void setModifiedPhone() {
-        this.info.setPhone(phone.getText());
+        this.shop.getInfo().setPhone(phone.getText());
     }
 
     public void setModifiedMail() {
-        this.info.setEmail(mail.getText());
+        this.shop.getInfo().setEmail(mail.getText());
     }
 
 
@@ -57,7 +57,7 @@ public class AdminContactController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
             Parent pane = loader.load();
-            ((AdminController) loader.getController()).init(this.info);
+            ((AdminController) loader.getController()).init(this.shop);
             this.center.getChildren().set(0, pane);
         } catch (IOException e) {
             e.printStackTrace();

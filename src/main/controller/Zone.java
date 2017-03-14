@@ -2,6 +2,7 @@ package controller;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.CheckBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -62,7 +63,7 @@ public class Zone extends Parent {
 
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("view/PopUp.fxml"));
 				Parent pane = loader.load();
-				pane.setOnMousePressed(e ->	popup.hide());
+				pane.setOnMousePressed(e -> popup.hide());
 				((PopUpController) loader.getController()).init(p);
 				popup.getContent().add(pane);
 
@@ -78,4 +79,12 @@ public class Zone extends Parent {
 
 	}
 
+	public void setAdmin(Product p) {
+		CheckBox box = new CheckBox();
+		this.setOnMouseClicked(event -> {
+			box.fire();
+			p.setSelected(!p.getSelected());
+		});
+		this.getChildren().add(box);
+	}
 }
