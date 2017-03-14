@@ -37,9 +37,8 @@ public class AdminAccesController {
 	}
 
 	public void check(KeyEvent keyEvent) {
-		if (clue.getLength() >= 37) {
+		if (clue.getLength() >= 38) {
 			clue.setText(clue.getText().substring(0, 37));
-			init(this.shop);
 		}
 	}
 

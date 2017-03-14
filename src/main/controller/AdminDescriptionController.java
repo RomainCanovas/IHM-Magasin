@@ -26,9 +26,8 @@ public class AdminDescriptionController {
 	}
 
 	public void check(KeyEvent keyEvent) {
-		if (desc.getLength() >= 300) {
+		if (desc.getLength() >= 301) {
 			desc.setText(desc.getText().substring(0, 300));
-			init(this.shop);
 		}
 	}
 
