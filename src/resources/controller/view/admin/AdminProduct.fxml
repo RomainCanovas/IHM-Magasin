@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -11,48 +12,53 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0"
-            prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.AdminProductController">
-    <VBox prefHeight="252.0" prefWidth="786.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminProductController">
+    <VBox prefHeight="252.0" prefWidth="786.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <HBox prefHeight="100.0" prefWidth="200.0">
             <VBox prefHeight="64.0" prefWidth="407.0">
-                <RadioButton fx:id="add" onAction="#addSelection" mnemonicParsing="false" text="Ajouter la séléction à la vue">
+                <RadioButton fx:id="add" mnemonicParsing="false" onAction="#addSelection" text="Ajouter la séléction à la vue">
                     <VBox.margin>
-                        <Insets left="50.0"/>
+                        <Insets left="50.0" />
                     </VBox.margin>
                 </RadioButton>
-                <RadioButton fx:id="remove" onAction="#removeSelection" mnemonicParsing="false"
-                             text="Retirer la séléction de la vue">
+                <RadioButton fx:id="remove" mnemonicParsing="false" onAction="#removeSelection" text="Retirer la séléction de la vue">
                     <VBox.margin>
-                        <Insets left="50.0"/>
+                        <Insets left="50.0" />
                     </VBox.margin>
                 </RadioButton>
-                <RadioButton fx:id="modification" onAction="#modificationSelection" mnemonicParsing="false"
-                             text="Modifier les réductions de la séléction">
+                <RadioButton fx:id="modification" mnemonicParsing="false" onAction="#modificationSelection" text="Modifier les réductions de la séléction">
                     <VBox.margin>
-                        <Insets left="50.0"/>
+                        <Insets left="50.0" />
                     </VBox.margin>
                 </RadioButton>
-                <RadioButton fx:id="news" onAction="#newsSelection" mnemonicParsing="false" text="Changer les nouveauté">
+                <RadioButton fx:id="news" mnemonicParsing="false" onAction="#newsSelection" text="Changer les nouveauté">
                     <VBox.margin>
-                        <Insets left="50.0"/>
+                        <Insets left="50.0" />
                     </VBox.margin>
                 </RadioButton>
             </VBox>
-            <AnchorPane fx:id="tricky" prefHeight="64.0" prefWidth="392.0"/>
+            <AnchorPane fx:id="tricky" prefHeight="64.0" prefWidth="392.0" />
         </HBox>
-        <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="818.0">
+        <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="818.0">
             <GridPane fx:id="gridPane" prefHeight="0.0" prefWidth="0.0">
                 <columnConstraints>
-                    <ColumnConstraints hgrow="SOMETIMES"/>
+                    <ColumnConstraints hgrow="SOMETIMES" />
                 </columnConstraints>
                 <rowConstraints>
-                    <RowConstraints vgrow="SOMETIMES"/>
+                    <RowConstraints vgrow="SOMETIMES" />
                 </rowConstraints>
             </GridPane>
         </ScrollPane>
-        <Button onAction="#valid" mnemonicParsing="false" prefHeight="25.0" prefWidth="976.0" text="Valider"/>
+        <AnchorPane prefHeight="21.0" prefWidth="786.0">
+         <Button layoutX="16.0" mnemonicParsing="false" onAction="#selectAll" prefHeight="25.0" prefWidth="107.0" text="Tous" />
+            <Button layoutX="286.0" mnemonicParsing="false" onAction="#valid" prefHeight="25.0" prefWidth="107.0" text="Valider" textAlignment="JUSTIFY">
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </Button>
+            <Button layoutX="416.0" mnemonicParsing="false" onAction="#actionAdmin" prefHeight="25.0" prefWidth="107.0" text="Retour" />
+            <TextField fx:id="searchBar" layoutX="601.0" onKeyReleased="#searchCall" prefHeight="25.0" prefWidth="143.0" promptText="Rechercher..." />
+         <Button layoutX="150.0" mnemonicParsing="false" onAction="#unselectAll" prefHeight="25.0" prefWidth="107.0" text="Aucun" />
+        </AnchorPane>
     </VBox>
 </AnchorPane>

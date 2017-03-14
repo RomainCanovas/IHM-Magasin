@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -14,21 +16,33 @@ import model.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
-import java.util.List;
 
 public class ShopController implements Initializable {
 
 	@FXML
 	public TextField search;
 	@FXML
+	public ToggleButton reception,company,promotions,products,news,team;
+	@FXML
 	private AnchorPane center;
-
 	private Shop shop;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.shop = this.createData();
+
+		ToggleGroup group = new ToggleGroup();
+
+		this.reception.setToggleGroup(group);
+		this.company.setToggleGroup(group);
+		this.products.setToggleGroup(group);
+		this.promotions.setToggleGroup(group);
+		this.news.setToggleGroup(group);
+		this.team.setToggleGroup(group);
+
+		this.reception.fire();
 		this.actionReception();
+
 	}
 
 	public void actionReception() {

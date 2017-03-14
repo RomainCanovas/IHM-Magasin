@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import model.Shop;
 
 import java.io.IOException;
@@ -39,7 +38,7 @@ public class AdminController {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminDescription.fxml"));
 			Parent pane = loader.load();
 			((AdminDescriptionController) loader.getController()).init(this.shop);
-			((Pane) this.center.getParent()).getChildren().set(0, pane);
+			this.center.getChildren().set(0, pane);
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -90,7 +89,7 @@ public class AdminController {
 
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminProduct.fxml"));
 			Parent pane = loader.load();
-			((AdminProductController) loader.getController()).init(this.shop.getInventory());
+			((AdminProductController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);
 
 		} catch (IOException e) {

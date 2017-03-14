@@ -5,17 +5,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import model.Inventory;
 import model.Product;
+import model.Shop;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
@@ -26,7 +26,11 @@ public class AdminProductController implements Initializable {
 	private static final int MAX_COLUMN = 8;
 
 	@FXML
-	public AnchorPane tricky;
+	public TextField searchBar;
+	@FXML
+	private AnchorPane center;
+	@FXML
+	private AnchorPane tricky;
 	@FXML
 	private RadioButton add;
 	@FXML
@@ -38,11 +42,15 @@ public class AdminProductController implements Initializable {
 	@FXML
 	private GridPane gridPane;
 	private AdminProductChoiceController trickyController;
+	private AdminNewsController dateController;
 	private boolean setModification;
 	private boolean setRemove;
 	private boolean setAdd;
 	private boolean setNews; //Todo
-	private Inventory inventory;
+
+	private Shop shop;
+	private List<Product> currentProducts;
+	private List<Product> displayedProducts;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -55,15 +63,22 @@ public class AdminProductController implements Initializable {
 		this.gridPane.setHgap(2);
 	}
 
-	public void init(Inventory inventory) {
-		this.inventory = inventory;
-		for (Product product : this.inventory.getAll())
+	public void init(Shop shop) {
+		this.shop = shop;
+		this.currentProducts = new ArrayList<>();
+		Inventory inventory = shop.getInventory();
+		for (Product product : inventory.getAll())
 			product.setSelected(false);
 
 		this.initProduct(inventory.getAll());
 	}
 
 	private void initProduct(List<Product> products) { // 786 252
+
+		this.displayedProducts = products;
+
+		if (this.gridPane.getChildren().size() > 0)
+			this.gridPane.getChildren().removeAll(this.gridPane.getChildren());
 
 		this.initSize(products.size() + 1, MAX_COLUMN);
 
@@ -87,6 +102,20 @@ public class AdminProductController implements Initializable {
 
 	public void newsSelection() {
 		this.reInit();
+
+		try {
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminNews.fxml"));
+			Parent pane = loader.load();
+			this.dateController = loader.getController();
+			this.tricky.getChildren().add(pane);
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
+
 		this.setNews = true;
 	}
 
@@ -107,21 +136,44 @@ public class AdminProductController implements Initializable {
 
 		}
 
-		this.initProduct(this.inventory.getShown());
+		this.initProduct(this.shop.getInventory().getShown());
+		this.currentProducts = this.shop.getInventory().getShown();
 		this.setModification = true;
 	}
 
 	public void removeSelection() {
 		this.reInit();
-		this.initProduct(this.inventory.getShown());
+		this.initProduct(this.shop.getInventory().getShown());
+		this.currentProducts = this.shop.getInventory().getShown();
 		this.setRemove = true;
 
 	}
 
 	public void addSelection() {
 		this.reInit();
-		this.initProduct(this.inventory.getNotShown());
+		this.initProduct(this.shop.getInventory().getNotShown());
+		this.currentProducts = this.shop.getInventory().getNotShown();
 		this.setAdd = true;
+	}
+
+	public void searchCall() {
+		this.initProduct(
+				this.currentProducts.stream()
+						.filter(product -> product.getName().toUpperCase().contains(this.searchBar.getText().toUpperCase()))
+						.collect(Collectors.toList()));
+	}
+
+	public void unselectAll() {
+		for (Product displayedProduct : this.displayedProducts)
+			displayedProduct.setSelected(false);
+		this.initProduct(this.displayedProducts);
+	}
+
+	public void selectAll() {
+		for (Product displayedProduct : this.displayedProducts)
+			displayedProduct.setSelected(true);
+		this.initProduct(this.displayedProducts);
+
 	}
 
 	private void reInit() {
@@ -131,16 +183,16 @@ public class AdminProductController implements Initializable {
 		this.setAdd = false;
 		this.setModification = false;
 		this.setNews = false;
-		for (Product product : this.inventory.getAll())
+		for (Product product : this.shop.getInventory().getAll())
 			product.setSelected(false);
 
 	}
 
 	public void valid() {
-		List<Product> list = this.inventory.getAll().stream().filter(Product::isSelected).collect(Collectors.toList());
+		List<Product> list = this.shop.getInventory().getAll().stream().filter(Product::isSelected).collect(Collectors.toList());
 
-		/*if (this.setNews)
-			true;*/
+		if (this.setNews)
+			this.shop.getInventory().setDate(this.dateController.getDate());
 
 		if (this.setAdd)
 			for (Product product : list) {
@@ -154,5 +206,22 @@ public class AdminProductController implements Initializable {
 			for (Product product : list) {
 				product.setShow(false);
 			}
+	}
+
+	public void actionAdmin() {
+
+		try {
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
+			Parent pane = loader.load();
+			((AdminController) loader.getController()).init(this.shop);
+			((Pane) this.center.getParent()).getChildren().set(0, pane);
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
+
 	}
 }

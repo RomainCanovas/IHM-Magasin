@@ -47,6 +47,9 @@ public class Zone extends Parent {
 
 	public void setAdmin(Product p) {
 		CheckBox box = new CheckBox();
+
+		if (p.isSelected()) box.fire();
+
 		this.setOnMouseClicked(event -> {
 			box.fire();
 			p.setSelected(!p.getSelected());

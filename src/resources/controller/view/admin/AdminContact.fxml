@@ -9,107 +9,95 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminContactController">
-    <children>
-        <VBox prefHeight="252.0" prefWidth="786.0">
-            <children>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CONTACT">
-                    <font>
-                        <Font name="Ebrima" size="37.0" />
-                    </font>
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminContactController">
+    <VBox prefHeight="252.0" prefWidth="786.0">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CONTACT">
+            <font>
+                <Font name="Ebrima" size="37.0"/>
+            </font>
+            <VBox.margin>
+                <Insets left="280.0"/>
+            </VBox.margin>
+        </Text>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <VBox prefHeight="200.0" prefWidth="300.0">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Votre numéro de téléphone :">
                     <VBox.margin>
-                        <Insets left="280.0" />
+                        <Insets left="50.0"/>
                     </VBox.margin>
                 </Text>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="300.0">
-                     <children>
-                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Votre numéro de téléphone :">
-                           <VBox.margin>
-                              <Insets left="50.0" />
-                           </VBox.margin>
-                            </Text>
-                        <HBox prefHeight="100.0" prefWidth="400.0">
-                           <children>
-                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+33 78 27 39">
-                                            <HBox.margin>
-                                                <Insets left="10.0" top="15.0" />
-                                            </HBox.margin>
-                                            <font>
-                                                <Font size="26.0" />
-                                            </font>
-                                        </Text>
-                                        <TextField fx:id="phone" prefHeight="56.0" prefWidth="100.0">
-                                            <opaqueInsets>
-                                                <Insets left="2.0" />
-                                            </opaqueInsets>
-                                            <HBox.margin>
-                                                <Insets left="5.0" top="5.0" />
-                                            </HBox.margin>
-                                            <font>
-                                                <Font size="26.0" />
-                                            </font>
-                                        </TextField>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="100.0" prefWidth="386.0">
-                     <children>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Votre email :">
-                                    <VBox.margin>
-                                        <Insets left="155.0" />
-                                    </VBox.margin>
-                                </Text>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                                        <TextField fx:id="mail" prefHeight="56.0" prefWidth="187.0">
-                                            <opaqueInsets>
-                                                <Insets left="2.0" />
-                                            </opaqueInsets>
-                                            <HBox.margin>
-                                                <Insets top="5.0" />
-                                            </HBox.margin>
-                                            <font>
-                                                <Font size="26.0" />
-                                            </font>
-                                        </TextField>
-                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="\@capsophia.fr">
-                                            <font>
-                                                <Font size="26.0" />
-                                            </font>
-                                            <HBox.margin>
-                                                <Insets left="20.0" top="15.0" />
-                                            </HBox.margin>
-                                        </Text>
-                           </children>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </HBox>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="100.0" />
-                     </HBox.margin>
-                  </VBox>
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#validChanges" prefHeight="48.0" prefWidth="68.0" text="Valider">
-                     <HBox.margin>
-                        <Insets left="280.0" top="20.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="admin" mnemonicParsing="false" onAction="#actionAdmin" prefHeight="48.0" prefWidth="68.0" text="Retour">
-                     <HBox.margin>
-                        <Insets left="50.0" top="20.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
-            </children>
-        </VBox>
-    </children>
+                <HBox prefHeight="100.0" prefWidth="400.0">
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+33 78 27 39">
+                        <HBox.margin>
+                            <Insets left="10.0" top="15.0"/>
+                        </HBox.margin>
+                        <font>
+                            <Font size="26.0"/>
+                        </font>
+                    </Text>
+                    <TextField fx:id="phone" prefHeight="56.0" prefWidth="100.0">
+                        <opaqueInsets>
+                            <Insets left="2.0"/>
+                        </opaqueInsets>
+                        <HBox.margin>
+                            <Insets left="5.0" top="5.0"/>
+                        </HBox.margin>
+                        <font>
+                            <Font size="26.0"/>
+                        </font>
+                    </TextField>
+                </HBox>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="386.0">
+                <HBox.margin>
+                    <Insets left="100.0"/>
+                </HBox.margin>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Votre email :">
+                    <VBox.margin>
+                        <Insets left="155.0"/>
+                    </VBox.margin>
+                </Text>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                    <TextField fx:id="mail" prefHeight="56.0" prefWidth="187.0">
+                        <opaqueInsets>
+                            <Insets left="2.0"/>
+                        </opaqueInsets>
+                        <HBox.margin>
+                            <Insets top="5.0"/>
+                        </HBox.margin>
+                        <font>
+                            <Font size="26.0"/>
+                        </font>
+                    </TextField>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="\@capsophia.fr">
+                        <font>
+                            <Font size="26.0"/>
+                        </font>
+                        <HBox.margin>
+                            <Insets left="20.0" top="15.0"/>
+                        </HBox.margin>
+                    </Text>
+                </HBox>
+            </VBox>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <Button mnemonicParsing="false" onAction="#validChanges" prefHeight="48.0" prefWidth="68.0"
+                    text="Valider">
+                <HBox.margin>
+                    <Insets left="280.0" top="20.0"/>
+                </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#actionAdmin" prefHeight="48.0"
+                    prefWidth="68.0" text="Retour">
+                <HBox.margin>
+                    <Insets left="50.0" top="20.0"/>
+                </HBox.margin>
+            </Button>
+        </HBox>
+    </VBox>
 </AnchorPane>

@@ -3,7 +3,7 @@ package model;
 
 import javafx.scene.image.ImageView;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Product {
 
@@ -12,7 +12,7 @@ public class Product {
 	private float currentPrice;
 	private ImageView picture;
 	private boolean isSelected, show;
-	private Date date;
+	private LocalDate date;
 
 	public Product(String name, String picturePath, String description, int price) {
 		this.show = true;
@@ -22,7 +22,7 @@ public class Product {
 		this.description = description;
 		this.price = price;
 		this.currentPrice = this.price;
-		this.date = new Date();
+		this.date = LocalDate.now();
 	}
 
 	public boolean isOnSale() {
@@ -42,7 +42,7 @@ public class Product {
 		this.picture.setFitHeight(height);
 	}
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return this.date;
 	}
 

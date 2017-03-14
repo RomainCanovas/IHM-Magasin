@@ -1,16 +1,17 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Inventory {
 
 	private Map<String, List<Product>> products;
-	private Date dataNews;
+	private LocalDate dateNews;
 
 	public Inventory(Map<String, List<Product>> products) {
 		this.products = products;
-		this.dataNews = new Date();
+		this.dateNews = LocalDate.now();
 	}
 
 	public List<Product> onSale() {
@@ -27,9 +28,11 @@ public class Inventory {
 
 		List<Product> products = new ArrayList<>();
 
-		for (List<Product> list : this.products.values())
-			products.addAll(list.stream().filter(product -> product.getDate().after(this.dataNews) && product.getShow()).collect(Collectors.toList()));
 
+		for (List<Product> list : this.products.values())
+			products.addAll(list.stream().filter(product -> product.getDate().isAfter(this.dateNews) && product.getShow()).collect(Collectors.toList()));
+
+		System.out.println(this.dateNews);
 		return products;
 	}
 
@@ -85,5 +88,13 @@ public class Inventory {
 			products.addAll(list.stream().filter(product -> product.getShow()).collect(Collectors.toList()));
 
 		return products;
+	}
+
+	public void setDate(LocalDate date) {
+		this.dateNews = date;
+	}
+
+	public LocalDate getDateNews() {
+		return dateNews;
 	}
 }
