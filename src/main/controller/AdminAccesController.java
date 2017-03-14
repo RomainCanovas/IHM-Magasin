@@ -44,6 +44,7 @@ public class AdminAccesController implements Initializable {
 		this.shop = s;
 		clue.setText(this.info.getClue());
         comboBox.setPromptText(info.getFloor());
+        comboBox.setValue(info.getFloor());
     }
 
 	@Override
