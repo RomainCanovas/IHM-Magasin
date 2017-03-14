@@ -1,25 +1,25 @@
 package controller;
 
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 import model.Information;
 
 public class ReceptionController {
 
-    @FXML
-    public Text openning, phone, email, floor, clue, desc, commentary;
+	@FXML
+	public Text openning, phone, email, floor, clue, desc, commentary;
 
-    @FXML
+	@FXML
 
-    public void init(Information info) {
-        this.openning.setText("Du " + info.getOpenDay() + " au " + info.getCloseDay() + " de " + info.getOpenHour() + info.getOpenMin() + " à " + info.getCloseHour() + info.getCloseMin());
-        this.phone.setText("Tél.: +33 78 27 39 " + info.getPhone());
-        this.email.setText("email: " + info.getEmail() + "@capsophia.fr");
-        this.floor.setText("Niveau: " + info.getFloor());
-        this.clue.setText(info.getClue());
-        this.desc.setText(info.getDesc());
-        this.commentary.setText(info.getCommentary());
-    }
+	public void init(Information info) {
+		this.openning.textProperty().bind(Bindings.concat("Du ", info.getOpenDay(), " au ", info.getCloseDay(), " de ", info.getOpenHour(), info.getOpenMin(), " à ", info.getCloseHour(), info.getCloseMin()));
+		this.phone.textProperty().bind(Bindings.concat("Tél.: +33 78 27 39 ", info.getPhone()));
+		this.email.textProperty().bind(Bindings.concat("email: ", info.getEmail(), "@capsophia.fr"));
+		this.floor.textProperty().bind(Bindings.concat("Niveau: ", info.floorProperty()));
+		this.clue.textProperty().bind(info.clueProperty());
+		this.desc.textProperty().bind(info.descProperty());
+		this.commentary.textProperty().bind(info.commentaryProperty());
+	}
 
-    //fixme INTERACTION INTERACTION INTERACTION INTERACTION INTERACTION INTERACTION INTERACTION
 }

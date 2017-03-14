@@ -29,13 +29,10 @@ public class AdminAccesController {
         comboBox.setValue(this.shop.getInfo().getFloor());
     }
 
-	private void setModifiedClue() {
-		this.shop.getInfo().setClue(clue.getText());
-	}
 
 	public void validChanges() {
 		this.shop.getInfo().setFloor(comboBox.getValue());
-		setModifiedClue();
+		this.shop.getInfo().setClue(clue.getText());
 	}
 
 	public void actionAdmin() {

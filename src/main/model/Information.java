@@ -1,117 +1,168 @@
 package model;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Information {
 
-    private String phone, email, openDay, closeDay, commentary, desc, clue, openHour, closeHour, openMin, closeMin, floor;
+	private StringProperty phone, email, openDay, closeDay, desc, commentary, clue, openHour, closeHour, openMin, closeMin, floor;
 
-    public Information(String phone, String email, String openDay, String closeDay, String openHour, String openMin, String closeHour, String closeMin, String commentary, String desc, String clue, String floor) {
-        this.phone = phone;
-        this.email = email;
-        this.openDay = openDay;
-        this.closeDay = closeDay;
-        this.openHour = openHour;
-        this.openMin = openMin;
-        this.closeHour = closeHour;
-        this.closeMin = closeMin;
-        this.commentary = commentary;
-        this.desc = desc;
-        this.clue = clue;
-        this.floor = floor;
-    }
+	public Information(String phone, String email, String openDay, String closeDay, String openHour, String openMin, String closeHour, String closeMin, String commentary, String desc, String clue, String floor) {
+		this.phone = new SimpleStringProperty(phone);
+		this.email = new SimpleStringProperty(email);
+		this.openDay = new SimpleStringProperty(openDay);
+		this.closeDay = new SimpleStringProperty(closeDay);
+		this.openHour = new SimpleStringProperty(openHour);
+		this.openMin = new SimpleStringProperty(openMin);
+		this.closeHour = new SimpleStringProperty(closeHour);
+		this.closeMin = new SimpleStringProperty(closeMin);
+		this.commentary = new SimpleStringProperty(commentary);
+		this.desc = new SimpleStringProperty(desc);
+		this.clue = new SimpleStringProperty(clue);
+		this.floor = new SimpleStringProperty(floor);
+	}
 
-    public String getPhone() {
-        return phone;
-    }
+	public void setPhone(String phone) {
+		this.phone.set(phone);
+	}
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+	public void setEmail(String email) {
+		this.email.set(email);
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public void setOpenDay(String openDay) {
+		this.openDay.set(openDay);
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setCloseDay(String closeDay) {
+		this.closeDay.set(closeDay);
+	}
 
-    public String getOpenDay() {
-        return openDay;
-    }
+	public void setOpenHour(String openHour) {
+		this.openHour.set(openHour);
+	}
 
-    public void setOpenDay(String openDay) {
-        this.openDay = openDay;
-    }
+	public void setOpenMin(String openMin) {
+		this.openMin.set(openMin);
+	}
 
-    public String getCloseDay() {
-        return closeDay;
-    }
+	public void setCloseHour(String openHour) {
+		this.closeHour.set(openHour);
+	}
 
-    public void setCloseDay(String closeDay) {
-        this.closeDay = closeDay;
-    }
+	public void setCloseMin(String closeMin) {
+		this.closeMin.set(closeMin);
+	}
 
-    public String getOpenHour() {
-        return openHour;
-    }
+	public void setCommentary(String commentary) {
+		this.commentary.set(commentary);
+	}
 
-    public void setOpenHour(String openHour) {
-        this.openHour = openHour;
-    }
+	public void setDesc(String desc) {
+		this.desc.set(desc);
+	}
 
-    public String getOpenMin() {
-        return openMin;
-    }
+	public void setClue(String clue) {
+		this.clue.set(clue);
+	}
 
-    public void setOpenMin(String openMin) {
-        this.openMin = openMin;
-    }
+	public void setFloor(String floor) {
+		this.floor.set(floor);
+	}
 
-    public String getCloseHour() {
-        return closeHour;
-    }
+	public StringProperty commentaryProperty() {
+		return commentary;
+	}
 
-    public void setCloseHour(String openHour) {
-        this.closeHour = openHour;
-    }
+	public StringProperty descProperty() {
+		return desc;
+	}
 
-    public String getCloseMin() {
-        return closeMin;
-    }
+	public StringProperty clueProperty() {
+		return clue;
+	}
 
-    public void setCloseMin(String closeMin) {
-        this.closeMin = closeMin;
-    }
+	public String getPhone() {
+		return phone.get();
+	}
 
-    public String getCommentary() {
-        return commentary;
-    }
+	public String getEmail() {
+		return email.get();
+	}
 
-    public void setCommentary(String commentary) {
-        this.commentary = commentary;
-    }
+	public String getOpenDay() {
+		return openDay.get();
+	}
 
-    public String getDesc() {
-        return desc;
-    }
+	public String getCloseDay() {
+		return closeDay.get();
+	}
 
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
+	public String getDesc() {
+		return desc.get();
+	}
 
-    public String getClue() {
-        return clue;
-    }
+	public String getCommentary() {
+		return commentary.get();
+	}
 
-    public void setClue(String clue) {
-        this.clue = clue;
-    }
+	public String getClue() {
+		return clue.get();
+	}
 
-    public String getFloor() {
-        return floor;
-    }
+	public String getOpenHour() {
+		return openHour.get();
+	}
 
-    public void setFloor(String floor) {
-        this.floor = floor;
-    }
+	public String getCloseHour() {
+		return closeHour.get();
+	}
+
+	public String getOpenMin() {
+		return openMin.get();
+	}
+
+	public String getCloseMin() {
+		return closeMin.get();
+	}
+
+	public String getFloor() {
+		return floor.get();
+	}
+
+	public StringProperty phoneProperty() {
+		return phone;
+	}
+
+	public StringProperty emailProperty() {
+		return email;
+	}
+
+	public StringProperty openDayProperty() {
+		return openDay;
+	}
+
+	public StringProperty closeDayProperty() {
+		return closeDay;
+	}
+
+	public StringProperty openHourProperty() {
+		return openHour;
+	}
+
+	public StringProperty closeHourProperty() {
+		return closeHour;
+	}
+
+	public StringProperty openMinProperty() {
+		return openMin;
+	}
+
+	public StringProperty closeMinProperty() {
+		return closeMin;
+	}
+
+	public StringProperty floorProperty() {
+		return floor;
+	}
 }

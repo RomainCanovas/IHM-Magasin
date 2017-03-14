@@ -32,7 +32,6 @@ public class Inventory {
 		for (List<Product> list : this.products.values())
 			products.addAll(list.stream().filter(product -> product.getDate().isAfter(this.dateNews) && product.getShow()).collect(Collectors.toList()));
 
-		System.out.println(this.dateNews);
 		return products;
 	}
 
@@ -92,9 +91,5 @@ public class Inventory {
 
 	public void setDate(LocalDate date) {
 		this.dateNews = date;
-	}
-
-	public LocalDate getDateNews() {
-		return dateNews;
 	}
 }
