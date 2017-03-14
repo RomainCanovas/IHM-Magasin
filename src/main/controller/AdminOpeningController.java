@@ -69,9 +69,8 @@ public class AdminOpeningController {
     }
 
     public void check(KeyEvent keyEvent) {
-        if (commentary.getLength() >= 37) {
+        if (commentary.getLength() >= 38) {
             commentary.setText(commentary.getText().substring(0, 37));
-            init(this.shop);
         }
     }
 

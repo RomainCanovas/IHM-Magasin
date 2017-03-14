@@ -38,13 +38,11 @@ public class AdminContactController {
     }
 
     public void check(KeyEvent keyEvent) {
-            if (phone.getLength() >= 2) {
+            if (phone.getLength() >= 3) {
                 phone.setText(phone.getText().substring(0, 2));
-                init(this.shop);
             }
-            if (mail.getLength() >= 15) {
+            if (mail.getLength() >= 16) {
                 mail.setText(mail.getText().substring(0, 15));
-                init(this.shop);
         }
     }
 
