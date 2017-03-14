@@ -34,6 +34,7 @@ public class AdminAccesController implements Initializable {
         this.info = info;
         floor=this.info.getFloor();
         comboBox.setPromptText(floor);
+		comboBox.setValue(floor);
         clue.setText(this.info.getClue());
         }
 
