@@ -11,10 +11,10 @@ public class Product {
 	private float price;
 	private float currentPrice;
 	private ImageView picture;
-	private boolean isSelected, show;
+	private boolean isSelected, show, inStock;
 	private LocalDate date;
 
-	public Product(String name, String picturePath, String description, int price) {
+	public Product(String name, String picturePath, String description, int price, boolean inStock) {
 		this.show = true;
 		this.isSelected = false;
 		this.name = name;
@@ -23,6 +23,7 @@ public class Product {
 		this.price = price;
 		this.currentPrice = this.price;
 		this.date = LocalDate.now();
+		this.inStock = inStock;
 	}
 
 	public boolean isOnSale() {
@@ -80,5 +81,13 @@ public class Product {
 
 	public float getPrice() {
 		return this.price;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public boolean isInStock() {
+		return inStock;
 	}
 }

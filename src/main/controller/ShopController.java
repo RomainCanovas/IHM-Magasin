@@ -173,49 +173,29 @@ public class ShopController implements Initializable {
 
 		List<List<Product>> products = Arrays.asList(
 				Arrays.asList(
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit26", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25),
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25)
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25,true),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25,true),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25,true),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25,true),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25,true),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25,true),
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25,true)
 
+						),
+				Arrays.asList(
+						new Product("produit26", "produit/produit2.jpg", "Ce produit est un produit qui est cher mais qui est bien, il est quand même relativement cher !", 250, false),
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250,true),
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250,true)
 				),
 				Arrays.asList(
-						new Product("produit26", "produit/produit2.jpg", "Ce produit est un produit qui est cher mais qui est bien, il est quand même relativement cher !", 250),
-						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250),
-						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit qui est cher !", 250)
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250,false),
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250,true),
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500,false)
 				),
 				Arrays.asList(
-						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250),
-						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 250),
-						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500)
-				),
-				Arrays.asList(
-						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit !", 250),
-						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit !", 250),
-						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500)
+						new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit !", 250,true),
+						new Product("produit2", "produit/produit2.jpg", "Ce produit est un produit !", 250,true),
+						new Product("produit3", "produit/produit3.jpg", "Ce produit est un produit !", 2500,false)
 				)
 		);
 
