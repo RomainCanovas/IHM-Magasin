@@ -6,7 +6,6 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,16 +23,8 @@ public class AdminStatsFreqController implements Initializable{
     RadioButton freq17, freq16;
 
     public void init() {
-        final ToggleGroup group = new ToggleGroup();
-        lun.setToggleGroup(group);
-        lun.setSelected(true);
-        mar.setToggleGroup(group);
-        mer.setToggleGroup(group);
-        jeu.setToggleGroup(group);
-        ven.setToggleGroup(group);
-        sam.setToggleGroup(group);
-        dim.setToggleGroup(group);
 
+        lun.setSelected(true);
         freq16.setSelected(true);
 
         display();
