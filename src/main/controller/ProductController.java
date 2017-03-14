@@ -106,7 +106,7 @@ public class ProductController implements Initializable {
 
     public void actionPop() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/popup.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/productpopup.fxml"));
             Parent pane = loader.load();
             ((PopUpController) loader.getController()).init(this.product);
 
