@@ -9,39 +9,44 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminDescriptionController">
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminDescriptionController" onKeyReleased="#check">
     <children>
         <VBox prefHeight="252.0" prefWidth="786.0">
             <children>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description du magasin (passez à la ligne au bout de la boîte) :" textAlignment="CENTER">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="Description du magasin (passez à la ligne au bout de la boîte) :" textAlignment="CENTER">
                     <VBox.margin>
-                        <Insets left="200.0" top="5.0" />
+                        <Insets left="200.0" top="5.0"/>
                     </VBox.margin>
                 </Text>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="To Be or To Have : ">
                     <font>
-                        <Font name="System Bold" size="15.0" />
+                        <Font name="System Bold" size="15.0"/>
                     </font>
                 </Text>
                 <TextArea fx:id="desc" prefHeight="148.0" prefWidth="340.0" text="Description">
                     <VBox.margin>
-                        <Insets left="30.0" right="350.0" top="5.0" />
+                        <Insets left="30.0" right="350.0" top="5.0"/>
                     </VBox.margin>
                 </TextArea>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#validChanges" prefHeight="48.0" prefWidth="68.0" text="Valider">
-                     <HBox.margin>
-                        <Insets left="280.0" top="20.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="admin" mnemonicParsing="false" onAction="#actionAdmin" prefHeight="48.0" prefWidth="68.0" text="Retour">
-                     <HBox.margin>
-                        <Insets left="50.0" top="20.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#validChanges" prefHeight="48.0" prefWidth="68.0"
+                                text="Valider">
+                            <HBox.margin>
+                                <Insets left="280.0" top="20.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="admin" mnemonicParsing="false" onAction="#actionAdmin" prefHeight="48.0"
+                                prefWidth="68.0" text="Retour">
+                            <HBox.margin>
+                                <Insets left="50.0" top="20.0"/>
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
             </children>
         </VBox>
     </children>

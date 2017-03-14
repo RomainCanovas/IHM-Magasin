@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import model.Shop;
@@ -33,6 +34,13 @@ public class AdminAccesController {
 	public void validChanges() {
 		this.shop.getInfo().setFloor(comboBox.getValue());
 		this.shop.getInfo().setClue(clue.getText());
+	}
+
+	public void check(KeyEvent keyEvent) {
+		if (clue.getLength() >= 37) {
+			clue.setText(clue.getText().substring(0, 37));
+			init(this.shop);
+		}
 	}
 
 	public void actionAdmin() {

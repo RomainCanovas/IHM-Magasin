@@ -11,184 +11,180 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminOpeningController">
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#check" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminOpeningController">
     <children>
         <VBox prefHeight="252.0" prefWidth="786.0">
             <children>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vos horaires et jours d'ouverture :">
                     <VBox.margin>
-                        <Insets bottom="8.0" left="290.0"/>
+                        <Insets bottom="8.0" left="290.0" />
                     </VBox.margin>
                 </Text>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Du">
                             <HBox.margin>
-                                <Insets left="30.0" top="10.0"/>
+                                <Insets left="30.0" top="10.0" />
                             </HBox.margin>
                         </Text>
                         <ComboBox fx:id="opDay" layoutX="15.0" layoutY="33.0" prefWidth="130.0">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Lun."/>
-                                    <String fx:value="Mar."/>
-                                    <String fx:value="Mer."/>
-                                    <String fx:value="Jeu."/>
-                                    <String fx:value="Ven."/>
-                                    <String fx:value="Sam."/>
-                                    <String fx:value="Dim."/>
+                                    <String fx:value="Lun." />
+                                    <String fx:value="Mar." />
+                                    <String fx:value="Mer." />
+                                    <String fx:value="Jeu." />
+                                    <String fx:value="Ven." />
+                                    <String fx:value="Sam." />
+                                    <String fx:value="Dim." />
                                 </FXCollections>
                             </items>
                             <HBox.margin>
-                                <Insets left="10.0" top="5.0"/>
+                                <Insets left="10.0" top="5.0" />
                             </HBox.margin>
                         </ComboBox>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="au">
                             <HBox.margin>
-                                <Insets left="15.0" top="10.0"/>
+                                <Insets left="15.0" top="10.0" />
                             </HBox.margin>
                         </Text>
                         <ComboBox fx:id="clDay" layoutX="15.0" layoutY="33.0" prefWidth="130.0">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Lun."/>
-                                    <String fx:value="Mar."/>
-                                    <String fx:value="Mer."/>
-                                    <String fx:value="Jeu."/>
-                                    <String fx:value="Ven."/>
-                                    <String fx:value="Sam."/>
-                                    <String fx:value="Dim."/>
+                                    <String fx:value="Lun." />
+                                    <String fx:value="Mar." />
+                                    <String fx:value="Mer." />
+                                    <String fx:value="Jeu." />
+                                    <String fx:value="Ven." />
+                                    <String fx:value="Sam." />
+                                    <String fx:value="Dim." />
                                 </FXCollections>
                             </items>
                             <HBox.margin>
-                                <Insets left="15.0" top="5.0"/>
+                                <Insets left="15.0" top="5.0" />
                             </HBox.margin>
                         </ComboBox>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="de">
                             <HBox.margin>
-                                <Insets left="15.0" top="10.0"/>
+                                <Insets left="15.0" top="10.0" />
                             </HBox.margin>
                         </Text>
                         <ComboBox fx:id="opH" layoutX="15.0" layoutY="33.0" prefWidth="80.0">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="7h"/>
-                                    <String fx:value="8h"/>
-                                    <String fx:value="9h"/>
-                                    <String fx:value="10h"/>
-                                    <String fx:value="11h"/>
-                                    <String fx:value="12h"/>
-                                    <String fx:value="13h"/>
-                                    <String fx:value="14h"/>
-                                    <String fx:value="15h"/>
-                                    <String fx:value="16h"/>
-                                    <String fx:value="17h"/>
-                                    <String fx:value="18h"/>
-                                    <String fx:value="19h"/>
-                                    <String fx:value="20h"/>
-                                    <String fx:value="21h"/>
-                                    <String fx:value="22h"/>
-                                    <String fx:value="23h"/>
-                                    <String fx:value="00h"/>
+                                    <String fx:value="7h" />
+                                    <String fx:value="8h" />
+                                    <String fx:value="9h" />
+                                    <String fx:value="10h" />
+                                    <String fx:value="11h" />
+                                    <String fx:value="12h" />
+                                    <String fx:value="13h" />
+                                    <String fx:value="14h" />
+                                    <String fx:value="15h" />
+                                    <String fx:value="16h" />
+                                    <String fx:value="17h" />
+                                    <String fx:value="18h" />
+                                    <String fx:value="19h" />
+                                    <String fx:value="20h" />
+                                    <String fx:value="21h" />
+                                    <String fx:value="22h" />
+                                    <String fx:value="23h" />
+                                    <String fx:value="00h" />
                                 </FXCollections>
                             </items>
                             <HBox.margin>
-                                <Insets left="15.0" top="5.0"/>
+                                <Insets left="15.0" top="5.0" />
                             </HBox.margin>
                         </ComboBox>
                         <ComboBox fx:id="opMn" layoutX="15.0" layoutY="33.0" prefWidth="80.0">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="00"/>
-                                    <String fx:value="15"/>
-                                    <String fx:value="30"/>
-                                    <String fx:value="45"/>
+                                    <String fx:value="00" />
+                                    <String fx:value="15" />
+                                    <String fx:value="30" />
+                                    <String fx:value="45" />
                                 </FXCollections>
                             </items>
                             <HBox.margin>
-                                <Insets top="5.0"/>
+                                <Insets top="5.0" />
                             </HBox.margin>
                         </ComboBox>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="à">
                             <HBox.margin>
-                                <Insets left="15.0" top="10.0"/>
+                                <Insets left="15.0" top="10.0" />
                             </HBox.margin>
                         </Text>
                         <ComboBox fx:id="clH" layoutX="15.0" layoutY="33.0" prefWidth="80.0">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="7h"/>
-                                    <String fx:value="8h"/>
-                                    <String fx:value="9h"/>
-                                    <String fx:value="10h"/>
-                                    <String fx:value="11h"/>
-                                    <String fx:value="12h"/>
-                                    <String fx:value="13h"/>
-                                    <String fx:value="14h"/>
-                                    <String fx:value="15h"/>
-                                    <String fx:value="16h"/>
-                                    <String fx:value="17h"/>
-                                    <String fx:value="18h"/>
-                                    <String fx:value="19h"/>
-                                    <String fx:value="20h"/>
-                                    <String fx:value="21h"/>
-                                    <String fx:value="22h"/>
-                                    <String fx:value="23h"/>
-                                    <String fx:value="00h"/>
+                                    <String fx:value="7h" />
+                                    <String fx:value="8h" />
+                                    <String fx:value="9h" />
+                                    <String fx:value="10h" />
+                                    <String fx:value="11h" />
+                                    <String fx:value="12h" />
+                                    <String fx:value="13h" />
+                                    <String fx:value="14h" />
+                                    <String fx:value="15h" />
+                                    <String fx:value="16h" />
+                                    <String fx:value="17h" />
+                                    <String fx:value="18h" />
+                                    <String fx:value="19h" />
+                                    <String fx:value="20h" />
+                                    <String fx:value="21h" />
+                                    <String fx:value="22h" />
+                                    <String fx:value="23h" />
+                                    <String fx:value="00h" />
                                 </FXCollections>
                             </items>
                             <HBox.margin>
-                                <Insets left="15.0" top="5.0"/>
+                                <Insets left="15.0" top="5.0" />
                             </HBox.margin>
                         </ComboBox>
                         <ComboBox fx:id="clMn" layoutX="15.0" layoutY="33.0" prefWidth="80.0">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="00"/>
-                                    <String fx:value="15"/>
-                                    <String fx:value="30"/>
-                                    <String fx:value="45"/>
+                                    <String fx:value="00" />
+                                    <String fx:value="15" />
+                                    <String fx:value="30" />
+                                    <String fx:value="45" />
                                 </FXCollections>
                             </items>
                             <HBox.margin>
-                                <Insets top="5.0"/>
+                                <Insets top="5.0" />
                             </HBox.margin>
                         </ComboBox>
                     </children>
                     <VBox.margin>
-                        <Insets/>
+                        <Insets />
                     </VBox.margin>
                     <padding>
-                        <Insets top="20.0"/>
+                        <Insets top="20.0" />
                     </padding>
                 </HBox>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Commentaire">
                     <VBox.margin>
-                        <Insets left="15.0"/>
+                        <Insets left="15.0" />
                     </VBox.margin>
                 </Text>
-                <TextField fx:id="commentary">
+                <TextField fx:id="commentary" prefHeight="31.0" prefWidth="686.0">
                     <opaqueInsets>
-                        <Insets/>
+                        <Insets />
                     </opaqueInsets>
                     <VBox.margin>
-                        <Insets left="5.0" right="5.0" top="10.0"/>
+                        <Insets left="50.0" right="450.0" top="10.0" />
                     </VBox.margin>
                 </TextField>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#validChanges" prefHeight="48.0" prefWidth="68.0"
-                                text="Valider">
+                        <Button mnemonicParsing="false" onAction="#validChanges" prefHeight="48.0" prefWidth="68.0" text="Valider">
                             <HBox.margin>
-                                <Insets left="280.0" top="20.0"/>
+                                <Insets left="280.0" top="20.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="admin" mnemonicParsing="false" onAction="#actionAdmin" prefHeight="48.0"
-                                prefWidth="68.0" text="Retour">
+                        <Button fx:id="admin" mnemonicParsing="false" onAction="#actionAdmin" prefHeight="48.0" prefWidth="68.0" text="Retour">
                             <HBox.margin>
-                                <Insets left="50.0" top="20.0"/>
+                                <Insets left="50.0" top="20.0" />
                             </HBox.margin>
                         </Button>
                     </children>

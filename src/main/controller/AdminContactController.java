@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import model.Shop;
@@ -33,6 +34,17 @@ public class AdminContactController {
             if (phone.getLength() == 2) {
                 this.shop.getInfo().setPhone(phone.getText());
             }
+        }
+    }
+
+    public void check(KeyEvent keyEvent) {
+            if (phone.getLength() >= 2) {
+                phone.setText(phone.getText().substring(0, 2));
+                init(this.shop);
+            }
+            if (mail.getLength() >= 15) {
+                mail.setText(mail.getText().substring(0, 15));
+                init(this.shop);
         }
     }
 
