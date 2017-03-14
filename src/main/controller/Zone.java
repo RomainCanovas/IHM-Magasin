@@ -87,8 +87,8 @@ public class Zone extends Parent {
 		controller.getBack().setOnAction(event -> pop.hide());
 
 		Rectangle2D rec = Screen.getPrimary().getBounds();
-		pop.setY(rec.getHeight() / 2 - 100);
-		pop.setX(rec.getWidth() / 2 - 100);
+		pop.setY(rec.getHeight() / 2 - 200);
+		pop.setX(rec.getWidth() / 2 - 200);
 
 		this.setOnMouseClicked(event -> pop.show(this.getScene().getWindow()));
 

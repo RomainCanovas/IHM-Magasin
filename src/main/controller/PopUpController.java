@@ -23,7 +23,7 @@ public class PopUpController {
 		this.product = product;
 		this.title.setText(product.getName());
 		this.desc.setText(product.getDescription());
-		this.picture.setImage(product.getPicture().getImage());
+		this.picture.setImage(product.getPicture());
 		this.price.setText(String.valueOf(product.getPrice())+"€");
 
 		if (product.getPrice() != product.getCurrentPrice()) {

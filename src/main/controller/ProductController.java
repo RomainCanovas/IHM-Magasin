@@ -2,6 +2,7 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -20,7 +21,6 @@ public class ProductController implements Initializable {
 
 	private static final int MAX_SIZE = 95;
 	private static final int MAX_COLUMN = 8;
-	private Product product;
 
 	@FXML
 	public GridPane gridPane;
@@ -62,8 +62,10 @@ public class ProductController implements Initializable {
 
 		for (int i = 0; i < products.size(); i++) {
 			Product p = products.get(i);
-			p.resize(MAX_SIZE, MAX_SIZE);
-			Zone zone = new Zone(p.getName(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, p.getPicture(), MAX_SIZE);
+			ImageView view = new ImageView(p.getPicture());
+			view.setFitWidth(MAX_SIZE);
+			view.setFitHeight(MAX_SIZE);
+			Zone zone = new Zone(p.getName(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, view, MAX_SIZE);
 			this.gridPane.add(zone, 1 + i % MAX_COLUMN, i / MAX_COLUMN);
 			zone.setPop(p);
 		}
@@ -80,9 +82,10 @@ public class ProductController implements Initializable {
 		int i = 0;
 
 		for (Map.Entry<String, Product> entry : categories.entrySet()) {
-
-			entry.getValue().resize(MAX_SIZE, MAX_SIZE);
-			Zone zone = new Zone(entry.getKey(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, entry.getValue().getPicture(), MAX_SIZE);
+			ImageView view = new ImageView(entry.getValue().getPicture());
+			view.setFitWidth(MAX_SIZE);
+			view.setFitHeight(MAX_SIZE);
+			Zone zone = new Zone(entry.getKey(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, view, MAX_SIZE);
 			zone.setOnMouseClicked(event -> this.initProduct(inventory.getCategory(zone.getName()), zone.getName()));
 			this.gridPane.add(zone, 1 + i % MAX_COLUMN, i / MAX_COLUMN);
 			i++;

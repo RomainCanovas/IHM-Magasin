@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import model.Inventory;
@@ -84,8 +85,10 @@ public class AdminProductController implements Initializable {
 
 		for (int i = 0; i < products.size(); i++) {
 			Product p = products.get(i);
-			p.resize(MAX_SIZE, MAX_SIZE);
-			Zone zone = new Zone(p.getName(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, p.getPicture(), MAX_SIZE);
+			ImageView view = new ImageView(p.getPicture());
+			view.setFitWidth(MAX_SIZE);
+			view.setFitHeight(MAX_SIZE);
+			Zone zone = new Zone(p.getName(), (i % 2 == 0) ? Color.YELLOW : Color.BEIGE, view, MAX_SIZE);
 			zone.setAdmin(p);
 			this.gridPane.add(zone, 1 + i % MAX_COLUMN, i / MAX_COLUMN);
 		}
