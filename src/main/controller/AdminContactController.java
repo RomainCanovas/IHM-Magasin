@@ -29,10 +29,14 @@ public class AdminContactController {
 
     private void setModifiedChanges() {
         this.shop.getInfo().setEmail(mail.getText());
-        this.shop.getInfo().setPhone(phone.getText());
+        if (phone.getText().matches("[0-9]*")) {
+            if (phone.getLength() == 2) {
+                this.shop.getInfo().setPhone(phone.getText());
+            }
+        }
     }
 
-    public void validChanges(){
+    public void validChanges() {
         setModifiedChanges();
     }
 
@@ -42,7 +46,7 @@ public class AdminContactController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
             Parent pane = loader.load();
             ((AdminController) loader.getController()).init(this.shop);
-			((Pane) this.center.getParent()).getChildren().set(0, pane);
+            ((Pane) this.center.getParent()).getChildren().set(0, pane);
 
         } catch (IOException e) {
 
