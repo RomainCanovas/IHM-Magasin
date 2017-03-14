@@ -48,7 +48,7 @@ public class AdminController {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminOpeningHours.fxml"));
 			Parent pane = loader.load();
-			((AdminOpeningController) loader.getController()).init(this.shop.getInfo());
+			((AdminOpeningController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);
 		} catch (IOException e) {
 			e.printStackTrace();

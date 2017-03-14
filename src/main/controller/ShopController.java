@@ -131,8 +131,8 @@ public class ShopController implements Initializable {
     }
 
     private Shop createData() {
-        Information info = new Information("21", "tbth", "Lundi au Samedi",
-                8, 20, "Nous sommes heureux de vous accueillir dans notre\nmagasin à Sophia Antipolis! Ouverts 6j/7 et entre\nmidi et deux, nous vous permettons de venir retirer\nvos commandes faites par internet pendant votre pause!\nVenez nous voir munis de votre bon de commande et\ngagnez du temps!\nNotre équipe espère vous voir bientôt!", "En face des escaliers", 2);
+        Information info = new Information("21", "tbth", "Lundi","Samedi",
+                "8h", "30", "20h", "00", "Fermeture exceptionnelle le 14/03/17!","Bienvenue! Ouverts 6j/7 et entre midi et deux, nous vous\npermettons de venir retirer vos commandes faites par\ninternet pendant votre pause! Venez nous voir munis\nde votre bon de commande et gagnez du temps!\nNotre équipe espère vous voir bientôt!", "En face des escaliers", 2);
 
         List<Employee> workers = Arrays.asList(
                 new Employee("Maurice", "Lopez", "Directeur", "image/directeur.png"),

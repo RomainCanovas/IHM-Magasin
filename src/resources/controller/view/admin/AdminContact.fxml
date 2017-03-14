@@ -18,7 +18,7 @@
                         <Font name="Ebrima" size="37.0" />
                     </font>
                     <VBox.margin>
-                        <Insets left="300.0" />
+                        <Insets left="280.0" />
                     </VBox.margin>
                 </Text>
             <HBox prefHeight="100.0" prefWidth="200.0">

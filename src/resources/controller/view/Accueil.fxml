@@ -32,6 +32,7 @@
                         <Insets left="5.0" />
                     </VBox.margin>
                 </Text>
+            <Text fx:id="commentary" strokeType="OUTSIDE" strokeWidth="0.0" />
             </VBox>
             <VBox prefHeight="90.0" prefWidth="377.0">
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CULTURE - MULTIMÉDIA">
@@ -105,6 +106,9 @@
                     <font>
                         <Font name="Britannic Bold" size="20.0" />
                     </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
                 </Text>
                 <Text fx:id="desc" strokeType="OUTSIDE" strokeWidth="0.0" />
             </VBox>
