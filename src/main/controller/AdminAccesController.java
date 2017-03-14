@@ -14,7 +14,7 @@ import java.io.IOException;
 public class AdminAccesController {
 
 	@FXML
-	private ComboBox comboBox;
+	private ComboBox<String> comboBox;
 	@FXML
 	private TextField clue;
 	@FXML
@@ -26,10 +26,7 @@ public class AdminAccesController {
 		this.shop = s;
 		clue.setText(this.shop.getInfo().getClue());
 		comboBox.setPromptText(this.shop.getInfo().getFloor());
-	}
-		clue.setText(this.info.getClue());
-        comboBox.setPromptText(info.getFloor());
-        comboBox.setValue(info.getFloor());
+        comboBox.setValue(this.shop.getInfo().getFloor());
     }
 
 	private void setModifiedClue() {
@@ -37,7 +34,7 @@ public class AdminAccesController {
 	}
 
 	public void validChanges() {
-		this.shop.getInfo().setFloor(comboBox.getValue().toString());
+		this.shop.getInfo().setFloor(comboBox.getValue());
 		setModifiedClue();
 	}
 

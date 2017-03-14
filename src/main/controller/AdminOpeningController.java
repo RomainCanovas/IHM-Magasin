@@ -2,7 +2,6 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -18,26 +17,25 @@ public class AdminOpeningController {
 	@FXML
 	private AnchorPane center;
 	@FXML
-	private ComboBox opDay, clDay, opH, clH, opMn, clMn;
+	private ComboBox<String> opDay;
+	@FXML
+	private ComboBox<String> clDay;
+	@FXML
+	private ComboBox<String> opH;
+	@FXML
+	private ComboBox<String> clH;
+	@FXML
+	private ComboBox<String> opMn;
+	@FXML
+	private ComboBox<String> clMn;
 	@FXML
 	private TextField commentary;
 
 	private Shop shop;
 
-	public void init(Shop shop) {
-		this.shop = shop;
-		Information info = this.shop.getInfo();
-		opDay.setPromptText(info.getOpenDay());
-		clDay.setPromptText(info.getCloseDay());
-		opH.setPromptText(info.getOpenHour());
-		clH.setPromptText(info.getCloseHour());
-		opMn.setPromptText(info.getOpenMin());
-		clMn.setPromptText(info.getCloseMin());
-		commentary.setText(info.getCommentary());
-	}
     public void init(Shop shop) {
         this.shop = shop;
-        info=this.shop.getInfo();
+        Information info=this.shop.getInfo();
         opDay.setPromptText(info.getOpenDay());
         opDay.setValue(info.getOpenDay());
         clDay.setPromptText(info.getCloseDay());
@@ -69,19 +67,19 @@ public class AdminOpeningController {
 		}
 	}
 
-	public void setModifiedCommentary() {
+	private void setModifiedCommentary() {
 		this.shop.getInfo().setCommentary(commentary.getText());
 	}
 
 	public void validChanges() {
 
 		Information info = this.shop.getInfo();
-		info.setOpenDay(opDay.getValue().toString());
-		info.setCloseDay(clDay.getValue().toString());
-		info.setOpenHour(opH.getValue().toString());
-		info.setCloseHour(clH.getValue().toString());
-		info.setOpenMin(opMn.getValue().toString());
-		info.setCloseMin(clMn.getValue().toString());
+		info.setOpenDay(opDay.getValue());
+		info.setCloseDay(clDay.getValue());
+		info.setOpenHour(opH.getValue());
+		info.setCloseHour(clH.getValue());
+		info.setOpenMin(opMn.getValue());
+		info.setCloseMin(clMn.getValue());
 		setModifiedCommentary();
 	}
 }
