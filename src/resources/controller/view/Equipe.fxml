@@ -14,7 +14,7 @@
             prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controller.TeamController">
     <VBox prefHeight="252.0" prefWidth="786.0">
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Notre équipe">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NOTRE EQUIPE">
             <VBox.margin>
                 <Insets left="290.0" top="1.0"/>
             </VBox.margin>

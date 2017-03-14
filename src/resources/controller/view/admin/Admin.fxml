@@ -9,57 +9,46 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="252.0"
-            prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.AdminController">
+<AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminController">
     <VBox prefHeight="252.0" prefWidth="786.0">
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue dans la vue administrateur !">
             <VBox.margin>
-                <Insets left="270.0" top="10.0"/>
+                <Insets left="270.0" top="10.0" />
             </VBox.margin>
         </Text>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Que désirez-vous faire/modifier?">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Que désirez-vous modifier/voir?">
             <VBox.margin>
-                <Insets left="290.0" top="20.0"/>
+                <Insets left="290.0" top="20.0" />
             </VBox.margin>
         </Text>
         <HBox prefHeight="157.0" prefWidth="786.0">
             <MenuButton mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="Accueil">
                 <items>
-                    <MenuItem fx:id="access" onAction="#actionAdminAccess" mnemonicParsing="false" text="Accès"/>
-                    <MenuItem fx:id="opening" onAction="#actionAdminOpening" mnemonicParsing="false"
-                              text="Heures d'ouverture"/>
-                    <MenuItem fx:id="phoneMail" onAction="#actionAdminContact" mnemonicParsing="false"
-                              text="Contact"/>
-                    <MenuItem fx:id="description" onAction="#actionAdminDescription" mnemonicParsing="false"
-                              text="Description"/>
+                    <MenuItem fx:id="access" mnemonicParsing="false" onAction="#actionAdminAccess" text="Accès" />
+                    <MenuItem fx:id="opening" mnemonicParsing="false" onAction="#actionAdminOpening" text="Heures d'ouverture" />
+                    <MenuItem fx:id="phoneMail" mnemonicParsing="false" onAction="#actionAdminContact" text="Contact" />
+                    <MenuItem fx:id="description" mnemonicParsing="false" onAction="#actionAdminDescription" text="Description" />
                 </items>
                 <HBox.margin>
-                    <Insets left="110.0" top="40.0"/>
+                    <Insets left="110.0" top="40.0" />
                 </HBox.margin>
                 <padding>
-                    <Insets left="20.0"/>
+                    <Insets left="20.0" />
                 </padding>
             </MenuButton>
             <Button mnemonicParsing="false" onAction="#products" prefHeight="70.0" prefWidth="121.0" text="Les produits">
                 <HBox.margin>
-                    <Insets left="100.0" top="40.0"/>
+                    <Insets left="100.0" top="40.0" />
                 </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="121.0" text="L'équipe">
-                <HBox.margin>
-                    <Insets left="110.0" top="40.0"/>
-                </HBox.margin>
-            </Button>
+           <Button mnemonicParsing="false" onAction="#actionStats" prefHeight="70.0" prefWidth="121.0" text="Statistiques">
+               <opaqueInsets>
+                   <Insets />
+               </opaqueInsets>
+            <HBox.margin>
+               <Insets left="100.0" top="40.0" />
+            </HBox.margin>
+           </Button>
         </HBox>
-        <Button onAction="#actionStats" mnemonicParsing="false" prefHeight="31.0" prefWidth="230.0" text="Statistiques">
-            <opaqueInsets>
-                <Insets/>
-            </opaqueInsets>
-            <VBox.margin>
-                <Insets bottom="5.0" left="275.0"/>
-            </VBox.margin>
-        </Button>
     </VBox>
 </AnchorPane>

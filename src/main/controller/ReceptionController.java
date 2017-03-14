@@ -11,7 +11,7 @@ public class ReceptionController {
 	@FXML
 
 	public void init(Information info) {
-		this.openning.setText(info.getOpenDay() + " de " + info.getOpenHour());
+		this.openning.setText(info.getOpenDay() + " de " + info.getOpenHour() + "H à " + info.getCloseHour() + "H");
 		this.phone.setText("Tél.: +33 78 27 39 " + info.getPhone());
 		this.email.setText("email: " + info.getEmail() + "@capsophia.fr");
 		this.floor.setText("Niveau: " + info.getFloor());
