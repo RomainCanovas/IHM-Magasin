@@ -1,12 +1,18 @@
 package controller;
 
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.control.CheckBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Popup;
+import javafx.stage.Screen;
 import model.Product;
+
+import java.io.IOException;
 
 public class Zone extends Parent {
 
@@ -55,5 +61,37 @@ public class Zone extends Parent {
 			p.setSelected(!p.getSelected());
 		});
 		this.getChildren().add(box);
+	}
+
+	public void setPop(Product p) {
+
+		Parent pane = null;
+		PopUpController controller = null;
+
+		try {
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/ProductPopUp.fxml"));
+			pane = loader.load();
+			controller = loader.getController();
+			controller.init(p);
+
+		} catch (IOException e) {
+
+			System.exit(0);
+
+		}
+
+		Popup pop = new Popup();
+		pop.getContent().add(pane);
+
+		controller.getBack().setOnAction(event -> pop.hide());
+
+		Rectangle2D rec = Screen.getPrimary().getBounds();
+		pop.setY(rec.getHeight() / 2 - 100);
+		pop.setX(rec.getWidth() / 2 - 100);
+
+		this.setOnMouseClicked(event -> pop.show(this.getScene().getWindow()));
+
+
 	}
 }

@@ -1,43 +1,46 @@
 package controller;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import model.Product;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+public class PopUpController {
 
-/**
- * Created by canor on 14/03/2017.
- */
-public class PopUpController implements Initializable{
+	@FXML
+	private Button back;
+	@FXML
+	private Text title;
+	@FXML
+	private ImageView picture;
+	@FXML
+	private Text desc;
+	@FXML
+	private Text stock;
+	@FXML
+	private Text price;
+	@FXML
+	private ImageView stockPicture;
 
-    Product product;
+	private Product product;
 
-    @FXML
-    Text productTitle, productPrice, productDesc, productStock;
+	public void init(Product product) {
+		this.product = product;
+		this.title.setText(product.getName());
+		this.desc.setText(product.getDescription());
+		this.picture.setImage(product.getPicture().getImage());
 
-    @FXML
-    ImageView productPicture;
+		if (product.getPrice() == product.getCurrentPrice()) {
+			this.price.setText(String.valueOf(product.getPrice()));
+		} else this.price.setText(String.valueOf(product.getCurrentPrice()));
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+		if (product.isInStock()) {
+			this.stock.setText("En stock");
+		} else this.stock.setText("Plus disponible");
+	}
 
-    }
-
-    public void init(Product product){
-        this.product = product;
-        productTitle.setText(product.getName());
-        productDesc.setText(product.getDescription());
-        productPicture.setImage(product.getPicture().getImage());
-
-        if(product.getPrice()==product.getCurrentPrice())
-        {productPrice.setText(String.valueOf(product.getPrice()));}
-        else productPrice.setText(String.valueOf(product.getCurrentPrice()));
-
-        if (product.isInStock()) {productStock.setText("En stock");}
-        else productStock.setText("Plus disponible");
-    }
+	public Button getBack() {
+		return this.back;
+	}
 }

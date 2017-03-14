@@ -10,8 +10,6 @@ public class ReceptionController {
 	@FXML
 	public Text openning, phone, email, floor, clue, desc, commentary;
 
-	@FXML
-
 	public void init(Information info) {
 		this.openning.textProperty().bind(Bindings.concat("Du ", info.getOpenDay(), " au ", info.getCloseDay(), " de ", info.getOpenHour(), info.getOpenMin(), " à ", info.getCloseHour(), info.getCloseMin()));
 		this.phone.textProperty().bind(Bindings.concat("Tél.: +33 78 27 39 ", info.getPhone()));

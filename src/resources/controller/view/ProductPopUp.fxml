@@ -12,37 +12,27 @@
             prefHeight="252.0" prefWidth="500.0" style="-fx-background-color: white;"
             xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controller.PopUpController">
-    <children>
-        <VBox prefHeight="252.0" prefWidth="500.0">
-            <children>
-                <Text fx:id="productTitle" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER"
-                      wrappingWidth="500.6708984375"/>
-                <HBox prefHeight="174.0" prefWidth="501.0">
-                    <children>
-                        <ImageView fx:id="productPicture" fitHeight="177.0" fitWidth="218.0" pickOnBounds="true"
-                                   preserveRatio="true"/>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                            <children>
-                                <Text fx:id="productDesc" strokeType="OUTSIDE" strokeWidth="0.0"
-                                      wrappingWidth="259.6708984375"/>
-                                <Text fx:id="productPrice" strokeType="OUTSIDE" strokeWidth="0.0"/>
-                                <HBox prefHeight="100.0" prefWidth="200.0">
-                                    <children>
-                                        <Text fx:id="productStock" strokeType="OUTSIDE" strokeWidth="0.0"/>
-                                        <ImageView fx:id="stockPicture" fitHeight="150.0" fitWidth="200.0"
-                                                   pickOnBounds="true" preserveRatio="true"/>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </children>
+    <VBox prefHeight="252.0" prefWidth="500.0">
+        <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER"
+              wrappingWidth="500.6708984375"/>
+        <HBox prefHeight="174.0" prefWidth="501.0">
+            <ImageView fx:id="picture" fitHeight="177.0" fitWidth="218.0" pickOnBounds="true"
+                       preserveRatio="true"/>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+                <Text fx:id="desc" strokeType="OUTSIDE" strokeWidth="0.0"
+                      wrappingWidth="259.6708984375"/>
+                <Text fx:id="price" strokeType="OUTSIDE" strokeWidth="0.0"/>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <Text fx:id="stock" strokeType="OUTSIDE" strokeWidth="0.0"/>
+                    <ImageView fx:id="stockPicture" fitHeight="150.0" fitWidth="200.0"
+                               pickOnBounds="true" preserveRatio="true"/>
                 </HBox>
-                <Button mnemonicParsing="false" text="Retour">
-                    <VBox.margin>
-                        <Insets left="225.0"/>
-                    </VBox.margin>
-                </Button>
-            </children>
-        </VBox>
-    </children>
+            </VBox>
+        </HBox>
+        <Button fx:id="back" mnemonicParsing="false" text="Retour">
+            <VBox.margin>
+                <Insets left="225.0"/>
+            </VBox.margin>
+        </Button>
+    </VBox>
 </AnchorPane>
