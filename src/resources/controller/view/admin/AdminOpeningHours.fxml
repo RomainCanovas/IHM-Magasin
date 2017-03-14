@@ -32,13 +32,13 @@
                         <ComboBox fx:id="opDay" layoutX="15.0" layoutY="33.0" prefWidth="130.0">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Lundi"/>
-                                    <String fx:value="Mardi"/>
-                                    <String fx:value="Mercredi"/>
-                                    <String fx:value="Jeudi"/>
-                                    <String fx:value="Vendredi"/>
-                                    <String fx:value="Samedi"/>
-                                    <String fx:value="Dimanche"/>
+                                    <String fx:value="Lun."/>
+                                    <String fx:value="Mar."/>
+                                    <String fx:value="Mer."/>
+                                    <String fx:value="Jeu."/>
+                                    <String fx:value="Ven."/>
+                                    <String fx:value="Sam."/>
+                                    <String fx:value="Dim."/>
                                 </FXCollections>
                             </items>
                             <HBox.margin>
@@ -53,13 +53,13 @@
                         <ComboBox fx:id="clDay" layoutX="15.0" layoutY="33.0" prefWidth="130.0">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Lundi"/>
-                                    <String fx:value="Mardi"/>
-                                    <String fx:value="Mercredi"/>
-                                    <String fx:value="Jeudi"/>
-                                    <String fx:value="Vendredi"/>
-                                    <String fx:value="Samedi"/>
-                                    <String fx:value="Dimanche"/>
+                                    <String fx:value="Lun."/>
+                                    <String fx:value="Mar."/>
+                                    <String fx:value="Mer."/>
+                                    <String fx:value="Jeu."/>
+                                    <String fx:value="Ven."/>
+                                    <String fx:value="Sam."/>
+                                    <String fx:value="Dim."/>
                                 </FXCollections>
                             </items>
                             <HBox.margin>
