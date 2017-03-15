@@ -79,6 +79,8 @@ public class AdminProductChoiceController implements Initializable {
         this.text.setText("%");
     }
 
+    
+    //// FIXME: 15/03/2017 
     void doOperation(List<Product> products) {
 
         if (this.button.getText().equals(this.changeOriginalPrice.getText()))
