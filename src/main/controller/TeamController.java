@@ -2,7 +2,6 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
@@ -19,8 +18,6 @@ public class TeamController implements Initializable {
 	private static final int MAX_COLUMN = 4;
 	@FXML
 	private GridPane gridPane;
-	@FXML
-	private ScrollPane scrollPane;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

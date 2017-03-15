@@ -116,7 +116,6 @@ public class ShopController implements Initializable {
     }
 
     public void actionCompany() {
-        //Todo rebalancer le gens sur la page de l'enseigne
     }
 
     public void actionTeam() {

@@ -92,6 +92,7 @@ public class AdminProductController implements Initializable {
 	}
 
 	public void newsSelection() {
+
 		this.reInit();
 
 		try {
@@ -147,7 +148,7 @@ public class AdminProductController implements Initializable {
 		this.setAdd = true;
 	}
 
-	public void searchCall() { //Fixme
+	public void searchCall() {
 		this.initProduct(
 				this.currentProducts.stream()
 						.filter(product -> product.getName().toUpperCase().contains(this.searchBar.getText().toUpperCase()))
