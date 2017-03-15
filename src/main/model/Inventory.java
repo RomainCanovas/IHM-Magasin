@@ -6,90 +6,101 @@ import java.util.stream.Collectors;
 
 public class Inventory {
 
-	private Map<String, List<Product>> products;
-	private LocalDate dateNews;
+    private Map<String, List<Product>> products;
+    private LocalDate dateNews;
 
-	public Inventory(Map<String, List<Product>> products) {
-		this.products = products;
-		this.dateNews = LocalDate.now();
-	}
+    public Inventory(Map<String, List<Product>> products) {
+        this.products = products;
+        this.dateNews = LocalDate.now();
+    }
 
-	public List<Product> onSale() {
+    public List<Product> onSale() {
 
-		List<Product> products = new ArrayList<>();
+        List<Product> products = new ArrayList<>();
 
-		for (List<Product> list : this.products.values())
-			products.addAll(list.stream().filter(product -> product.isOnSale() && product.getShow()).collect(Collectors.toList()));
+        for (List<Product> list : this.products.values())
+            products.addAll(list.stream().filter(product -> product.isOnSale() && product.getShow()).collect(Collectors.toList()));
 
-		return products;
-	}
+        return products;
+    }
 
-	public List<Product> isNew() {
+    public List<Product> isNew() {
 
-		List<Product> products = new ArrayList<>();
-
-
-		for (List<Product> list : this.products.values())
-			products.addAll(list.stream().filter(product -> product.getDate().isAfter(this.dateNews) && product.getShow()).collect(Collectors.toList()));
-
-		return products;
-	}
-
-	public Map<String, Product> getCategories() {
-		Map<String, Product> map = new HashMap<>();
-
-		for (Map.Entry<String, List<Product>> entry : this.products.entrySet())
-			if (!entry.getValue().stream().filter(Product::getShow).collect(Collectors.toList()).isEmpty())
-				map.put(entry.getKey(), entry.getValue().get(0));
+        List<Product> products = new ArrayList<>();
 
 
-		return map;
-	}
+        for (List<Product> list : this.products.values())
+            products.addAll(list.stream().filter(product -> product.getDate().isAfter(this.dateNews) && product.getShow()).collect(Collectors.toList()));
 
-	public List<Product> getCategory(String key) {
-		return this.products.get(key).stream().filter(Product::getShow).collect(Collectors.toList());
-	}
+        return products;
+    }
 
-	public List<Product> search(String name) {
+    public Map<String, Product> getCategories() {
+        Map<String, Product> map = new HashMap<>();
 
-		List<Product> products = new ArrayList<>();
+        for (Map.Entry<String, List<Product>> entry : this.products.entrySet())
+            if (!entry.getValue().stream().filter(Product::getShow).collect(Collectors.toList()).isEmpty())
+                map.put(entry.getKey(), entry.getValue().get(0));
 
-		for (List<Product> list : this.products.values())
-			products.addAll(list.stream().filter(product -> product.getName().toUpperCase().contains(name) && product.getShow()).collect(Collectors.toList()));
 
-		return products;
+        return map;
+    }
 
-	}
+    public Map<String, Product> getSubCategories() {
+        Map<String, Product> map = new HashMap<>();
 
-	public List<Product> getAll() {
+        for (Map.Entry<String, List<Product>> entry : this.products.entrySet())
+            if (!entry.getValue().stream().filter(Product::getShow).collect(Collectors.toList()).isEmpty())
+                map.put(entry.getKey(), entry.getValue().get(0));
 
-		List<Product> products = new ArrayList<>();
 
-		for (List<Product> list : this.products.values())
-			products.addAll(list);
+        return map;
+    }
 
-		return products;
-	}
+    public List<Product> getCategory(String key) {
+        return this.products.get(key).stream().filter(Product::getShow).collect(Collectors.toList());
+    }
 
-	public List<Product> getNotShown() {
-		List<Product> products = new ArrayList<>();
+    public List<Product> search(String name) {
 
-		for (List<Product> list : this.products.values())
-			products.addAll(list.stream().filter(product -> !product.getShow()).collect(Collectors.toList()));
+        List<Product> products = new ArrayList<>();
 
-		return products;
-	}
+        for (List<Product> list : this.products.values())
+            products.addAll(list.stream().filter(product -> product.getName().toUpperCase().contains(name) && product.getShow()).collect(Collectors.toList()));
 
-	public List<Product> getShown() {
-		List<Product> products = new ArrayList<>();
+        return products;
 
-		for (List<Product> list : this.products.values())
-			products.addAll(list.stream().filter(product -> product.getShow()).collect(Collectors.toList()));
+    }
 
-		return products;
-	}
+    public List<Product> getAll() {
 
-	public void setDate(LocalDate date) {
-		this.dateNews = date;
-	}
+        List<Product> products = new ArrayList<>();
+
+        for (List<Product> list : this.products.values())
+            products.addAll(list);
+
+        return products;
+    }
+
+    public List<Product> getNotShown() {
+        List<Product> products = new ArrayList<>();
+
+        for (List<Product> list : this.products.values())
+            products.addAll(list.stream().filter(product -> !product.getShow()).collect(Collectors.toList()));
+
+        return products;
+    }
+
+    public List<Product> getShown() {
+        List<Product> products = new ArrayList<>();
+
+        for (List<Product> list : this.products.values())
+            products.addAll(list.stream().filter(product -> product.getShow()).collect(Collectors.toList()));
+
+        return products;
+    }
+
+    public void setDate(LocalDate date) {
+        this.dateNews = date;
+    }
 }

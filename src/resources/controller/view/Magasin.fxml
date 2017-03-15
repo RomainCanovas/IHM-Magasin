@@ -13,13 +13,19 @@
             fx:controller="controller.ShopController">
     <HBox layoutY="305.0" prefHeight="50.0" prefWidth="930.0" AnchorPane.bottomAnchor="10.0"
           AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
-        <ToggleButton fx:id="reception" mnemonicParsing="false" onAction="#actionReception" prefHeight="50.0" prefWidth="155.0" text="Accueil"/>
-        <ToggleButton fx:id="promotions" mnemonicParsing="false" onAction="#actionSales" prefHeight="50.0" prefWidth="155.0" text="Promotions"/>
-        <ToggleButton fx:id="products" mnemonicParsing="false" onAction="#actionProducts" prefHeight="50.0" prefWidth="155.0"
-                text="Nos produits"/>
-        <ToggleButton fx:id="news" mnemonicParsing="false" onAction="#actionNews" prefHeight="50.0" prefWidth="155.0" text="Nouveautés"/>
-        <ToggleButton fx:id="company" mnemonicParsing="false" onAction="#actionCompany" prefHeight="50.0" prefWidth="155.0" text="Enseigne"/>
-        <ToggleButton fx:id="team" mnemonicParsing="false" onAction="#actionTeam" prefHeight="50.0" prefWidth="155.0" text="Notre équipe"/>
+        <ToggleButton fx:id="reception" mnemonicParsing="false" onAction="#actionReception" prefHeight="50.0"
+                      prefWidth="155.0" text="Accueil"/>
+        <ToggleButton fx:id="promotions" mnemonicParsing="false" onAction="#actionSales" prefHeight="50.0"
+                      prefWidth="155.0" text="Promotions"/>
+        <ToggleButton fx:id="products" mnemonicParsing="false" onAction="#actionProducts" prefHeight="50.0"
+                      prefWidth="155.0"
+                      text="Nos produits"/>
+        <ToggleButton fx:id="news" mnemonicParsing="false" onAction="#actionNews" prefHeight="50.0" prefWidth="155.0"
+                      text="Nouveautés"/>
+        <ToggleButton fx:id="company" mnemonicParsing="false" onAction="#actionCompany" prefHeight="50.0"
+                      prefWidth="155.0" text="Enseigne"/>
+        <ToggleButton fx:id="team" mnemonicParsing="false" onAction="#actionTeam" prefHeight="50.0" prefWidth="155.0"
+                      text="Notre équipe"/>
     </HBox>
     <AnchorPane fx:id="center" layoutX="74.0" layoutY="58.0" prefHeight="252.0" prefWidth="786.0"
                 AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0"
