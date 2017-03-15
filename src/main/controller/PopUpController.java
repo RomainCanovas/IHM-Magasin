@@ -14,8 +14,6 @@ public class PopUpController {
 	private Text title, desc, stock, price, priceSale;
 	@FXML
 	private ImageView picture;
-	@FXML
-	private ImageView stockPicture;
 
 	private Product product;
 
