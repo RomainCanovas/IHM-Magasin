@@ -18,9 +18,9 @@ public class TeamController implements Initializable {
 
 	private static final int MAX_COLUMN = 4;
 	@FXML
-	public GridPane gridPane;
+	private GridPane gridPane;
 	@FXML
-	public ScrollPane scrollPane;
+	private ScrollPane scrollPane;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

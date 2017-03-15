@@ -23,11 +23,11 @@ public class ProductController implements Initializable {
     private static final int MAX_COLUMN = 8;
 
     @FXML
-    public GridPane gridPane;
+    private GridPane gridPane;
     @FXML
-    public Text heading;
+    private Text heading;
     @FXML
-    public AnchorPane center;
+    private AnchorPane center;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

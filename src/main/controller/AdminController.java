@@ -11,7 +11,7 @@ import java.io.IOException;
 public class AdminController {
 
 	@FXML
-	public AnchorPane center;
+	private AnchorPane center;
 
 	private Shop shop;
 

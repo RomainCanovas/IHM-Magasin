@@ -8,7 +8,7 @@ import model.Information;
 public class ReceptionController {
 
 	@FXML
-	public Text openning, phone, email, floor, clue, desc, commentary;
+	private Text openning, phone, email, floor, clue, desc, commentary;
 
 	public void init(Information info) {
 		this.openning.textProperty().bind(Bindings.concat("Du ", info.openDayProperty(), " au ", info.closeDayProperty(), " de ", info.openHourProperty(), info.openMinProperty(), " à ", info.closeHourProperty(), info.closeMinProperty()));

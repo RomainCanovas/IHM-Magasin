@@ -80,7 +80,7 @@ public class AdminProductChoiceController implements Initializable {
     }
 
     
-    //// FIXME: 15/03/2017 
+    //// FIXME: 15/03/2017
     void doOperation(List<Product> products) {
 
         if (this.button.getText().equals(this.changeOriginalPrice.getText()))

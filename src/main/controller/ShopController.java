@@ -20,9 +20,9 @@ import java.util.*;
 public class ShopController implements Initializable {
 
     @FXML
-    public TextField search;
+    private TextField search;
     @FXML
-    public ToggleButton reception, company, promotions, products, news, team;
+    private ToggleButton reception, company, promotions, products, news, team;
     @FXML
     private AnchorPane center;
     private Shop shop;
