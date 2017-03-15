@@ -32,7 +32,7 @@
                         <Insets left="5.0" />
                     </VBox.margin>
                 </Text>
-                <Text fx:id="commentary" strokeType="OUTSIDE" strokeWidth="0.0" />
+                <Text fx:id="commentary" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="249.0" />
             </VBox>
             <VBox prefHeight="90.0" prefWidth="310.0">
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CULTURE - MULTIMÉDIA">
