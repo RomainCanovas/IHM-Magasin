@@ -17,7 +17,7 @@
                     <VBox.margin>
                         <Insets left="95.0" />
                     </VBox.margin>
-                    <Image url="@../../controller/image/horloge.png" />
+                    <Image url="@image/horloge.png" />
                 </ImageView>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HORAIRES D'OUVERTURE">
                     <VBox.margin>
@@ -60,7 +60,7 @@
                     <VBox.margin>
                         <Insets left="85.0" right="5.0" top="5.0" />
                     </VBox.margin>
-                    <Image url="@../../controller/image/contact.png" />
+                    <Image url="@image/contact.png" />
                 </ImageView>
                 <Text fx:id="phone" strokeType="OUTSIDE" strokeWidth="0.0">
                     <VBox.margin>
@@ -80,7 +80,7 @@
                     <VBox.margin>
                         <Insets left="70.0" top="20.0" />
                     </VBox.margin>
-                    <Image url="@../../controller/image/lieu.png" />
+                    <Image url="@image/lieu.png" />
                 </ImageView>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ACCÈS">
                     <VBox.margin>
@@ -119,7 +119,7 @@
                 <HBox.margin>
                     <Insets bottom="2.0" left="10.0" />
                 </HBox.margin>
-                <Image url="@../../controller/image/vitrine.jpg" />
+                <Image url="@image/vitrine.jpg" />
             </ImageView>
         </HBox>
     </VBox>

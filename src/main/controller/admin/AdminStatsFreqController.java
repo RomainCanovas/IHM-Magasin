@@ -1,4 +1,4 @@
-package controller;
+package controller.admin;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,7 +39,7 @@ public class AdminStatsFreqController {
 	public void actionAdmin() {
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminstats.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("adminstats.fxml"));
 			Parent pane = loader.load();
 			((AdminStatsController) loader.getController()).init(this.shop);
 			((Pane) this.center.getParent()).getChildren().set(0, pane);

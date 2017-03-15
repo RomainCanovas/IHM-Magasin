@@ -1,10 +1,9 @@
-package controller;
+package controller.admin;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import model.Shop;
@@ -25,7 +24,7 @@ public class AdminDescriptionController {
 		desc.setText(this.shop.getInfo().getDesc());
 	}
 
-	public void check(KeyEvent keyEvent) {
+	public void check() {
 		if (desc.getLength() >= 301) {
 			desc.setText(desc.getText().substring(0, 300));
 		}
@@ -43,7 +42,7 @@ public class AdminDescriptionController {
 
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("admin.fxml"));
 			Parent pane = loader.load();
 			((AdminController) loader.getController()).init(this.shop);
 			((Pane) this.center.getParent()).getChildren().set(0, pane);

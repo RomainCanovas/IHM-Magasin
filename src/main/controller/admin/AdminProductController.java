@@ -1,5 +1,6 @@
-package controller;
+package controller.admin;
 
+import controller.Zone;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,29 +30,16 @@ public class AdminProductController implements Initializable {
 	@FXML
 	public TextField searchBar;
 	@FXML
-	private AnchorPane center;
+	private AnchorPane center, tricky;
 	@FXML
-	private AnchorPane tricky;
-	@FXML
-	private RadioButton add;
-	@FXML
-	private RadioButton news;
-	@FXML
-	private RadioButton modification;
-	@FXML
-	private RadioButton remove;
+	private RadioButton add, news, modification, remove;
 	@FXML
 	private GridPane gridPane;
 	private AdminProductChoiceController trickyController;
 	private AdminNewsController dateController;
-	private boolean setModification;
-	private boolean setRemove;
-	private boolean setAdd;
-	private boolean setNews; //Todo
-
+	private boolean setModification, setRemove, setAdd, setNews;
 	private Shop shop;
-	private List<Product> currentProducts;
-	private List<Product> displayedProducts;
+	private List<Product> currentProducts, displayedProducts;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -108,7 +96,7 @@ public class AdminProductController implements Initializable {
 
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminNews.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminNews.fxml"));
 			Parent pane = loader.load();
 			this.dateController = loader.getController();
 			this.tricky.getChildren().add(pane);
@@ -128,7 +116,7 @@ public class AdminProductController implements Initializable {
 
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/TrickyController.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("TrickyController.fxml"));
 			Parent pane = loader.load();
 			this.trickyController = loader.getController();
 			this.tricky.getChildren().add(pane);
@@ -159,7 +147,7 @@ public class AdminProductController implements Initializable {
 		this.setAdd = true;
 	}
 
-	public void searchCall() {
+	public void searchCall() { //Fixme
 		this.initProduct(
 				this.currentProducts.stream()
 						.filter(product -> product.getName().toUpperCase().contains(this.searchBar.getText().toUpperCase()))
@@ -215,7 +203,7 @@ public class AdminProductController implements Initializable {
 
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("admin.fxml"));
 			Parent pane = loader.load();
 			((AdminController) loader.getController()).init(this.shop);
 			((Pane) this.center.getParent()).getChildren().set(0, pane);

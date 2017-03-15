@@ -1,9 +1,8 @@
-package controller;
+package controller.admin;
 
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.ToggleButton;
@@ -12,13 +11,8 @@ import javafx.scene.layout.AnchorPane;
 import model.Shop;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-/**
- * Created by canor on 13/03/2017.
- */
-public class AdminStatsPSController implements Initializable {
+public class AdminStatsPSController {
 
     @FXML
     private AnchorPane center;
@@ -42,13 +36,9 @@ public class AdminStatsPSController implements Initializable {
         display();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-    }
-
     public void actionAdmin() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminstats.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("adminstats.fxml"));
             Parent pane = loader.load();
             ((AdminStatsController) loader.getController()).init(this.shop);
             this.center.getChildren().set(0, pane);

@@ -1,4 +1,4 @@
-package controller;
+package controller.admin;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +22,7 @@ public class AdminController {
 	public void actionAdminAccess() {
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminAccess.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminAccess.fxml"));
 			Parent pane = loader.load();
 			((AdminAccesController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);
@@ -35,7 +35,7 @@ public class AdminController {
 	public void actionAdminDescription() {
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminDescription.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminDescription.fxml"));
 			Parent pane = loader.load();
 			((AdminDescriptionController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);
@@ -48,7 +48,7 @@ public class AdminController {
 	public void actionAdminOpening() {
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminOpeningHours.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminOpeningHours.fxml"));
 			Parent pane = loader.load();
 			((AdminOpeningController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);
@@ -60,7 +60,7 @@ public class AdminController {
 
 	public void actionAdminContact() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminContact.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminContact.fxml"));
 			Parent pane = loader.load();
 			((AdminContactController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);
@@ -73,7 +73,7 @@ public class AdminController {
 	public void actionStats() {
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminStats.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminStats.fxml"));
 			Parent pane = loader.load();
 			((AdminStatsController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);
@@ -87,7 +87,7 @@ public class AdminController {
 
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminProduct.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminProduct.fxml"));
 			Parent pane = loader.load();
 			((AdminProductController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);

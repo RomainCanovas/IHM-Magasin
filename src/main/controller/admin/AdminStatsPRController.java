@@ -1,4 +1,4 @@
-package controller;
+package controller.admin;
 
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
@@ -21,7 +21,6 @@ public class AdminStatsPRController {
 	private ToggleButton oct, nov, dec, jan, fev, mar;
 	@FXML
 	private PieChart chart;
-
 	private Shop shop;
 
 	public void init(Shop shop) {
@@ -39,7 +38,7 @@ public class AdminStatsPRController {
 
 	public void actionAdmin() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminstats.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("adminstats.fxml"));
 			Parent pane = loader.load();
 			((AdminStatsController) loader.getController()).init(this.shop);
 			((Pane) this.center.getParent()).getChildren().set(0, pane);

@@ -1,11 +1,10 @@
-package controller;
+package controller.admin;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import model.Information;
@@ -56,7 +55,7 @@ public class AdminOpeningController {
 
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("admin.fxml"));
             Parent pane = loader.load();
             ((AdminController) loader.getController()).init(this.shop);
             ((Pane) this.center.getParent()).getChildren().set(0, pane);
@@ -68,7 +67,7 @@ public class AdminOpeningController {
         }
     }
 
-    public void check(KeyEvent keyEvent) {
+    public void check() {
         if (commentary.getLength() >= 38) {
             commentary.setText(commentary.getText().substring(0, 37));
         }

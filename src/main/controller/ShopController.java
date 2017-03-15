@@ -1,5 +1,6 @@
 package controller;
 
+import controller.admin.AdminController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -49,7 +50,7 @@ public class ShopController implements Initializable {
 
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Accueil.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Accueil.fxml"));
             Parent pane = loader.load();
             ((ReceptionController) loader.getController()).init(this.shop.getInfo());
 
@@ -69,7 +70,7 @@ public class ShopController implements Initializable {
 
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Produit.fxml"));
             Parent pane = loader.load();
             ((ProductController) loader.getController()).init(this.shop.getInventory(), "PROMOTIONS");
             this.center.getChildren().set(0, pane);
@@ -85,7 +86,7 @@ public class ShopController implements Initializable {
 
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Produit.fxml"));
             Parent pane = loader.load();
             ((ProductController) loader.getController()).init(this.shop.getInventory(), "CATEGORIES");
             this.center.getChildren().set(0, pane);
@@ -101,7 +102,7 @@ public class ShopController implements Initializable {
     public void actionNews() {
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Produit.fxml"));
             Parent pane = loader.load();
             ((ProductController) loader.getController()).init(this.shop.getInventory(), "NOUVEAUTES");
             this.center.getChildren().set(0, pane);
@@ -120,7 +121,7 @@ public class ShopController implements Initializable {
 
     public void actionTeam() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Equipe.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Equipe.fxml"));
             Parent pane = loader.load();
             ((TeamController) loader.getController()).initEmployee(this.shop.getTeam());
             this.center.getChildren().set(0, pane);
@@ -134,7 +135,7 @@ public class ShopController implements Initializable {
 
             if (event.getEventType() == KeyEvent.KEY_PRESSED && event.getCode() == KeyCode.A) {
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("admin/admin.fxml"));
                 Parent pane = loader.load();
                 ((AdminController) loader.getController()).init(this.shop);
 
@@ -213,7 +214,7 @@ public class ShopController implements Initializable {
 
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Produit.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Produit.fxml"));
             Parent pane = loader.load();
             ((ProductController) loader.getController()).init(this.shop.getInventory(), this.search.getText().toUpperCase());
             this.center.getChildren().set(0, pane);

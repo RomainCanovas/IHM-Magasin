@@ -32,7 +32,7 @@
                 AnchorPane.topAnchor="75.0"/>
     <ImageView fitHeight="50.0" fitWidth="260.0" layoutX="18.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true"
                AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="10.0">
-        <Image url="@../../controller/image/mf_logo_final.jpg"/>
+        <Image url="@image/mf_logo_final.jpg"/>
     </ImageView>
     <Text layoutX="47.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE place to be,"/>
     <Text layoutX="113.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE place to have"/>

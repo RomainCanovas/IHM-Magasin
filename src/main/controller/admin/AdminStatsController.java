@@ -1,4 +1,4 @@
-package controller;
+package controller.admin;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +24,7 @@ public class AdminStatsController{
 
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/admin.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("admin.fxml"));
 			Parent pane = loader.load();
 			((AdminController) loader.getController()).init(this.shop);
 			((Pane) this.center.getParent()).getChildren().set(0, pane);
@@ -38,7 +38,7 @@ public class AdminStatsController{
 
 	public void actionPS() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminstatsPS.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("adminstatsPS.fxml"));
 			Parent pane = loader.load();
 			((AdminStatsPSController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);
@@ -49,7 +49,7 @@ public class AdminStatsController{
 
 	public void actionPR() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminstatsPR.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("adminstatsPR.fxml"));
 			Parent pane = loader.load();
 			((AdminStatsPRController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);
@@ -61,7 +61,7 @@ public class AdminStatsController{
 	public void actionCA() {
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/adminStatsCA.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("adminStatsCA.fxml"));
 			Parent pane = loader.load();
 			((AdminStatsCAController) loader.getController()).init(this.shop);
 
@@ -76,7 +76,7 @@ public class AdminStatsController{
 
 	public void actionFreq() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/admin/AdminStatsFrequentation.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminStatsFrequentation.fxml"));
 			Parent pane = loader.load();
 			((AdminStatsFreqController) loader.getController()).init(this.shop);
 			this.center.getChildren().set(0, pane);

@@ -10,11 +10,11 @@
 
 <AnchorPane fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.111"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminStatsPSController">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.admin.AdminStatsPRController">
     <children>
         <VBox prefHeight="252.0" prefWidth="786.0">
             <children>
-                <PieChart fx:id="chart" title="Produits soldés/non soldés"/>
+                <PieChart fx:id="chart" title="Produit renvoyés"/>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <Button mnemonicParsing="false" onAction="#actionAdmin" prefHeight="40.0" prefWidth="70.0"
@@ -23,20 +23,20 @@
                                 <Insets bottom="5.0" left="5.0" top="5.0"/>
                             </HBox.margin>
                         </Button>
-                        <ToggleButton fx:id="oct" mnemonicParsing="false" prefHeight="36.0" prefWidth="80.0"
-                                      text="Octobre" onAction="#display">
+                        <ToggleButton fx:id="oct" mnemonicParsing="false" onAction="#display" prefHeight="36.0"
+                                      prefWidth="80.0" text="Octobre">
                             <HBox.margin>
                                 <Insets bottom="5.0" left="60.0" top="5.0"/>
                             </HBox.margin>
                         </ToggleButton>
-                        <ToggleButton fx:id="nov" mnemonicParsing="false" prefHeight="36.0" prefWidth="99.0"
-                                      text="Novembre" onAction="#display">
+                        <ToggleButton fx:id="nov" mnemonicParsing="false" onAction="#display" prefHeight="36.0"
+                                      prefWidth="99.0" text="Novembre">
                             <HBox.margin>
                                 <Insets bottom="5.0" left="10.0" top="5.0"/>
                             </HBox.margin>
                         </ToggleButton>
-                        <ToggleButton fx:id="dec" mnemonicParsing="false" prefHeight="36.0" prefWidth="100.0"
-                                      text="Décembre" onAction="#display">
+                        <ToggleButton fx:id="dec" mnemonicParsing="false" onAction="#display" prefHeight="36.0"
+                                      prefWidth="100.0" text="Décembre">
                             <HBox.margin>
                                 <Insets bottom="5.0" left="10.0" top="5.0"/>
                             </HBox.margin>

@@ -1,4 +1,4 @@
-package controller;
+package controller.admin;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -79,7 +79,6 @@ public class AdminProductChoiceController implements Initializable {
         this.text.setText("%");
     }
 
-    
     //// FIXME: 15/03/2017
     void doOperation(List<Product> products) {
 

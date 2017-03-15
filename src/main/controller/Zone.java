@@ -18,7 +18,7 @@ public class Zone extends Parent {
 
 	private String name;
 
-	Zone(String name, Color color, ImageView picture, int maxSize) {
+	public Zone(String name, Color color, ImageView picture, int maxSize) {
 
 		this.name = name;
 		this.prefHeight(maxSize);
@@ -70,7 +70,7 @@ public class Zone extends Parent {
 
 		try {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/ProductPopUp.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductPopUp.fxml"));
 			pane = loader.load();
 			controller = loader.getController();
 			controller.init(p);
