@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Text?>
 <?scenebuilder-stylesheet theme.css?>
 
-<AnchorPane onKeyPressed="#keyListenerAdmin" prefHeight="405.0" prefWidth="930.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShopController">
+<AnchorPane onKeyPressed="#keyListenerAdmin" prefHeight="405.0" prefWidth="930.0" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShopController">
     <HBox layoutY="305.0" prefHeight="50.0" prefWidth="930.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
         <ToggleButton fx:id="reception" mnemonicParsing="false" onAction="#actionReception" prefHeight="50.0" prefWidth="155.0" text="Accueil" />
         <ToggleButton fx:id="promotions" mnemonicParsing="false" onAction="#actionSales" prefHeight="50.0" prefWidth="155.0" text="Promotions" />
@@ -18,7 +18,7 @@
         <ToggleButton fx:id="company" mnemonicParsing="false" onAction="#actionCompany" prefHeight="50.0" prefWidth="155.0" text="Enseigne" />
         <ToggleButton fx:id="team" mnemonicParsing="false" onAction="#actionTeam" prefHeight="50.0" prefWidth="155.0" text="Notre équipe" />
     </HBox>
-    <AnchorPane fx:id="center" layoutX="74.0" layoutY="58.0" prefHeight="252.0" prefWidth="786.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="75.0" />
+    <AnchorPane fx:id="center" layoutX="74.0" layoutY="58.0" prefHeight="252.0" prefWidth="786.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="75.0" />
     <ImageView fitHeight="50.0" fitWidth="260.0" layoutX="18.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="10.0">
         <Image url="@image/mf_logo_final.jpg" />
     </ImageView>

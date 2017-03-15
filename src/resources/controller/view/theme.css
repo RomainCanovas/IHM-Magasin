@@ -1,143 +1,186 @@
-.background {
-    -fx-background-color: #1d1d1d;
+.root{
+	-fx-background-color: #f0f0f0;
 }
 
-.label {
-    -fx-font-size: 11pt;
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-text-fill: white;
-    -fx-opacity: 0.6;
+#popup{
+	-fx-border-color: grey;
+	-fx-border-width: 1 0 0 0;
+	-fx-background-color: #f0f0f0;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }
 
-.label-bright {
-    -fx-font-size: 11pt;
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-text-fill: white;
-    -fx-opacity: 1;
+#popupadmin
+{
+	-fx-border-color: grey;
+	-fx-border-width: 1 0 0 0;
+	-fx-background-color: #f0f0f0;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }
 
-.label-header {
-    -fx-font-size: 32pt;
-    -fx-font-family: "Segoe UI Light";
-    -fx-text-fill: white;
-    -fx-opacity: 1;
+#leftMenu{
+	-fx-padding: 10 0 0 0;
+	-fx-border-color: grey;
+	-fx-border-width: 0 1 0 0;
+	-fx-background-color: transparent;
 }
 
-.table-view {
-    -fx-base: #1d1d1d;
-    -fx-control-inner-background: #1d1d1d;
-    -fx-background-color: #1d1d1d;
-    -fx-table-cell-border-color: transparent;
-    -fx-table-header-border-color: transparent;
-    -fx-padding: 5;
+.menuTitre{
+	-fx-font-size:16px;
+	-fx-text-fill:black;
+	-fx-padding:0 0 0 10;
 }
 
-.table-view .column-header-background {
-    -fx-background-color: transparent;
+.menuItem{
+	-fx-font-size:16px;
+	-fx-font-weight:bold;
+	-fx-padding:0 0 0 10;
+	-fx-text-fill:grey;
 }
 
-.table-view .column-header, .table-view .filler {
-    -fx-size: 35;
-    -fx-border-width: 0 0 1 0;
-    -fx-background-color: transparent;
-    -fx-border-color:
-        transparent
-        transparent
-        derive(-fx-base, 80%)
-        transparent;
-    -fx-border-insets: 0 10 1 0;
+.menuItem:hover{
+	-fx-text-fill:black;
 }
 
-.table-view .column-header .label {
-    -fx-font-size: 20pt;
-    -fx-font-family: "Segoe UI Light";
-    -fx-text-fill: white;
-    -fx-alignment: center-left;
-    -fx-opacity: 1;
+#navBar .label {
+	-fx-background-color: transparent;
+	-fx-font-size:14px;
+	-fx-font-weight:bold;
 }
 
-.table-view:focused .table-row-cell:filled:focused:selected {
-    -fx-background-color: -fx-focus-color;
+#navBar .label:hover {
+	-fx-background-color: #086788;
+	-fx-text-fill: white;
 }
 
-.split-pane:horizontal > .split-pane-divider {
-    -fx-border-color: transparent #1d1d1d transparent #1d1d1d;
-    -fx-background-color: transparent, derive(#1d1d1d,20%);
+#titre{
+	-fx-font-size:33px;
+	-fx-alignment:center;
 }
 
-.split-pane {
-    -fx-padding: 1 0 0 0;
+.tiled-pane{
+	-fx-background-color: transparent;
 }
 
-.menu-bar {
-    -fx-background-color: derive(#1d1d1d,20%);
+#container{
+	-fx-padding: 10 0 0 0;
 }
 
-.context-menu {
-    -fx-background-color: derive(#1d1d1d,50%);
+.itemTitre{
+	-fx-font-size:15px;
+	-fx-alignment:center;
+	-fx-text-fill:grey;
 }
 
-.menu-bar .label {
-    -fx-font-size: 14pt;
-    -fx-font-family: "Segoe UI Light";
-    -fx-text-fill: white;
-    -fx-opacity: 0.9;
+.itemPrize{
+	-fx-font-size:15px;
+	-fx-alignment:center;
+	-fx-text-fill:black;
 }
 
-.menu .left-container {
-    -fx-background-color: black;
+.item{
+	-fx-background-color: #FAF6F4;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }
 
-.text-field {
-    -fx-font-size: 12pt;
-    -fx-font-family: "Segoe UI Semibold";
+.item:hover{
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 0, 0, 0, 0);
 }
 
-/*
- * Metro style Push Button
- * Author: Pedro Duque Vieira
- * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
- */
-.button {
-    -fx-padding: 5 22 5 22;
-    -fx-border-color: #e2e2e2;
-    -fx-border-width: 2;
-    -fx-background-radius: 0;
-    -fx-background-color: #1d1d1d;
-    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-    -fx-font-size: 11pt;
-    -fx-text-fill: #d8d8d8;
-    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+.scroll-pane > .viewport{
+	-fx-background-color: transparent;
 }
 
-.button:hover {
-    -fx-background-color: #3a3a3a;
+.scroll-pane{
+	-fx-background-color: transparent;
 }
 
-.button:pressed, .button:default:hover:pressed {
-  -fx-background-color: white;
-  -fx-text-fill: #1d1d1d;
+.scroll-pane > .scroll-bar{
+	-fx-background-color: transparent;
 }
 
-.button:focused {
-    -fx-border-color: white, white;
-    -fx-border-width: 1, 1;
-    -fx-border-style: solid, segments(1, 1);
-    -fx-border-radius: 0, 0;
-    -fx-border-insets: 1 1 1 1, 0;
+#pubDes{
+	-fx-font-size:14px;
+	-fx-text-alignment: center;
 }
 
-.button:disabled, .button:default:disabled {
-    -fx-opacity: 0.4;
-    -fx-background-color: #1d1d1d;
-    -fx-text-fill: white;
+#prevPub{
+	-fx-image: url(../images/enseigne/prev.png);
 }
 
-.button:default {
-    -fx-background-color: -fx-focus-color;
-    -fx-text-fill: #ffffff;
+#prevPub:hover{
+	-fx-image: url(../images/enseigne/prev_hover.png);
 }
 
-.button:default:hover {
-    -fx-background-color: derive(-fx-focus-color,30%);
+#nextPub{
+	-fx-image: url(../images/enseigne/next.png);
+}
+
+#nextPub:hover{
+	-fx-image: url(../images/enseigne/next_hover.png);
+}
+
+.pointPub{
+	-fx-image: url(../images/enseigne/point.png);
+}
+
+.pointPub:hover{
+	-fx-image: url(../images/enseigne/point_hover.png);
+}
+
+#moreInfo{
+	-fx-font-size:16px;
+	-fx-alignment:center;
+	-fx-text-fill:black;
+	-fx-border-color: grey;
+	-fx-border-width: 1 0 0 0;
+}
+
+.textZone{
+	-fx-opacity:1.0;
+	-fx-border-radius:0px;
+	-fx-border-width: 0 0 0 0;
+	-fx-font-size:13px;
+	-fx-text-fill:black;
+	-fx-hbar-policy: never;
+	-fx-background-color: transparent;
+}
+
+#infoZoneReservation{
+	-fx-opacity:1.0;
+	-fx-border-radius:0px;
+	-fx-border-width: 0 0 0 0;
+	-fx-font-size:11px;
+	-fx-text-fill:black;
+	-fx-hbar-policy: never;
+	-fx-background-color: transparent;
+}
+
+.overlayPane{
+	-fx-background-color: #f0f0f0;
+	-fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
+}
+
+#titreOverlay{
+	-fx-font-size: 14px;
+}
+
+.titreLabel{
+	-fx-font-size:16px;
+	-fx-alignment:center;
+	-fx-text-fill:black;
+	-fx-border-color: grey;
+	-fx-border-width: 1 0 1 0;
+}
+
+#description:disabled{
+	-fx-opacity:1.0;
+	-fx-border-radius:0px;
+	-fx-background-color: #f0f0f0;
+	-fx-border-width: 0 0 0 0;
+	-fx-font-size:13px;
+	-fx-text-fill:black;
+}
+
+.text-area .scroll-bar:vertical:disabled {
+	-fx-opacity: 0;
 }
