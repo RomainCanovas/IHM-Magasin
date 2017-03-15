@@ -6,13 +6,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane id="popup" fx:id="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PopUpController">
     <VBox prefHeight="252.0" prefWidth="500.0">
-        <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="500.6708984375" />
+        <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="500.6708984375">
+         <font>
+            <Font name="Britannic Bold" size="26.0" />
+         </font></Text>
         <HBox prefHeight="174.0" prefWidth="501.0">
-            <ImageView fx:id="picture" fitHeight="177.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="picture" fitHeight="177.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin></ImageView>
             <VBox prefHeight="200.0" prefWidth="100.0">
                 <Text fx:id="desc" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="259.6708984375">
                <VBox.margin>

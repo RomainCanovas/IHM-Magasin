@@ -33,36 +33,6 @@
 	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }
 
-#leftMenu{
-	-fx-padding: 10 0 0 0;
-	-fx-border-color: grey;
-	-fx-border-width: 0 1 0 0;
-	-fx-background-color: transparent;
-}
-
-.menuTitre{
-	-fx-font-size:16px;
-	-fx-text-fill:black;
-	-fx-padding:0 0 0 10;
-}
-
-.menuItem{
-	-fx-font-size:16px;
-	-fx-font-weight:bold;
-	-fx-padding:0 0 0 10;
-	-fx-text-fill:grey;
-}
-
-.menuItem:hover{
-	-fx-text-fill:black;
-}
-
-#navBar .label {
-	-fx-background-color: transparent;
-	-fx-font-size:14px;
-	-fx-font-weight:bold;
-}
-
 .toggle-button {
     -fx-text-fill: black;
     -fx-base: transparent;
@@ -213,6 +183,36 @@
 	-fx-border-width: 0 0 0 0;
 	-fx-font-size:13px;
 	-fx-text-fill:black;
+}
+
+#leftMenu{
+	-fx-padding: 10 0 0 0;
+	-fx-border-color: grey;
+	-fx-border-width: 0 1 0 0;
+	-fx-background-color: transparent;
+}
+
+.menuTitre{
+	-fx-font-size:16px;
+	-fx-text-fill:black;
+	-fx-padding:0 0 0 10;
+}
+
+.menuItem{
+	-fx-font-size:16px;
+	-fx-font-weight:bold;
+	-fx-padding:0 0 0 10;
+	-fx-text-fill:grey;
+}
+
+.menuItem:hover{
+	-fx-text-fill:black;
+}
+
+#navBar .label {
+	-fx-background-color: transparent;
+	-fx-font-size:14px;
+	-fx-font-weight:bold;
 }
 
 .text-area .scroll-bar:vertical:disabled {
