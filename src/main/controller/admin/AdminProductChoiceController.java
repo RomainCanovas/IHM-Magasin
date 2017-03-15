@@ -83,19 +83,18 @@ public class AdminProductChoiceController implements Initializable {
 
         if (this.button.getText().equals(this.changeOriginalPrice.getText()))
             for (Product product : products) {
-                double d = ((int) ((slider.getValue()) * 100)) / 100.;
-                product.setPrice(d);
+                product.setPrice(Double.parseDouble(textField.getText()));
             }
 
         if (this.button.getText().equals(this.salesCurrent.getText()))
             for (Product product : products) {
-                double d = ((int) ((product.getCurrentPrice() * (1-slider.getValue()) / 100) * 100)) / 100.;
+                double d = ((int) ((product.getCurrentPrice() * (100-Double.parseDouble(textField.getText())) / 100) * 100)) / 100.;
                 product.setCurrentPrice(d);
             }
 
         if (this.button.getText().equals(this.salesOriginal.getText()))
             for (Product product : products) {
-                double d = ((int) ((product.getPrice() * (1-slider.getValue()) / 100) * 100)) / 100.;
+                double d = ((int) ((product.getPrice() * (100-Double.parseDouble(textField.getText())) / 100) * 100)) / 100.;
                 product.setCurrentPrice(d);
             }
 

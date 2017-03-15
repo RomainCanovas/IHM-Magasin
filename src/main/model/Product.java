@@ -64,6 +64,7 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+        this.currentPrice = price;
     }
 
     public void setCurrentPrice(double price) {
