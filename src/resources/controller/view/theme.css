@@ -63,6 +63,24 @@
 	-fx-font-weight:bold;
 }
 
+.toggle-button {
+    -fx-text-fill: black;
+    -fx-base: transparent;
+    -fx-background: transparent;
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+    -fx-effect: null;
+}
+
+.toggle-button:selected {
+    -fx-text-fill: black;
+    -fx-base: transparent;
+    -fx-background: transparent;
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+    -fx-effect: null;
+}
+
 #navBar .label:hover {
 	-fx-background-color: #086788;
 	-fx-text-fill: white;
