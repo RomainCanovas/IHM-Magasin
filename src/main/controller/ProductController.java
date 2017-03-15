@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 public class ProductController implements Initializable {
 
 	private static final int MAX_SIZE = 95;
-	private static final int MAX_COLUMN = 8;
+	private static final int MAX_COLUMN = 7;
 
 	@FXML
 	private GridPane gridPane;
@@ -28,7 +28,7 @@ public class ProductController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		this.gridPane.setHgap(2);
+		this.gridPane.setHgap(15);
 		this.gridPane.setVgap(2);
 	}
 

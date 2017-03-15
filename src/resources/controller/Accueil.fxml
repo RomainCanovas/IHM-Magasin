@@ -9,8 +9,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReceptionController">
-    <VBox prefHeight="252.0" prefWidth="786.0">
+<AnchorPane id="accueil" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="786.0" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReceptionController">
+    <VBox prefHeight="252.0" prefWidth="786.0" style="-fx-background-color: white;">
         <HBox prefHeight="90.0" prefWidth="786.0" style="-fx-background-color: white;">
             <VBox prefHeight="96.0" prefWidth="290.0">
                 <ImageView fitHeight="40.0" fitWidth="40.0">
@@ -23,33 +23,33 @@
                     <VBox.margin>
                         <Insets left="35.0" />
                     </VBox.margin>
-               <font>
-                  <Font name="Britannic Bold" size="16.0" />
-               </font>
+                    <font>
+                        <Font name="Britannic Bold" size="16.0" />
+                    </font>
                 </Text>
                 <Text fx:id="openning" strokeType="OUTSIDE" strokeWidth="0.0">
                     <VBox.margin>
                         <Insets left="5.0" />
                     </VBox.margin>
                 </Text>
-            <Text fx:id="commentary" strokeType="OUTSIDE" strokeWidth="0.0" />
+                <Text fx:id="commentary" strokeType="OUTSIDE" strokeWidth="0.0" />
             </VBox>
             <VBox prefHeight="90.0" prefWidth="310.0">
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CULTURE - MULTIMÉDIA">
                     <VBox.margin>
                         <Insets left="45.0" top="10.0" />
                     </VBox.margin>
-               <font>
-                  <Font name="Britannic Bold" size="24.0" />
-               </font>
+                    <font>
+                        <Font name="Britannic Bold" size="24.0" />
+                    </font>
                 </Text>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DÉVELOPPEMENT PERSONNEL">
                     <VBox.margin>
                         <Insets left="20.0" top="10.0" />
                     </VBox.margin>
-               <font>
-                  <Font name="Britannic Bold" size="24.0" />
-               </font>
+                    <font>
+                        <Font name="Britannic Bold" size="24.0" />
+                    </font>
                 </Text>
             </VBox>
             <VBox prefHeight="96.0" prefWidth="231.0">
@@ -75,7 +75,7 @@
             </VBox>
         </HBox>
         <HBox prefHeight="162.0" prefWidth="786.0" style="-fx-background-color: white;">
-            <VBox prefHeight="162.0" prefWidth="291.0">
+            <VBox prefHeight="162.0" prefWidth="291.0" style="-fx-background-color: white;">
                 <ImageView fitHeight="50.0" fitWidth="50.0">
                     <VBox.margin>
                         <Insets left="70.0" top="20.0" />
@@ -86,9 +86,9 @@
                     <VBox.margin>
                         <Insets left="72.0" />
                     </VBox.margin>
-               <font>
-                  <Font name="Britannic Bold" size="16.0" />
-               </font>
+                    <font>
+                        <Font name="Britannic Bold" size="16.0" />
+                    </font>
                 </Text>
                 <Text fx:id="floor" strokeType="OUTSIDE" strokeWidth="0.0">
                     <VBox.margin>
@@ -100,18 +100,18 @@
                         <Insets left="25.0" />
                     </VBox.margin>
                 </Text>
-            <padding>
-               <Insets left="20.0" />
-            </padding>
+                <padding>
+                    <Insets left="20.0" />
+                </padding>
             </VBox>
-            <VBox prefHeight="162.0" prefWidth="284.0">
+            <VBox prefHeight="162.0" prefWidth="284.0" style="-fx-background-color: white;">
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="To Be or To Have : ">
                     <font>
                         <Font name="Britannic Bold" size="20.0" />
                     </font>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
                 </Text>
                 <Text fx:id="desc" strokeType="OUTSIDE" strokeWidth="0.0" />
             </VBox>

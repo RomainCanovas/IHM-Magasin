@@ -179,6 +179,18 @@ public class ShopController implements Initializable {
                         new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
                         new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
                         new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
+                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
+                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
+                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
+                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
+                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
+                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
+                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
+                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
+                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
+                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
+                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
+                        new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true),
                         new Product("produit1", "produit/produit1.jpg", "Ce produit est un produit qui est bien !", 25, true)
 
                 ),

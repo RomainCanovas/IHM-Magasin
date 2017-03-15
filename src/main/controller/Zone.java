@@ -29,11 +29,11 @@ public class Zone extends Parent {
 
 		this.setOnMouseEntered(event -> {
 			Rectangle rect = new Rectangle(maxSize, maxSize);
-			rect.setFill(Color.YELLOW);
-			rect.setOpacity(0.6);
+			rect.setFill(Color.LIGHTSKYBLUE);
+			rect.setOpacity(0.5);
 			Text text = new Text(this.name);
 			text.setLayoutY(maxSize / 2);
-			text.setLayoutX(maxSize / 2 - 25);
+			text.setLayoutX(maxSize / 2 - 35);
 			this.getChildren().addAll(rect, text);
 		});
 
