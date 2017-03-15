@@ -8,8 +8,8 @@ import java.time.LocalDate;
 public class Product {
 
 	private String name, description;
-	private float price;
-	private float currentPrice;
+	private double price;
+	private double currentPrice;
 	private Image picture;
 	private boolean isSelected, show, inStock;
 	private LocalDate date;
@@ -62,19 +62,19 @@ public class Product {
 		return this.show;
 	}
 
-	public void setPrice(float price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
-	public void setCurrentPrice(float price) {
+	public void setCurrentPrice(double price) {
 		this.currentPrice = price;
 	}
 
-	public float getCurrentPrice() {
+	public double getCurrentPrice() {
 		return this.currentPrice;
 	}
 
-	public float getPrice() {
+	public double getPrice() {
 		return this.price;
 	}
 
